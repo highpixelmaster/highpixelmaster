@@ -119,7 +119,7 @@ rootMenuConfig =  {
         icon = "#general-car",
         functionName = "vehcontrol:openExternal",
         enableMenu = function()
-            return (isPolice and not isDead and IsPedInAnyVehicle(PlayerPedId(), true))
+            return (not isDead and IsPedInAnyVehicle(PlayerPedId(), true))
         end,
     },
     {    
