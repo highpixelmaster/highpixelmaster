@@ -113,15 +113,15 @@ rootMenuConfig =  {
         return not isDead
     end
     },
-    --[[{   
+    {   
         id = "Vehicle",
         displayName = "Vehicle",
         icon = "#general-car",
+        functionName = "vehcontrol:openExternal",
         enableMenu = function()
             return (isPolice and not isDead and IsPedInAnyVehicle(PlayerPedId(), true))
         end,
-        subMenus = {"vehicle:extra1", "vehicle:extra2","vehicle:extra3","vehicle:extra4","vehicle:extra5","vehicle:extra6","vehicle:extra7","vehicle:extra8",},
-    },]]--
+    },
     {    
         id = "Emotes",
         displayName = "Emotes",
@@ -228,7 +228,7 @@ newSubMenus = { -- NOTE basicly, what will be happen after clicking these button
         functionName = "police:client:PutPlayerInVehicle"
     },
     ['general:takeout'] = {
-        title = "Put In Vehicle",
+        title = "Take Out Vehicle",
         icon = "#general-unseat-nearest",
         functionName = "police:client:SetPlayerOutVehicle"
     },

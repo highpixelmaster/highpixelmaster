@@ -1,10 +1,10 @@
 
 ================================================================
-======== FXServer starting - 9/27/2021, 10:07:39 PM
+======== FXServer starting - 9/28/2021, 11:55:25 PM
 ================================================================
 [38;5;161m[    c-scripting-core] Creating script environments for _cfx_internal
 [38;5;73m[ citizen-server-impl] Scanning resources.
-[38;5;73m[ citizen-server-impl] Found 165 resources.
+[38;5;73m[ citizen-server-impl] Found 167 resources.
 [38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
 [38;5;73m[ citizen-server-impl]     - chat
 [38;5;73m[ citizen-server-impl]     - lux_vehcontrol
@@ -97,6 +97,8 @@
 [38;5;73m[ citizen-server-impl] Started resource qb-crypto
 [38;5;161m[    c-scripting-core] Creating script environments for qb-customs
 [38;5;73m[ citizen-server-impl] Started resource qb-customs
+[38;5;161m[    c-scripting-core] Creating script environments for qb-detector
+[38;5;73m[ citizen-server-impl] Started resource qb-detector
 [38;5;161m[    c-scripting-core] Creating script environments for qb-diceroll
 [38;5;73m[ citizen-server-impl] Started resource qb-diceroll
 [38;5;161m[    c-scripting-core] Creating script environments for qb-diving
@@ -123,6 +125,8 @@
 [38;5;73m[ citizen-server-impl] Started resource qb-houserobbery
 [38;5;161m[    c-scripting-core] Creating script environments for qb-houses
 [38;5;73m[ citizen-server-impl] Started resource qb-houses
+[38;5;161m[    c-scripting-core] Creating script environments for qb-hud
+[38;5;73m[ citizen-server-impl] Started resource qb-hud
 [38;5;161m[    c-scripting-core] Creating script environments for qb-idcard
 [38;5;73m[ citizen-server-impl] Started resource qb-idcard
 [38;5;161m[    c-scripting-core] Creating script environments for qb-ifruitstore
@@ -217,25 +221,13 @@
 [38;5;73m[ citizen-server-impl] Started resource Dox-Garage
 [38;5;161m[    c-scripting-core] Creating script environments for LegacyFuel
 [38;5;73m[ citizen-server-impl] Started resource LegacyFuel
-[38;5;73m[ citizen-server-impl] Started resource MazeBank
 [38;5;161m[    c-scripting-core] Creating script environments for RichPresence
 [38;5;73m[ citizen-server-impl] Started resource RichPresence
-[38;5;73m[ citizen-server-impl] Started resource ballasint
-[38;5;73m[ citizen-server-impl] Started resource bob74_ipl
-[38;5;73m[ citizen-server-impl] Started resource cardealer_patoche
-[38;5;73m[ citizen-server-impl] Started resource cokelabs
 [38;5;73m[ citizen-server-impl] Started resource compass
-[38;5;73m[ citizen-server-impl] Asset daviscourt/v_5_1.ytd uses 25.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Started resource daviscourt
-[38;5;73m[ citizen-server-impl] Started resource digitalden
 [38;5;161m[    c-scripting-core] Creating script environments for dpemotes
-[38;5;133m[     script:dpemotes] [dp] Sql Keybinding is turned off, if you want to enable /emotebind, import dpkeybinding.sql and set SqlKeybinding = true in config.lua.
 [38;5;73m[ citizen-server-impl] Started resource dpemotes
-[38;5;73m[ citizen-server-impl] Started resource familiesint
-[38;5;73m[ citizen-server-impl] Started resource gabz_hub
-[38;5;73m[ citizen-server-impl] Asset gabz_mrpd/gabz_mrpd_txd.ytd uses 38.5 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Started resource gabz_mrpd
-[38;5;73m[ citizen-server-impl] Started resource importga
+[38;5;161m[    c-scripting-core] Creating script environments for ghmattimysql
+[38;5;73m[ citizen-server-impl] Started resource ghmattimysql
 [38;5;73m[ citizen-server-impl] Started resource int_weed
 [38;5;161m[    c-scripting-core] Creating script environments for interact-sound
 [38;5;73m[ citizen-server-impl] Started resource interact-sound
@@ -246,15 +238,9 @@
 [38;5;73m[ citizen-server-impl] Started resource mysql-async
 [38;5;73m[ citizen-server-impl] Started resource nh-context
 [38;5;73m[ citizen-server-impl] Started resource nh-keyboard
-[38;5;73m[ citizen-server-impl] Started resource np-247
-[38;5;73m[ citizen-server-impl] Started resource np-beanmachine
-[38;5;73m[ citizen-server-impl] Asset np-burgershotv2/bs_int_txd.ytd uses 18.8 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Started resource np-burgershotv2
 [38;5;73m[ citizen-server-impl] Asset np-carflames/core.ypt uses 33.4 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-carflames/core.ypt uses 21.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Started resource np-carflames
-[38;5;73m[ citizen-server-impl] Asset np-cleanmanor/lm.ytd uses 36.2 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Started resource np-cleanmanor
 [38;5;73m[ citizen-server-impl] Asset np-clothes/mp_f_freemode_01_np^accs_027_u.ydd uses 34.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-clothes/mp_f_freemode_01_np^jbib_032_u.ydd uses 34.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-clothes/mp_f_freemode_01_np^jbib_033_u.ydd uses 34.0 MiB of physical memory.
@@ -263,19 +249,7 @@
 [38;5;73m[ citizen-server-impl] Asset np-clothes/mp_f_freemode_01_np^lowr_022_u.ydd uses 34.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-clothes/mp_m_freemode_01_np^jbib_029_u.ydd uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Started resource np-clothes
-[38;5;73m[ citizen-server-impl] Started resource np-comedyclub
-[38;5;73m[ citizen-server-impl] Asset np-deanworld/dw_carousel_horses.ydr uses 20.0 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset np-deanworld/dw_carousel_rockets.ydr uses 22.0 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset np-deanworld/dw_stage_electronics.ydr uses 24.0 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Started resource np-deanworld
-[38;5;73m[ citizen-server-impl] Started resource np-fightclub
-[38;5;73m[ citizen-server-impl] Started resource np-paletomarket
-[38;5;73m[ citizen-server-impl] Asset np-prison/prison_armoury_details1.ydr uses 21.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Started resource np-prison
-[38;5;73m[ citizen-server-impl] Asset np-vegetation/globalroads.ytd uses 24.9 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Started resource np-vegetation
 [38;5;73m[ citizen-server-impl] Started resource np-vehicleaudio
-[38;5;73m[ citizen-server-impl] Started resource np-workingroadsigns
 [38;5;73m[ citizen-server-impl] Asset np_clothes_props/mp_f_freemode_01_p^p_eyes_diff_017_a.ytd uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np_clothes_props/mp_f_freemode_01_p^p_eyes_diff_017_c.ytd uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np_clothes_props/mp_f_freemode_01_p^p_eyes_diff_017_k.ytd uses 32.0 MiB of physical memory.
@@ -284,13 +258,7 @@
 [38;5;73m[ citizen-server-impl] Started resource np_clothes_props
 [38;5;161m[    c-scripting-core] Creating script environments for nui_doorlock
 [38;5;73m[ citizen-server-impl] Started resource nui_doorlock
-[38;5;73m[ citizen-server-impl] Started resource ob_laundry
-[38;5;73m[ citizen-server-impl] Asset pillbox/gabz_pillbox_textures_01.ytd uses 27.5 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Started resource pillbox
 [38;5;73m[ citizen-server-impl] Started resource safecracker
-[38;5;73m[ citizen-server-impl] Started resource vagosint
-[38;5;73m[ citizen-server-impl] Asset vanilla-unicorn/v_19_stripclub.ytd uses 23.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Started resource vanilla-unicorn
 [38;5;73m[ citizen-server-impl] Started resource vehcontrol
 [38;5;73m[ citizen-server-impl] Asset weapon_replacements/w_ar_assaultrifle+hi.ytd uses 18.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset weapon_replacements/w_ar_assaultrifle.ytd uses 18.0 MiB of physical memory.
@@ -312,296 +280,610 @@
 [38;5;73m[ citizen-server-impl] Started resource pma-voice
 [38;5;161m[    c-scripting-core] Creating script environments for qb-radio
 [38;5;73m[ citizen-server-impl] Started resource qb-radio
-[38;5;73m[ citizen-server-impl] Asset assest_copcars/polchar.ytd uses 88.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset assest_copcars/polraptor.yft uses 17.8 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset assest_copcars/polraptor.yft uses 17.8 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset assest_copcars/polraptor.ytd uses 65.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset assest_copcars/polraptor.ytd uses 65.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset assest_copcars/polraptor_hi.yft uses 17.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset assest_copcars/polraptor_hi.yft uses 17.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset assest_copcars/polchar.ytd uses 88.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset assest_copcars/polchar.ytd uses 88.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset assest_copcars/poltah.ytd uses 94.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset assest_copcars/poltah.ytd uses 94.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset assest_copcars/poltaurus.ytd uses 140.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset assest_copcars/poltaurus.ytd uses 140.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset assest_copcars/polvic.ytd uses 138.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset assest_copcars/polvic.ytd uses 138.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Started resource assest_copcars
 [38;5;73m[ citizen-server-impl] Asset charger16/16charger.ytd uses 176.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset charger16/16charger.ytd uses 176.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Started resource charger16
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/2015polstang.ytd uses 90.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/2015polstang.ytd uses 90.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/2015polstang_hi.ytd uses 27.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/2015polstang_hi.ytd uses 27.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/2f2fgtr34.ytd uses 100.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/2f2fgtr34.ytd uses 100.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/300zw.yft uses 24.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/300zw.yft uses 24.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/300zw.ytd uses 96.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/300zw.ytd uses 96.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/300zw_hi.yft uses 24.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/300zw_hi.yft uses 24.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/370z.yft uses 22.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/370z.yft uses 22.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/370z.ytd uses 76.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/370z.ytd uses 76.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/370z_hi.yft uses 22.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/370z_hi.yft uses 22.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/510.yft uses 26.8 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/510.yft uses 26.8 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/510_hi.yft uses 26.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/510_hi.yft uses 26.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/650slw.ytd uses 182.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/650slw.ytd uses 182.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/66fastback_livery1.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/66fastback_livery1.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/911rwb.yft uses 16.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/911rwb.yft uses 16.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/911rwb.ytd uses 26.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/911rwb.ytd uses 26.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/911rwb_hi.yft uses 16.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/911rwb_hi.yft uses 16.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/911turbos.ytd uses 114.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/911turbos.ytd uses 114.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/918.yft uses 24.8 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/918.yft uses 24.8 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/918.ytd uses 148.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/918.ytd uses 148.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/918_hi.yft uses 24.8 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/MBW124.yft uses 17.2 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/MBW124.ytd uses 50.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/MBW124_hi.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/918_hi.yft uses 24.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/a80.ytd uses 20.2 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/a80.ytd uses 20.2 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/acs8.ytd uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/acs8.ytd uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/an225.ytd uses 80.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/an225.ytd uses 80.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/audirs6tk.ytd uses 31.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/audirs6tk.ytd uses 31.5 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/audirs6tk_hi.yft uses 16.8 MiB of virtual memory.
-[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bc_hi.yft uses 16.6 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/audirs6tk_hi.yft uses 16.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bcbanshee.ytd uses 25.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bcbanshee.ytd uses 25.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bcbansheed.ytd uses 39.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bcbansheed.ytd uses 39.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bc_hi.yft uses 16.6 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bc_hi.yft uses 16.6 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bdragon.yft uses 18.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bdragon.yft uses 18.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bdragon_hi.yft uses 18.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bdragon_hi.yft uses 18.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bluecunt.ytd uses 25.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bluecunt.ytd uses 25.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bmwr.yft uses 19.6 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/bmwr.yft uses 19.6 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/c63.yft uses 22.4 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/c63.yft uses 22.4 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/c63_hi.yft uses 19.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/c63_hi.yft uses 19.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/c7.ytd uses 22.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/c7.ytd uses 22.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/contss18.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/contss18.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/contss18_hi.yft uses 17.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/contss18_hi.yft uses 17.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery10.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery10.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery27.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery27.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery7.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery7.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery8.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery8.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery9.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/cw2019_livery9.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/czl1.ytd uses 98.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/czl1.ytd uses 98.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/db11.yft uses 17.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/db11.yft uses 17.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/db11_hi.yft uses 17.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/db11_hi.yft uses 17.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/dc5.ytd uses 21.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/dc5.ytd uses 21.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/demon.ytd uses 20.2 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/demon.ytd uses 20.2 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e36prb.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e36prb.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e36prb.ytd uses 40.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e36prb.ytd uses 40.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e36prb_hi.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e36prb_hi.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e46.yft uses 21.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e46.yft uses 21.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e46.ytd uses 70.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e46.ytd uses 70.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e46_hi.yft uses 21.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/e46_hi.yft uses 21.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/eclipse.yft uses 23.1 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/eclipse.yft uses 23.1 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/eclipse.ytd uses 120.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/eclipse.ytd uses 120.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/eclipse_hi.yft uses 16.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/eclipse_hi.yft uses 16.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/emsnspeedo.ytd uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/emsnspeedo.ytd uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/er34.ytd uses 128.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/er34.ytd uses 128.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/evo10.yft uses 17.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/evo10.yft uses 17.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/evo10.ytd uses 95.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/evo10.ytd uses 95.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/exor.ytd uses 20.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/exor.ytd uses 20.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/f40.ytd uses 25.2 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/f40.ytd uses 25.2 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/f40_hi.yft uses 19.1 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/f40_hi.yft uses 19.1 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/fc3s.ytd uses 104.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/fc3s.ytd uses 104.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ff4wrx.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ff4wrx.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/focusrs.ytd uses 53.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/focusrs.ytd uses 53.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/golfp.yft uses 22.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/golfp.yft uses 22.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/golfp.ytd uses 24.2 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/golfp.ytd uses 24.2 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/golfp_hi.yft uses 22.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/golfp_hi.yft uses 22.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt2rwb.ytd uses 174.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt2rwb.ytd uses 174.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt3rs.yft uses 28.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt3rs.yft uses 28.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt3rs.ytd uses 248.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt3rs.ytd uses 248.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt3rs_hi.yft uses 28.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt3rs_hi.yft uses 28.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt63.yft uses 18.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/gt63.yft uses 18.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/hellion_livery11.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/hellion_livery11.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/hellion_livery12.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/hellion_livery12.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/laferrari17.ytd uses 27.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/laferrari17.ytd uses 27.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lfa.ytd uses 33.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lfa.ytd uses 33.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lfa_hi.yft uses 18.1 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lfa_hi.yft uses 18.1 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lp700r.yft uses 20.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lp700r.yft uses 20.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lp700r.ytd uses 61.2 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lp700r.ytd uses 61.2 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lp700r_hi.yft uses 20.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lp700r_hi.yft uses 20.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwgtr.ytd uses 180.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwgtr.ytd uses 180.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwgtr2.yft uses 20.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwgtr2.yft uses 20.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwgtr2.ytd uses 188.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwgtr2.ytd uses 188.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwgtr2_hi.yft uses 20.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwgtr2_hi.yft uses 20.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwlp670.yft uses 18.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwlp670.yft uses 18.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwlp670.ytd uses 146.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwlp670.ytd uses 146.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwlp670_hi.yft uses 18.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/lwlp670_hi.yft uses 18.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m235.ytd uses 50.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m235.ytd uses 50.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m3e46.ytd uses 25.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m3e46.ytd uses 25.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m4.ytd uses 26.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m4.ytd uses 26.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m5e60.yft uses 18.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m5e60.yft uses 18.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m5e60.ytd uses 16.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m5e60.ytd uses 16.5 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m5e60_hi.yft uses 18.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/m5e60_hi.yft uses 18.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/MBW124.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/MBW124.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/MBW124.ytd uses 50.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/MBW124.ytd uses 50.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/MBW124_hi.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/MBW124_hi.yft uses 17.2 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/mig.ytd uses 50.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/mig.ytd uses 50.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/moco_midship.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/moco_midship.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/momo_race.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/momo_race.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/monroec.ytd uses 20.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/monroec.ytd uses 20.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/mustang19.ytd uses 18.8 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/mustang19.ytd uses 18.8 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nardi_classic.yft uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nardi_classic.yft uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nardi_corn1.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nardi_corn1.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nardi_corn2.yft uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nardi_corn2.yft uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nis13.yft uses 19.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nis13.yft uses 19.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nis13.ytd uses 61.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nis13.ytd uses 61.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nis13_hi.yft uses 19.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/nis13_hi.yft uses 19.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/npolchal.ytd uses 20.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/npolchal.ytd uses 20.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/npolstang.ytd uses 18.8 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/npolstang.ytd uses 18.8 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/npolvette.ytd uses 22.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bride_gias2a.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
-[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bride_gias2b.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/npolvette.ytd uses 22.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bridebrix_purple.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bridebrix_purple.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bridebrix_red.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bridebrix_red.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bridelow_nstyle.yft uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bridelow_nstyle.yft uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bride_gias2a.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bride_gias2a.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bride_gias2b.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_bride_gias2b.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_int1s3.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_int1s3.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_advan.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_advan.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_checkered.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_checkered.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_cherry.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_cherry.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_fujio.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_fujio.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_hiromitsu.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_hiromitsu.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_matsukawa.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_matsukawa.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_mcr.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_mcr.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_nico.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_nico.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_shirts.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_shirts.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_tomoyuki.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_tomoyuki.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_zburst.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_liv_zburst.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_mats_dmaxblue.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_mats_dmaxblue.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_mats_dmaxred.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_mats_dmaxred.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_stickerwindows1.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_stickerwindows1.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_stickerwindows2.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_stickerwindows2.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_stickerwindows3.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/ns13_stickerwindows3.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/p1.ytd uses 34.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/p1.ytd uses 34.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/p1_hi.yft uses 23.8 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/p1_hi.yft uses 23.8 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/panamera17turbo.yft uses 21.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/panamera17turbo.yft uses 21.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/panamera17turbo_hi.yft uses 21.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/panamera17turbo_hi.yft uses 21.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pandem_livery2.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pandem_livery2.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pandem_livery3.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pandem_livery3.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pandem_livery4.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pandem_livery4.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pandem_livery5.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pandem_livery5.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pistas.yft uses 17.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pistas.yft uses 17.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pistas.ytd uses 66.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pistas.ytd uses 66.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pistas_hi.yft uses 17.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/pistas_hi.yft uses 17.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign1.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign1.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign10.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign10.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign11.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign11.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign12.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign12.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign13.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign13.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign2.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign2.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign3.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign3.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign4.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign4.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign6.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign6.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign7.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign7.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign8.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign8.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign9.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/primod_sign9.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/prospats.yft uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/prospats.yft uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/r1.ytd uses 29.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/r1.ytd uses 29.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/raid.yft uses 19.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/raid.yft uses 19.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/raid_hi.yft uses 19.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/raid_hi.yft uses 19.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rcf.ytd uses 23.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rcf.ytd uses 23.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/regera.ytd uses 192.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/regera.ytd uses 192.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rmodmustang.yft uses 17.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rmodmustang.yft uses 17.0 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rmodmustang.ytd uses 17.2 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rmodmustang.ytd uses 17.2 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery1.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery1.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery2.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery2.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery3.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery3.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery4.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery4.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery5.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery5.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery6.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rsv8_livery6.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rx7rb.ytd uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/rx7rb.ytd uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s14boss.yft uses 16.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s14boss.yft uses 16.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s14boss.ytd uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s14boss.ytd uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s14boss_hi.yft uses 16.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s14boss_hi.yft uses 16.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s15mak.yft uses 19.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s15mak.yft uses 19.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s15mak.ytd uses 128.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s15mak.ytd uses 128.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s15mak_hi.yft uses 19.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s15mak_hi.yft uses 19.2 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s15rb.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/s15rb.ytd uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/senna.ytd uses 48.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/senna.ytd uses 48.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/srt8b.ytd uses 60.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/srt8b.ytd uses 60.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/sultanrsv8.ytd uses 56.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/sultanrsv8.ytd uses 56.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tempesta2.yft uses 16.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tempesta2.yft uses 16.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tempesta2_hi.yft uses 16.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tempesta2_hi.yft uses 16.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tractorcv8.ytd uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tractorcv8.ytd uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tractorc_livery1.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tractorc_livery1.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tractorc_livery3.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tractorc_livery3.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tractorc_livery4.yft uses 32.0 MiB of physical memory.
-[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tractorcv8.ytd uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tractorc_livery4.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20.ytd uses 43.5 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20.ytd uses 43.5 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv1.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv1.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv10.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv10.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv11.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv11.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv12.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv12.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv13.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv13.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv14.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv14.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv15.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv15.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv16.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv16.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv17.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv17.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv18.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv18.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv3.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv3.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv4.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv4.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv5.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv5.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv6.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv6.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv7.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv7.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv8.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv8.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv9.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/tsgr20_liv9.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/urus.ytd uses 52.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/urus.ytd uses 52.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/urus_nath_01.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/urus_nath_01.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/urus_nath_02.ydr uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/urus_nath_02.ydr uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/urus_nath_03.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/urus_nath_03.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/v242.yft uses 31.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/v242.yft uses 31.5 MiB of virtual memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/v242_hi.yft uses 31.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/v242_hi.yft uses 31.5 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vehicles_nis13_tuning.ytd uses 160.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vehicles_nis13_tuning.ytd uses 160.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex2.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex2.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex3.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex3.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex4.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex4.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex5.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex5.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex6.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex6.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex7.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex7.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex8.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex8.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex9.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/vertex9.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_agt2.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_agt2.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_ete1.ydr uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_ete1.ydr uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_fm.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_fm.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_gx1.ydr uses 20.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_gx1.ydr uses 20.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_lg4.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_lg4.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_rs050rr.ydr uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_rs050rr.ydr uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_sa60.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_sa60.ydr uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_te37v.ydr uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wheel_spor_te37v.ydr uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wraith.yft uses 17.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wraith.yft uses 17.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wraith.ytd uses 59.2 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wraith.ytd uses 59.2 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wraith_hi.yft uses 17.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/wraith_hi.yft uses 17.8 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/yos3_livery12.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/yos3_livery12.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z2879.ytd uses 41.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z2879.ytd uses 41.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32.ytd uses 57.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32.ytd uses 57.5 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridebrix_black.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridebrix_black.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridebrix_hks.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridebrix_hks.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridebrix_purple.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridebrix_purple.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridebrix_red.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridebrix_red.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridethrash_black.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridethrash_black.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridethrash_blue.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridethrash_blue.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridethrash_red.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridethrash_red.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridethrash_yellow.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_bridethrash_yellow.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_moco_midship.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_moco_midship.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_momo_race.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_momo_race.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_nardi_classic.yft uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_nardi_classic.yft uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_nardi_corn1.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_nardi_corn1.yft uses 24.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_nardi_corn2.yft uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_nardi_corn2.yft uses 24.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_prospats.yft uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_prospats.yft uses 96.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_recaro_base.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_recaro_base.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_recaro_hks.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_recaro_hks.yft uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_recaro_nismo.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_recaro_nismo.yft uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_vertex3.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/z32_vertex3.yft uses 64.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/zondar.ytd uses 56.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/zondar.ytd uses 56.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/zx10.ytd uses 21.2 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Asset np-vehicleconfig/zx10.ytd uses 21.2 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Started resource np-vehicleconfig
 [38;5;73m[ citizen-server-impl] Asset speedoambo/emsnspeedo.ytd uses 32.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset speedoambo/emsnspeedo.ytd uses 32.0 MiB of physical memory.
 [38;5;73m[ citizen-server-impl] Started resource speedoambo
+[38;5;73m[ citizen-server-impl] Asset taxicharg/Taxi2.ytd uses 112.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Asset taxicharg/Taxi2.ytd uses 112.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Started resource taxicharg
 [38;5;73m[ citizen-server-impl] Asset taxiexp/Taxi4.ytd uses 160.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset taxiexp/Taxi4.ytd uses 160.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Started resource taxiexp
 [38;5;73m[ citizen-server-impl] Asset taxivic/Taxi1.ytd uses 160.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
+[38;5;73m[ citizen-server-impl] Asset taxivic/Taxi1.ytd uses 160.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (models not loading/rendering, commonly known as 'texture loss', 'city bug' or 'streaming isn't great').
 [38;5;73m[ citizen-server-impl] Started resource taxivic
-[38;5;161m[    c-scripting-core] Creating script environments for qb-hud
-[38;5;73m[ citizen-server-impl] Started resource qb-hud
+[38;5;73m[ citizen-server-impl] Started resource MazeBank
+[38;5;73m[ citizen-server-impl] Started resource ballasint
+[38;5;73m[ citizen-server-impl] Started resource bob74_ipl
+[38;5;73m[ citizen-server-impl] Started resource cardealer_patoche
+[38;5;73m[ citizen-server-impl] Started resource cokelabs
+[38;5;73m[ citizen-server-impl] Asset daviscourt/v_5_1.ytd uses 25.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset daviscourt/v_5_1.ytd uses 25.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Started resource daviscourt
+[38;5;73m[ citizen-server-impl] Started resource digitalden
+[38;5;73m[ citizen-server-impl] Started resource familiesint
+[38;5;73m[ citizen-server-impl] Started resource gabz_hub
+[38;5;73m[ citizen-server-impl] Asset gabz_mrpd/gabz_mrpd_txd.ytd uses 38.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset gabz_mrpd/gabz_mrpd_txd.ytd uses 38.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Started resource gabz_mrpd
+[38;5;73m[ citizen-server-impl] Started resource importga
+[38;5;73m[ citizen-server-impl] Started resource np-247
+[38;5;73m[ citizen-server-impl] Started resource np-beanmachine
+[38;5;73m[ citizen-server-impl] Asset np-burgershotv2/bs_int_txd.ytd uses 18.8 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-burgershotv2/bs_int_txd.ytd uses 18.8 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Started resource np-burgershotv2
+[38;5;73m[ citizen-server-impl] Asset np-cleanmanor/lm.ytd uses 36.2 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-cleanmanor/lm.ytd uses 36.2 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Started resource np-cleanmanor
+[38;5;73m[ citizen-server-impl] Started resource np-comedyclub
+[38;5;73m[ citizen-server-impl] Asset np-deanworld/dw_carousel_horses.ydr uses 20.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-deanworld/dw_carousel_horses.ydr uses 20.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-deanworld/dw_carousel_rockets.ydr uses 22.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-deanworld/dw_carousel_rockets.ydr uses 22.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-deanworld/dw_stage_electronics.ydr uses 24.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Asset np-deanworld/dw_stage_electronics.ydr uses 24.0 MiB of virtual memory.
+[38;5;73m[ citizen-server-impl] Started resource np-deanworld
+[38;5;73m[ citizen-server-impl] Started resource np-fightclub
+[38;5;73m[ citizen-server-impl] Started resource np-paletomarket
+[38;5;73m[ citizen-server-impl] Asset np-prison/prison_armoury_details1.ydr uses 21.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-prison/prison_armoury_details1.ydr uses 21.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Started resource np-prison
+[38;5;73m[ citizen-server-impl] Asset np-vegetation/globalroads.ytd uses 24.9 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset np-vegetation/globalroads.ytd uses 24.9 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Started resource np-vegetation
+[38;5;73m[ citizen-server-impl] Started resource np-workingroadsigns
+[38;5;73m[ citizen-server-impl] Started resource ob_laundry
+[38;5;73m[ citizen-server-impl] Asset pillbox/gabz_pillbox_textures_01.ytd uses 27.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset pillbox/gabz_pillbox_textures_01.ytd uses 27.5 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Started resource pillbox
+[38;5;73m[ citizen-server-impl] Started resource vagosint
+[38;5;73m[ citizen-server-impl] Asset vanilla-unicorn/v_19_stripclub.ytd uses 23.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Asset vanilla-unicorn/v_19_stripclub.ytd uses 23.0 MiB of physical memory.
+[38;5;73m[ citizen-server-impl] Started resource vanilla-unicorn
 [38;5;66m[          svadhesive] Authenticating server license key...
 [38;5;42m[      script:oxmysql] Error: connect ETIMEDOUT
-[38;5;159m[  script:mysql-async] [mysql-async] [SUCCESS] Database server connection established.
+[38;5;77m[ script:ghmattimysql] [ghmattimysql] [ERROR] connect ETIMEDOUT
+[38;5;159m[  script:mysql-async] [mysql-async] [ERROR] connect ETIMEDOUT
 [38;5;84m[      script:monitor] [txAdminClient] Threads and commands set up. All Ready.
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 666 milliseconds
-[38;5;42m[      script:oxmysql] Warning: SELECT * FROM lapraces took 698.3215ms! []
-[38;5;42m[      script:oxmysql] Warning: SELECT * FROM player_houses took 700.9368ms! []
-[38;5;42m[      script:oxmysql] Warning: SELECT * FROM permissions took 704.5678ms! []
-[38;5;42m[      script:oxmysql] Warning: SELECT * FROM houselocations took 703.6315ms! []
-[38;5;42m[      script:oxmysql] Warning: SELECT * FROM houselocations took 702.5779ms! []
-[38;5;42m[      script:oxmysql] Warning: SELECT * FROM bank_accounts WHERE account_type = ? took 708.878ms! [
+[38;5;66m[          svadhesive] Server license key authentication succeeded. Welcome!
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 853 milliseconds
+[38;5;42m[      script:oxmysql] Warning: SELECT * FROM bank_accounts WHERE account_type = ? took 837.9775ms! [
 [38;5;42m[      script:oxmysql]   "Business"
 [38;5;42m[      script:oxmysql] ]
-[38;5;66m[          svadhesive] Server license key authentication succeeded. Welcome!
+[38;5;42m[      script:oxmysql] Warning: SELECT * FROM permissions took 840.6549ms! []
+[38;5;42m[      script:oxmysql] Warning: SELECT * FROM houselocations took 844.3227ms! []
+[38;5;42m[      script:oxmysql] Warning: SELECT * FROM player_houses took 844.8378ms! []
+[38;5;42m[      script:oxmysql] Warning: SELECT * FROM lapraces took 845.3411ms! []
+[38;5;42m[      script:oxmysql] Warning: SELECT * FROM houselocations took 849.8186ms! []
 [38;5;133m[     script:dpemotes] 
 [38;5;133m[     script:dpemotes] dp Emotes (dpemotes) is up to date. (173)
 [38;5;73m[ citizen-server-impl]         fff                          
@@ -620,133 +902,18 @@
 [38;5;173m[ script:connectqueue] QUEUE: Tony[license:0fc676c8258a2eccc552dea2d701ebd064a47a76] is loading into the server
 [38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
 [38;5;133m[script:qb-multichara] [qb-core] Tony (Citizen ID: CUF38163) has succesfully loaded!
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 162 milliseconds
-[38;5;42m[      script:oxmysql] Warning: SELECT * FROM crypto WHERE crypto = ? took 152.83ms! [
-[38;5;42m[      script:oxmysql]   "btc"
-[38;5;42m[      script:oxmysql] ]
-[38;5;42m[      script:oxmysql] Warning: SELECT * FROM playerskins WHERE citizenid = ? AND active = ? took 129.6746ms! [
-[38;5;42m[      script:oxmysql]   "CUF38163",
-[38;5;42m[      script:oxmysql]   1
-[38;5;42m[      script:oxmysql] ]
+[38;5;73m[ citizen-server-impl] Stopping resource qb-detector
+[38;5;161m[    c-scripting-core] Creating script environments for qb-detector
+[38;5;73m[ citizen-server-impl] Started resource qb-detector
+[38;5;73m[ citizen-server-impl] Stopping resource qb-detector
+[38;5;161m[    c-scripting-core] Creating script environments for qb-detector
+[38;5;73m[ citizen-server-impl] Started resource qb-detector
+[38;5;73m[ citizen-server-impl] Stopping resource qb-detector
+[38;5;161m[    c-scripting-core] Creating script environments for qb-detector
+[38;5;73m[ citizen-server-impl] Started resource qb-detector
 [38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;73m[ citizen-server-impl] Stopping resource qb-smallresources
-[38;5;161m[    c-scripting-core] Creating script environments for qb-smallresources
-[38;5;73m[ citizen-server-impl] Started resource qb-smallresources
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 244 milliseconds
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 236 milliseconds
-[38;5;73m[ citizen-server-impl] Stopping resource qb-smallresources
-[38;5;161m[    c-scripting-core] Creating script environments for qb-smallresources
-[38;5;73m[ citizen-server-impl] Started resource qb-smallresources
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 165 milliseconds
-[38;5;73m[ citizen-server-impl] Stopping resource qb-smallresources
-[38;5;161m[    c-scripting-core] Creating script environments for qb-smallresources
-[38;5;73m[ citizen-server-impl] Started resource qb-smallresources
-[38;5;73m[ citizen-server-impl] Stopping resource qb-smallresources
-[38;5;161m[    c-scripting-core] Creating script environments for qb-smallresources
-[38;5;73m[ citizen-server-impl] Started resource qb-smallresources
-[38;5;73m[ citizen-server-impl] Stopping resource qb-smallresources
-[38;5;161m[    c-scripting-core] Creating script environments for qb-smallresources
-[38;5;73m[ citizen-server-impl] Started resource qb-smallresources
-[38;5;73m[ citizen-server-impl] Stopping resource qb-smallresources
-[38;5;161m[    c-scripting-core] Creating script environments for qb-smallresources
-[38;5;73m[ citizen-server-impl] Started resource qb-smallresources
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;73m[ citizen-server-impl] Stopping resource qb-radialmenu
-[38;5;161m[    c-scripting-core] Creating script environments for qb-radialmenu
-[38;5;73m[ citizen-server-impl] Started resource qb-radialmenu
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;42m[      script:oxmysql] Warning: SELECT plate FROM player_vehicles WHERE plate = ? took 108.0953ms! [
-[38;5;42m[      script:oxmysql]   "46XRG325"
-[38;5;42m[      script:oxmysql] ]
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
-[38;5;133m[script:qb-multichara] [qb-core] Tony (Citizen ID: CUF38163) has succesfully loaded!
-[38;5;73m[ citizen-server-impl] Stopping resource qb-multicharacter
-[38;5;73m[ citizen-server-impl] Stopping resource qb-spawn
-[38;5;73m[ citizen-server-impl] Stopping resource qb-houses
-[38;5;161m[    c-scripting-core] Creating script environments for qb-houses
-[38;5;73m[ citizen-server-impl] Started resource qb-houses
-[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 183 milliseconds
-[38;5;73m[ citizen-server-impl] Stopping resource qb-hud
-[38;5;73m[ citizen-server-impl] Started resource qb-hud
+[38;5;73m[ citizen-server-impl] Stopping resource qb-ambulancejob
+[38;5;161m[    c-scripting-core] Creating script environments for qb-ambulancejob
+[38;5;73m[ citizen-server-impl] Started resource qb-ambulancejob
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 227 milliseconds
 [38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!

@@ -31,9 +31,11 @@
     "statusMessage": "**IP:** `change-me:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {
+    "serverDataPath": "C:/Users/tonyw/Documents/GitHub/highpixelmaster/txData/QBCoreFramework_413BF7.base/",
+    "cfgPath": "C:/Users/tonyw/Documents/GitHub/highpixelmaster/txData/QBCoreFramework_413BF7.base/server.cfg",
+    "commandLine": "",
+    "onesync": "on",
     "autostart": true,
-    "serverDataPath": "C:/Users/tonyw/Desktop/NoPixel/txData/QBCoreFramework_413BF7.base/",
-    "cfgPath": "C:/Users/tonyw/Desktop/NoPixel/txData/QBCoreFramework_413BF7.base/server.cfg",
-    "onesync": "on"
+    "quiet": false
   }
 }
