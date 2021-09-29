@@ -1,0 +1,4 @@
+Player: [2] Placed Scene: [test] At Coords = vector3(431.2203, -979.4052, 26.10093)
+Player: [1] Placed Scene: [fuck yourself holiday] At Coords = vector3(-1195.248, -891.6443, 14.28801)
+Player: [1] Placed Scene: [kill niggers] At Coords = vector3(228.764, -1039.536, 28.36242)
+Player: [1] Placed Scene: [black cum] At Coords = vector3(336.3391, -1027.451, 28.30881)

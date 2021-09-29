@@ -1,0 +1,21 @@
+[
+  {
+    "name": "JimmyLispy",
+    "master": true,
+    "password_hash": "$2a$11$kqUOlaAP7OpNG4mjximsvu0hF/9YfBeOrtqw0jv19BHwsJXIE4lsO",
+    "providers": {
+      "citizenfx": {
+        "id": "JimmyLispy",
+        "identifier": "fivem:1422566",
+        "data": {
+          "sub": "6260da5b17ff93c0c212cea3a2a9bf71",
+          "nameid": "https://forum.cfx.re/internal/user/1422566",
+          "name": "JimmyLispy",
+          "picture": "https://forum.cfx.re/user_avatar/forum.cfx.re/jimmylispy/256/698042_2.png",
+          "profile": "https://forum.cfx.re/u/JimmyLispy"
+        }
+      }
+    },
+    "permissions": []
+  }
+]
