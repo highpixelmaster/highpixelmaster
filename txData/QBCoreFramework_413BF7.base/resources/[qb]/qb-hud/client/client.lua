@@ -5,13 +5,85 @@ local hasNitrous = false
 local Stress = 0
 local hunger = nil
 local thirst = nil
+local oxygen = 0
 local seatbeltOn = false
+local bleedingPercentage = 0
 
-QBCore = nil
+
+RegisterCommand('+onengine', function()
+    local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+    if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
+        if not IsPauseMenuActive() then
+            QBCore.Functions.Notify('You\'ve turned on the engine!')
+            SetVehicleEngineOn(vehicle, true, false, true)
+        end
+    end
+end)
+
+RegisterCommand('+offengine', function()
+    local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+    if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
+        if not IsPauseMenuActive() then
+            QBCore.Functions.Notify('You\'ve turned off the engine!')
+            SetVehicleEngineOn(vehicle, false, false, true)
+        end
+    end
+end)
+
+RegisterKeyMapping('+onengine', '[CAR] Toggle Engine On', 'keyboard', 'MOUSE_WHEEL_UP')
+RegisterKeyMapping('+offengine', '[CAR] Toggle Engine Off', 'keyboard', 'MOUSE_WHEEL_DOWN')
+
+RegisterNetEvent("EngineAlarm")
+AddEventHandler("EngineAlarm", function()
+    if not alarm then
+        alarm = true
+        local i = 5
+        QBCore.Functions.Notify("Vehicle Reaching Critical Damage.", "error")
+        while i > 0 do
+            PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
+            i = i - 1
+            Citizen.Wait(500)
+        end
+        Citizen.Wait(60000)
+        alarm = false
+    end
+end)
+
+alarmset = false
+RegisterNetEvent("CarFuelAlarm")
+AddEventHandler("CarFuelAlarm", function()
+    if not alarmset then
+        alarmset = true
+        local i = 5
+        QBCore.Functions.Notify("Low fuel.", "error")
+        while i > 0 do
+            PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
+            i = i - 1
+            Citizen.Wait(300)
+        end
+        Citizen.Wait(60000)
+        alarmset = false
+    end
+end)
+
 Citizen.CreateThread(function()
-    while QBCore == nil do
-        TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-        Wait(200)
+    while true do
+        if QBCore ~= nil then
+            QBCore.Functions.TriggerCallback('hospital:GetPlayerBleeding', function(playerBleeding)
+                if playerBleeding == 0 then
+                    bleedingPercentage = 0
+                elseif playerBleeding == 1 then
+                    bleedingPercentage = 25
+                elseif playerBleeding == 2 then
+                    bleedingPercentage = 50
+                elseif playerBleeding == 3 then
+                    bleedingPercentage = 75
+                elseif playerBleeding == 4 then
+                    bleedingPercentage = 100
+                end
+            end)
+        end
+        Citizen.Wait(2500)
     end
 end)
 
@@ -30,8 +102,13 @@ AddEventHandler('hud:client:UpdateStress', function(newStress)
     Stress = newStress
 end)
 
-RegisterNetEvent('qb-hud:client:UpdateNitrous')
-AddEventHandler('qb-hud:client:UpdateNitrous', function(hasNitrous, level)
+RegisterNetEvent('seatbelt:client:ToggleSeatbelt')-- Triggered in smallresources
+AddEventHandler('seatbelt:client:ToggleSeatbelt', function()
+    seatbeltOn = not seatbeltOn
+end)
+
+RegisterNetEvent('hud:client:UpdateNitrous')
+AddEventHandler('hud:client:UpdateNitrous', function(hasNitrous, level)
     hasNitrous = hasNitrous
     nitrous = level
 end)
@@ -73,7 +150,7 @@ Citizen.CreateThread(function()
                     not IsPedInAnySub(PlayerPedId()) then
                     isDriving = true
                     SendNUIMessage({showSpeedo = true})
-                elseif not IsPedInAnyVehicle(PlayerPedId(), false) then
+                else
                     isDriving = false
                     SendNUIMessage({showSpeedo = false})
                 end
@@ -89,34 +166,48 @@ Citizen.CreateThread(function()
             QBCore.Functions.GetPlayerData(function(PlayerData)
                 local player = PlayerPedId()
                 local playerid = PlayerId()
-
+                
                 -- Talking Status
                 local isTalking = NetworkIsPlayerTalking(playerid)
-
+                
                 -- Oxygen/Stamina
-            	if IsEntityInWater(player) then
-                	oxygen = GetPlayerUnderwaterTimeRemaining(playerid) * 10
-            	else
-                	oxygen = 100 - GetPlayerSprintStaminaRemaining(playerid)
-            	end
-
+                if IsPedSwimmingUnderWater(player) then
+                    isUnderwater = true
+                    SendNUIMessage({showOxygen = true})
+                else
+                    isUnderwater = false
+                    SendNUIMessage({showOxygen = false})
+                end
+                
+                if IsPedInAnyVehicle(player) then
+                    seatbelt = seatbeltOn
+                else
+                    seatbelt = 0
+                end
+                
                 -- Hunger
                 local hunger = hunger
                 -- Thirst
                 local thirst = thirst
                 -- Stress
                 local stress = PlayerData.metadata["stress"]
-
+                
                 -- Radio
                 if Config.UseRadio then
-                    local radioStatus = exports["qb-radio"]:IsRadioOn()
-                    SendNUIMessage({radio = radioStatus})
+                    --[[local radioStatus = exports["qb-radio"]:IsRadioOn()
+                    SendNUIMessage({radio = radioStatus}) ]]
+                    local radioStatus = LocalPlayer.state['radioChannel']
+                    if radioStatus ~= 0 then
+                        SendNUIMessage({radio = false})
+                    else
+                        SendNUIMessage({radio = true})
+                    end
                 end
-
+                
                 -- Voice
                 local voicedata = LocalPlayer.state["proximity"].distance
                 SendNUIMessage({action = "voice_level", voicelevel = voicedata})
-
+                
                 SendNUIMessage({
                     action = "update_hud",
                     hp = GetEntityHealth(player) - 100,
@@ -124,8 +215,10 @@ Citizen.CreateThread(function()
                     hunger = hunger,
                     thirst = thirst,
                     stress = stress,
-                    oxygen = oxygen,
-                    talking = isTalking
+                    oxygen = GetPlayerUnderwaterTimeRemaining(PlayerId()) * 10,
+                    talking = isTalking,
+                    seatbelt = seatbelt,
+                    bleedingPercentage = bleedingPercentage,
                 })
                 if IsPauseMenuActive() then
                     SendNUIMessage({showUi = false})
@@ -150,7 +243,7 @@ Citizen.CreateThread(function()
     RequestStreamedTextureDict("circlemap", false)
     while not HasStreamedTextureDictLoaded("circlemap") do Wait(100) end
     AddReplaceTexture("platform:/textures/graphics", "radarmasksm", "circlemap", "radarmasksm")
-
+    
     SetMinimapClipType(1)
     SetMinimapComponentPosition('minimap', 'L', 'B', x, y, w, h)
     SetMinimapComponentPosition('minimap_mask', 'L', 'B', x + 0.17, y + 0.09, 0.072, 0.162)
@@ -174,7 +267,7 @@ CreateThread(function()
         Wait(2000)
         SetRadarZoom(1150)
         local player = PlayerPedId()
-
+        
         if Config.AlwaysShowRadar == false then
             if IsPedInAnyVehicle(player, false) then
                 DisplayRadar(true)
@@ -184,17 +277,17 @@ CreateThread(function()
         elseif Config.AlwaysShowRadar == true then
             DisplayRadar(true)
         end
-
+        
         -- Stress
         if Config.ShowStress == false then
             SendNUIMessage({action = "disable_stress"})
         end
-
+        
         -- Voice
         if Config.ShowVoice == false then
             SendNUIMessage({action = "disable_voice"})
         end
-
+        
         -- Fuel
         if Config.ShowFuel == true then
             if isDriving and IsPedInAnyVehicle(player, true) then
@@ -209,7 +302,7 @@ CreateThread(function()
         elseif Config.ShowFuel == false then
             SendNUIMessage({showFuel = false})
         end
-
+        
         -- Nitrous
         if Config.ShowNitrous == true then
             if isDriving and IsPedInAnyVehicle(player, true) then
@@ -226,6 +319,12 @@ CreateThread(function()
                         showNitrous = false
                     })
                 end
+            else
+                SendNUIMessage({
+                    action = "update_nitrous",
+                    nitrous = 0,
+                    showNitrous = false
+                })
             end
         elseif Config.ShowNitrous == false then
             SendNUIMessage({showNitrous = false})
@@ -233,32 +332,6 @@ CreateThread(function()
     end
 end)
 
-RegisterCommand("togglehud",
-    function()  SendNUIMessage({action = "toggle_hud"})
-end, false)
-
-playerAiming = false
-
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(200)
-		local ped = PlayerPedId()
-        if IsAimCamActive(PlayerPedId(), true) then
-			if playerAiming == false then
-            ShakeGameplayCam("HAND_SHAKE", 1.0 + Stress * 0.01)
-			SetPedAccuracy(ped, 0)
-			EnableLaserSightRendering(true)
-			playerAiming = true
-		end
-        else
-			if playerAiming == true then
-            StopGameplayCamShaking(true)
-			playerAiming = false
-			end
-        end
-    end
-end)
-
-RegisterCommand("creamster", function(source)
+RegisterCommand('ui-r', function()
     isLoggedIn = true
-end, false) -- dont worry about this, testing things delete if u want
+end)

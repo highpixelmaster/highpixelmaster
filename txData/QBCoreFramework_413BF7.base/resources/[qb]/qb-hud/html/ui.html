@@ -5,27 +5,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;300&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css" />
-      <title>zSeatbelt resource by zfbx</title>
-      <style>
-          body {
-              box-sizing: border-box;
-              margin: 20px;
-          }
-          #indicatorbox {
-              width: 46px;
-              height: 46px;
-              position:absolute;
-              left: 15%;
-              margin-left: -23px;
-              bottom: 120px;
-              opacity: 0;
-              -webkit-transition: opacity 0.5s ease-out;
-              transition: opacity 0.5s ease-out;
-          }
-          .show {
-              opacity: 0.75 !important;
-          }
-      </style>
   </head>
   <body>
     <div class="container">
@@ -34,13 +13,13 @@
           <i id="VoiceIcon" class="fas fa-microphone"></i>
       </div>
       <div id="HealthIndicator" class="BaseCircle">
-        <i id="hp-icon" class="fas fa-heartbeat"></i>
+        <i id="hp-icon" class="fas fa-heart"></i>
       </div>
       <div id="ArmorIndicator" class="BaseCircle">
-        <i class="fas fa-user-shield"></i>
+        <i class="fas fa-shield-alt"></i>
       </div>
       <div id="HungerIndicator" class="BaseCircle">
-        <i id="HungerIcon" class="fas fa-hamburger"></i>
+        <i class="fas fa-hamburger"></i>
       </div>
       <div id="ThirstIndicator" class="BaseCircle">
         <i id="ThirstIcon" class="fas fa-tint"></i>
@@ -49,40 +28,21 @@
         <i id="StressIcon" class="fas fa-brain"></i>
       </div>
       <div id="OxygenIndicator" class="BaseCircle">
-        <i id="OxyIcon" class="fas fa-lungs"></i>
-      </div>  
+        <i id="HungerIcon" class="fas fa-lungs"></i>
+      </div>
+      <div id="BeltCircle" class="BaseCircle">
+        <i class="fas fa-user-slash"></i>
+      </div>
+      <div id="NitrousCircle" class="BaseCircle">
+        <i class="fas fa-meteor"></i>
+      </div>
     </div>   
 
     <div id="VehicleContainer" style="display: none;">  
       <div id="SpeedCircle" class="BaseCircle"><h1 id="SpeedIndicator"></h1></div>           
       <div id="FuelCircle" class="BaseCircle"><i id="FuelIndicator" class="fas fa-gas-pump"></i></div>
-      <div id="NitrousCircle" class="BaseCircle"><i id="NitrousIndicator"></i><img class="nitrous" src="nitrous.png"></img></div>
     </div>
-  </div>
-    <audio id="buckle" src="buckle.ogg" preload></audio>
-    <audio id="unbuckle" src="unbuckle.ogg" preload></audio>
-    <script>
-        const buckle = document.getElementById("buckle");
-        const unbuckle = document.getElementById("unbuckle");
-
-        addEventListener('message', function(event) {
-            switch (event.data.type) {
-                case "unbuckle":
-                    unbuckle.volume = event.data.volume;
-                    unbuckle.play();
-                    break;
-                case "buckle":
-                    buckle.volume = event.data.volume;
-                    buckle.play();
-                    break;
-                case "showindicator":
-                    break;
-                case "hideindicator":
-                default:
-                    break;
-            }
-        });
-    </script>
+  </div> 
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.min.js" integrity="sha512-7IoDEsIJGxz/gNyJY/0LRtS45wDSvPFXGPuC7Fo4YueWMNOmWKMAllEqo2Im3pgOjeEwsOoieyliRgdkZnY0ow==" crossorigin="anonymous"></script>
   <script type="text/javascript" src="script.js"></script>

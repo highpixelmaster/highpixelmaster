@@ -466,7 +466,6 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
 	phone = PlayerData.charinfo.phone
 	job = PlayerData.job.name
 	rank = PlayerData.job.grade.name
-    isPlayerWhitelisted = refreshPlayerWhitelisted()
 end)
 
 

@@ -3,23 +3,14 @@ local stress = 0
 local StressGain = 0
 local IsGaining = false
 
-QBCore = nil
-
-Citizen.CreateThread(function()
-	while QBCore == nil do
-		TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-		Citizen.Wait(200)
-	end
-end)
-
 Citizen.CreateThread(function()
     while true do
         if QBCore ~= nil and isLoggedIn then
             local ped = PlayerPedId()
             if IsPedInAnyVehicle(ped, false) then
-                speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false)) * 2.237 --mph
+                speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false)) * 3.6 --mph
                 if speed >= Config.MinimumSpeed then
-                    TriggerServerEvent('qb-hud:Server:GainStress', math.random(2, 4))
+                    TriggerServerEvent('hud:Server:GainStress', math.random(2, 4))
                 end
             end
         end
@@ -33,7 +24,7 @@ Citizen.CreateThread(function()
             StressGain = math.ceil(StressGain)
             if StressGain > 0 then
                 QBCore.Functions.Notify('Getting Stressed', "error", 1500)
-                TriggerServerEvent('qb-hud:Server:UpdateStress', StressGain)
+                TriggerServerEvent('hud:Server:UpdateStress', StressGain)
                 StressGain = 0
             end
         end
@@ -45,7 +36,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(6)
         local ped = PlayerPedId()
-
+        
         if IsPedShooting(ped) then
             local StressChance = math.random(1, 40)
             local odd = math.random(1, 40)
@@ -74,12 +65,12 @@ Citizen.CreateThread(function()
             local RagdollTimeout = (FallRepeat * 1750)
             ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', ShakeIntensity)
             SetFlash(0, 0, 500, 3000, 500)
-
+            
             if not IsPedRagdoll(ped) and IsPedOnFoot(ped) and not IsPedSwimming(ped) then
                 local player = PlayerPedId()
                 SetPedToRagdollWithFall(player, RagdollTimeout, RagdollTimeout, 1, GetEntityForwardVector(player), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
             end
-
+            
             Citizen.Wait(500)
             for i = 1, FallRepeat, 1 do
                 Citizen.Wait(750)

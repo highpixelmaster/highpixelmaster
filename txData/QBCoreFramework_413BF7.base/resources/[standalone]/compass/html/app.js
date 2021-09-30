@@ -8,6 +8,7 @@ window.addEventListener("message", function (event) {
             $(".compass").hide();
         } else  {
             $('.street').html(type);
+            $(".street").show();
             $('.compass').html(value);
             $(".compass").show();
 

@@ -25,13 +25,8 @@ Citizen.CreateThread( function()
 		street = table.concat(street, " & ")
 
 		if street ~= laststreet then
-			if IsPedInAnyVehicle(PlayerPedId()) then
-				SendNUIMessage({action = "display", type = street})
-			else
-				SendNUIMessage({action = "hide", type = street})
-			end
-			
-			Citizen.Wait(50)
+			SendNUIMessage({action = "display", type = street})
+			Citizen.Wait(100)
 		end
 		laststreet = street
 		Citizen.Wait(100)

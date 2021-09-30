@@ -1,6 +1,6 @@
 Config = {}
 Config.compass = {}
-Config.compass.show = false
+Config.compass.show = true
 Config.compass.followGameplayCam = true
 
 Config.streetName = {}

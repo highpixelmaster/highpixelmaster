@@ -1,9 +1,11 @@
 fx_version 'cerulean'
-name 'cosmo_hud'
-description 'cosmo_hud for fivem, uses library from loading.io'
-ui_page 'html/ui.html'
-author 'CosmoKramer'
 game 'gta5'
+
+name 'qb-hud'
+description 'qb-hud for fivem, uses library from loading.io'
+author 'CosmoKramer'
+
+ui_page 'html/ui.html'
 
 files {
     'html/ui.html',
@@ -16,16 +18,15 @@ files {
     'html/seatBelt_off.png'
 }
 
+shared_scripts {
+    '@qb-core/import.lua',
+
+    'config.lua'
+}
 
 client_scripts {
-    'config.lua',
     'client/client.lua',
     'client/stress.lua',
-    'client/cruisecontrol.lua',
-    'client/seatbelt.lua'
 }
 
-server_scripts {
-    'config.lua',
-    'server/server.lua'
-}
+server_script 'server/server.lua'

@@ -14,15 +14,9 @@ Citizen.CreateThread( function()
 		end
 		if heading == '360' then heading = '0' end
 		if heading ~= lastHeading then
-			if IsPedInAnyVehicle(PlayerPedId()) then
-				SendNUIMessage({ action = "display", value = heading })
-			else
-				SendNUIMessage({ action = "hide", value = heading })
-			end
-			
+			SendNUIMessage({ action = "display", value = heading })
+			Citizen.Wait(2)
 		end
 		lastHeading = heading
 	end
 end)
-
-

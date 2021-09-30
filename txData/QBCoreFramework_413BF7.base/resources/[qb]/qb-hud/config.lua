@@ -7,15 +7,11 @@ Config.ShowVoice = true -- set to false if you want to hide mic indicator
 Config.UnitOfSpeed = "mph"  -- "kmh" or "mph"
 Config.UseRadio = true -- Shows headset icon instead of microphone if radio is on - REQUIRES "rp-radio"
 Config.ShowFuel = true -- Show fuel indicator
-Config.ShowNitrous = false -- Show nitrous level || BROKEN
+Config.ShowNitrous = true -- Show nitrous level
 Config.MinimumStress = 50 -- Change minimum stress amount to shake screen
-Config.MinimumSpeed = 100 -- Change minimum speed that causes stress
-Config.ShowBelt = false
+Config.MinimumSpeed = 120 -- Change minimum speed that causes stress
 
-
-Config.Stress = {}
-
-Config.Intensity = {
+Config.Intensity = { -- Change Screen Shake Intensity Relative To Stress Amount
     ["shake"] = {
         [1] = {
             min = 20,
@@ -25,7 +21,7 @@ Config.Intensity = {
         [2] = {
             min = 40,
             max = 60,
-            intensity = 0.15,
+            intensity = 0.17,
         },
         [3] = {
             min = 60,
@@ -45,10 +41,7 @@ Config.Intensity = {
     }
 }
 
-Config.MinimumStress = 20
-Config.MinimumSpeed = 100
-
-Config.EffectInterval = {
+Config.EffectInterval = { -- Change How Often Screen Shake Happens
     [1] = {
         min = 20,
         max = 60,
@@ -76,12 +69,7 @@ Config.EffectInterval = {
     }
 }
 
--- fixedWhileBuckled - Don't allow the person to jump/get out of the car while seatbelt is on
-Config.fixedWhileBuckled = true
-
--- showUnbuckledIndicator - Enabled seatbelt indicator if you don't have your own
-Config.showUnbuckledIndicator = true
-
+-- Seatbelt
 
 -- ejectVelocity - The gta velocity at which ejection from the car should happen when not wearing seatbelt
 --      This is NOT MPH or KPH but instead GTA Velocity. to convert:
@@ -101,9 +89,6 @@ Config.unknownModifier = 17.0 --  Default: 17.0
 -- minDamage - Minimum damage given when ejected from car?
 Config.minDamage = 2000 -- 0-2000?
 
-
-
-
 -- playSound - Should a buckle/unbuckle sound be played
 Config.playSound = true
 
@@ -116,4 +101,4 @@ Config.passengerVolume = 0.20 -- 0.0 - 1.0
 --  playSoundForPassengers
 --      true = Play for everyone in the car
 --      false = Play only for the person who triggers it
-Config.playSoundForPassengers = true
+Config.playSoundForPassengers = true 

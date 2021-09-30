@@ -1,7 +1,7 @@
 $(document).ready(function () {
   HealthIndicator = new ProgressBar.Circle("#HealthIndicator", {
     color: "rgb(0, 182, 91)",
-    trailColor: "green",
+    trailColor: "rgba(0, 182, 91, 0.4)",
     strokeWidth: 15,
     trailWidth: 15,
     duration: 250,
@@ -10,15 +10,16 @@ $(document).ready(function () {
 
   ArmorIndicator = new ProgressBar.Circle("#ArmorIndicator", {
     color: "rgb(0, 140, 255)",
-    trailColor: "rgb(0, 85, 155)",
+    trailColor: "rgba(0, 140, 255, 0.4)",
     strokeWidth: 15,
     trailWidth: 15,
     duration: 250,
     easing: "easeInOut",
   });
+
   HungerIndicator = new ProgressBar.Circle("#HungerIndicator", {
     color: "rgb(255, 164, 59)",
-    trailColor: "rgb(165, 116, 60)",
+    trailColor: "rgba(255, 164, 59, 0.4)",
     strokeWidth: 15,
     trailWidth: 15,
     duration: 250,
@@ -27,16 +28,25 @@ $(document).ready(function () {
 
   ThirstIndicator = new ProgressBar.Circle("#ThirstIndicator", {
     color: "rgb(0, 140, 255)",
-    trailColor: "rgb(0, 85, 155)",
+    trailColor: "rgba(0, 140, 255, 0.4)",
     strokeWidth: 15,
     trailWidth: 15,
     duration: 250,
     easing: "easeInOut",
   });
 
+  /*BloodIndicator = new ProgressBar.Circle("#BloodIndicator", {
+    color: "rgb(255, 0, 0)",
+    trailColor: "rgba(0, 0, 0, 0.0)",
+    strokeWidth: 15,
+    trailWidth: 6,
+    duration: 250,
+    easing: "easeInOut",
+  });*/
+
   StressIndicator = new ProgressBar.Circle("#StressIndicator", {
-    color: "rgb(255, 74, 104)",
-    trailColor: "rgb(102, 27, 40)",
+    color: "rgb(255, 101, 74)",
+    trailColor: "rgba(255, 101, 74, 0.2)",
     strokeWidth: 15,
     trailWidth: 15,
     duration: 250,
@@ -44,8 +54,8 @@ $(document).ready(function () {
   });
 
   OxygenIndicator = new ProgressBar.Circle("#OxygenIndicator", {
-    color: "rgb(0, 140, 255)",
-    trailColor: "rgb(0, 85, 155)",
+    color: "rgb(214, 101, 93)",
+    trailColor: "rgba(214, 101, 93, 0.4)",
     strokeWidth: 15,
     trailWidth: 15,
     duration: 250,
@@ -54,34 +64,52 @@ $(document).ready(function () {
 
   Speedometer = new ProgressBar.Circle("#SpeedCircle", {
     color: "rgba(70, 104, 135, 1)",
-    trailColor: "#404b58",
-    strokeWidth: 12,
+    trailColor: "rgba(0, 0, 0, 0.0)",
+    strokeWidth: 10,
     duration: 100,
-    trailWidth: 12,
+    trailWidth: 6,
     easing: "easeInOut",
   });
 
   FuelIndicator = new ProgressBar.Circle("#FuelCircle", { 
-    color: "rgba(70, 104, 135, 1)",
-    trailColor: "#404b58",
-    strokeWidth: 12,
+    color: "rgba(255, 255, 255,)",
+    trailColor: "rgba(255, 255, 255, 0.4)",
+    strokeWidth: 10,
     duration: 2000,
-    trailWidth: 12,
+    trailWidth: 10,
     easing: "easeInOut",
   });
 
   NitrousIndicator = new ProgressBar.Circle("#NitrousCircle", { 
-    color: "rgba(70, 104, 135, 1)",
-    trailColor: "#404b58",
-    strokeWidth: 12,
+    color: "rgba(157, 0, 255)",
+    trailColor: "rgba(157, 0, 255, 0.4)",
+    strokeWidth: 15,
     duration: 2000,
-    trailWidth: 12,
+    trailWidth: 15,
     easing: "easeInOut",
   });
 
+  BeltIndicator = new ProgressBar.Circle("#BeltCircle", { 
+    color: "rgba(255, 0, 0)",
+    trailColor: "rgba(255, 0, 0, 0.4)",
+    strokeWidth: 15,
+    duration: 2000,
+    trailWidth: 15,
+    easing: "easeInOut",
+  });
+
+  /*CruiseIndicator = new ProgressBar.Circle("#CruiseCircle", { 
+    color: "rgba(70, 104, 135, 1)",
+    trailColor: "rgba(0, 0, 0, 0.0)",
+    strokeWidth: 10,
+    duration: 2000,
+    trailWidth: 6,
+    easing: "easeInOut",
+  });*/
+
   VoiceIndicator = new ProgressBar.Circle("#VoiceIndicator", {
     color: "#4a4a4a",
-    trailColor: "#4a4a4a",
+    trailColor: "rgba(255, 255, 255, 0.4)",
     strokeWidth: 15,
     trailWidth: 15,
     duration: 250,
@@ -98,6 +126,7 @@ window.addEventListener("message", function (event) {
     ArmorIndicator.animate(data.armor / 100);
     HungerIndicator.animate(data.hunger / 100);
     ThirstIndicator.animate(data.thirst / 100);
+    /*BloodIndicator.animate(data.bleedingPercentage / 100);*/
     StressIndicator.animate(data.stress / 100);
     OxygenIndicator.animate(data.oxygen / 100);
   }
@@ -115,7 +144,7 @@ window.addEventListener("message", function (event) {
         data.voicelevel = 100;
         break;
       default:
-        data.voicelevel = 33;
+        data.voicelevel = 66;
         break;
     }
     VoiceIndicator.animate(data.voicelevel / 100);
@@ -130,11 +159,11 @@ window.addEventListener("message", function (event) {
 
   // Headset icon if using radio
   if (data.radio == true) {
-    $("#VoiceIcon").removeClass("fa-microphone");
-    $("#VoiceIcon").addClass("fa-headset");
-  } else if (data.radio == false) {
     $("#VoiceIcon").removeClass("fa-headset");
     $("#VoiceIcon").addClass("fa-microphone");
+  } else if (data.radio == false) {
+    $("#VoiceIcon").removeClass("fa-microphone");
+    $("#VoiceIcon").addClass("fa-headset");
   }
 
   // Hide stress if disabled
@@ -155,30 +184,6 @@ window.addEventListener("message", function (event) {
   }
 
   // Hide armor if 0
-  if (data.oxygen >= 75) {
-    $("#OxygenIndicator").fadeOut();
-  } else if (data.oxygen < 75) {
-    $("#OxygenIndicator").fadeIn();
-  }
-
-  if (data.hunger == 100) {
-    $("#HungerIndicator").fadeOut();
-  } else if (data.hunger < 100) {
-    $("#HungerIndicator").fadeIn();
-  }
-
-  if (data.thirst == 100) {
-    $("#ThirstIndicator").fadeOut();
-  } else if (data.thirst < 100) {
-    $("#ThirstIndicator").fadeIn();
-  }
-
-  if (data.hp >= 90) {
-    $("#HealthIndicator").fadeOut();
-  } else if (data.hp < 90) {
-    $("#HealthIndicator").fadeIn();
-  }
-
   if (data.armor == 0) {
     $("#ArmorIndicator").fadeOut();
   } else if (data.armor > 0) {
@@ -191,28 +196,47 @@ window.addEventListener("message", function (event) {
     $("#StressIndicator").fadeIn();
   }
 
+  if (data.bleedingPercentage == 0) {
+    $("#BloodIndicator").fadeOut();
+  } else if (data.bleedingPercentage > 0) {
+    $("#BloodIndicator").fadeIn();
+  }
+
   // Change color and icon if HP is 0 (dead)
   if (data.hp < 0) {
     HealthIndicator.animate(0);
-    HealthIndicator.trail.setAttribute("stroke", "red");
+    HealthIndicator.trail.setAttribute("stroke", "rgb(0, 182, 91, 0.4)");
     $("#hp-icon").removeClass("fa-heart");
     $("#hp-icon").addClass("fa-skull");
-  } else if (data.hp < 25) {
-    HealthIndicator.trail.setAttribute("stroke", "red");
-    $("#hp-icon").toggleClass("flash");
-  } else if (data.hp > 25) {
-    HealthIndicator.trail.setAttribute("stroke", "green");
+  } else if (data.hp > 0) {
+    HealthIndicator.trail.setAttribute("stroke", "rgb(0, 182, 91, 0.4)");
     $("#hp-icon").removeClass("fa-skull");
     $("#hp-icon").addClass("fa-heart");
   }
 
   // Flash if thirst is low
   if (data.thirst < 25) {
-    $("#ThirstIcon").toggleClass("flash");
+    $("#ThirstIndicator").toggleClass("flash");
   }
   // Flash if hunger is low
   if (data.hunger < 25) {
-    $("#HungerIcon").toggleClass("flash");
+    $("#HungerIndicator").toggleClass("flash");
+  }
+  // Flash if blood is high
+  if (data.bleedingPercentage > 75) {
+    $("#BloodIcon").toggleClass("flash");
+  }
+  // Flash if Oxygen is low
+  if (data.oxygen < 25) {
+    $("#OxygenIndicator").toggleClass("flash");
+  }
+  // Flash if health is low
+  if (data.hp < 25) {
+    $("#HealthIndicator").toggleClass("flash");
+  }
+  // Flash if stress is high
+  if (data.stress > 75) {
+    $("#StressIndicator").toggleClass("flash");
   }
 
   if (data.rpm > 0) {
@@ -225,7 +249,7 @@ window.addEventListener("message", function (event) {
     }
 
     Speedometer.animate(rpm / SpeedoLimit);
-      Speedometer.path.setAttribute("stroke", "white");
+      Speedometer.path.setAttribute("stroke", "green");
     if (data.rpm > 95) {
       Speedometer.path.setAttribute("stroke", "red");
     } else if (data.rpm > 85) {
@@ -246,6 +270,7 @@ window.addEventListener("message", function (event) {
     }
     if (fuel < 17) {
       FuelIndicator.path.setAttribute("stroke", "red");
+      $("#FuelCircle").toggleClass("flash");
     } else if (fuel > 17) {
       FuelIndicator.path.setAttribute("stroke", "white");
     }
@@ -260,9 +285,10 @@ window.addEventListener("message", function (event) {
       $("#NitrousCircle").fadeOut();
       NitrousIndicator.animate(0);
     } if (data.nitrous < 20) {
-      NitrousIndicator.path.setAttribute("stroke", "red");
+      NitrousIndicator.path.setAttribute("stroke", "#9c50cc");
+      $("#NitrousCircle").toggleClass("flash");
     } else {
-      NitrousIndicator.path.setAttribute("stroke", "white");
+      NitrousIndicator.path.setAttribute("stroke", "#9c50cc");
     }
   }
 
@@ -278,11 +304,41 @@ window.addEventListener("message", function (event) {
     $("#FuelCircle").hide();
   }
 
+  if (data.hunger == 100) {
+    $("#HungerIndicator").fadeOut();
+  } else if (data.hunger < 80) {
+    $("#HungerIndicator").fadeIn();
+  }
+
+  if (data.thirst == 100) {
+    $("#ThirstIndicator").fadeOut();
+  } else if (data.thirst < 100) {
+    $("#ThirstIndicator").fadeIn();
+  }
+
   if (data.showNitrous == true) {
     $("#NitrousCircle").show();
   } else if (data.showNitrous == false) {
     $("#NitrousCircle").hide();
   }
+
+  if (data.seatbelt == false) {
+    $("#BeltCircle").show();
+    BeltIndicator.trail.setAttribute("stroke", "red");
+  } else if (data.seatbelt == true) {
+    $("#BeltCircle").show();
+    BeltIndicator.trail.setAttribute("stroke", "#5feb46");
+  }
+  if (data.seatbelt === 0) {
+    $("#BeltCircle").hide();
+  }
+
+  /*if (data.showCruise == true) {
+    $("#CruiseIcon").css("color", "red");
+    CruiseIndicator.trail.setAttribute("stroke", "transparant");
+  } else if (data.showCruise == false) {
+    $("#CruiseIcon").css("color", "#5feb46");
+  }*/
 
   if (data.showUi == true) {
     $(".container").show();

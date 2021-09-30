@@ -4,16 +4,9 @@
 -- Dox Shop https://discord.gg/wQBuB3U5Ym
 
 
-QBCore = nil
+QBCore = exports['qb-core']:GetCoreObject()
 local PlayerData = {}
 local pedspawned = false
-
-Citizen.CreateThread(function()
-	while QBCore == nil do
-		TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-		Citizen.Wait(0)
-	end
-end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function(Player)
