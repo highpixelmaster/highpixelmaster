@@ -72,11 +72,11 @@ end
 function GetAmount(Tier)
     local Amount = nil
     if Tier == 'tier1' then
-        Amount = math.random(3, 12)
+        Amount = math.random(1, 5)
     elseif Tier == 'tier2' then 
-        Amount = math.random(1, 4)
+        Amount = 1
     else
-        Amount = math.random(1, 2)
+        Amount = 1
     end
     return Amount
 end

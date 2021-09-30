@@ -1,6 +1,6 @@
 Config = {}
 
-Config.replenishtimer = 1 -- minutes
+Config.replenishtimer = 5 -- minutes
 
 Config.loot = {
     ['tier1'] = {
@@ -11,7 +11,9 @@ Config.loot = {
         'iron',
         'steel',
         'glass',
-        'tosti'
+        'tosti',
+        'license_plate',
+        'burger-raw'
     },
     ['tier2'] = {
         'rolex',
@@ -20,12 +22,20 @@ Config.loot = {
         'cryptostick',
         'vodka',
         'bandage',
-        'lockpick'
+        'lockpick',
+        'cokebaggy',
+        'philipsscrewdriver',
+        'radio',
+        'walkstick',
+        'phone',
+
     },
     ['tier3'] = {
         'weapon_pistol',
-        'weapon_knife',
+        'weapon_handcuffs',
         'painkillers',
-        'advancedrepairkit'
+        'advancedrepairkit',
+        'armor',
+
     }
 }

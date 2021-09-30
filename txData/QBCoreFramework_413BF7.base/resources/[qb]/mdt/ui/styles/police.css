@@ -7,20 +7,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-blend-mode: darken;
-    background: repeating-linear-gradient(180deg, rgba(0,0,0, 0.0),rgba(0,0,0, 0.05) 4px, rgba(0,0,0, 0) 4px,rgba(0,0,0, 0.05) 4px), #011b37;
+    background: repeating-linear-gradient(180deg, rgba(0,0,0, 0.0),rgba(0,0,0, 0.05) 4px, rgba(0,0,0, 0) 4px,rgba(0,0,0, 0.05) 4px), #333;
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2) inset, 1px 1px 6px 1px rgba(0,0,0,0.2);
 
 }
 .content h2 {
     font-family: "Arial Black";
     user-select: none;
-    color: #fbbe28;
+    color: #28aefb;
     margin: 1px 1px 1px 1px;
 }
 .content h3 {
     font-family: "Arial Black";
     user-select: none;
-    color: #fbbe28;
+    color: #28aefb;
     margin: 1px 1px 1px 1px;
 }
 .content h4 {
@@ -44,11 +44,11 @@
     border-right: none;
 }
 .content button {
-    background-color: #fbbe28;
+    background-color: #28aefb;
     color: #011b37;
     font-family: "Arial";
     font-weight: bolder;
-    border: 4px solid #fbbe28;
+    border: 4px solid #28aefb;
     font-size: 12pt;
     text-align: center;
     padding: 4px 3px;
@@ -56,7 +56,7 @@
 .content input {
     background-color: #011b37;
     font-family: "Courier New";
-    border: 2px solid #fbbe28;
+    border: 2px solid #28aefb;
     color: #00a2d6;
     font-size: 12pt;
     padding: 7px 15px 5px 15px;
@@ -93,7 +93,7 @@
     color: white;
     padding: 5px 10px;
     text-align: center;
-    border-bottom: 3px solid #fbbe28;
+    border-bottom: 3px solid #28aefb;
 }
 .content td {
     font-family: "Courier New";
@@ -101,27 +101,27 @@
     color: #00a2d6;
     padding: 10px;
     text-align: center;
-    border-top: 1px solid #fbbe28;
+    border-top: 1px solid #28aefb;
 }
 .content table {
     border-collapse: collapse;
-    column-gap: 3px solid #fbbe28;
+    column-gap: 3px solid #28aefb;
 }
 .content table td + td { 
-    border-left: 2px solid #fbbe28; 
+    border-left: 2px solid #28aefb; 
 }
 .content table th + th { 
-    border-left: 2px solid #fbbe28; 
+    border-left: 2px solid #28aefb; 
 }
 .content tr:not(:first-child):hover {
     background-color: #00152c;
 }
 .content button:hover {
-    background-color: #00a2d6;
-    border-color: #00a2d6;
+    background-color: #28aefb;
+    border-color: #28aefb;
 }
 .content ::-webkit-scrollbar-thumb {
-    background: #fbbe28; 
+    background: #28aefb; 
     border-radius: 5px;
 }
 .badge {
@@ -136,7 +136,7 @@
     display: inline-block;
     max-width: 215px;
     height: auto;
-    border: 2px solid #fbbe28;
+    border: 2px solid #28aefb;
     user-select: none;
 }
 .notification {
@@ -148,7 +148,7 @@
     max-width: 25%;
     padding: 15px;
     background-color: #00152c;
-    border-bottom: 4px solid #fbbe28;
+    border-bottom: 4px solid #28aefb;
 }
 .report-input {
     font-family: "Courier New";
@@ -164,10 +164,10 @@
     font-weight: bolder;
 }
 .line {
-    background-image: linear-gradient(to right, rgb(251, 190, 40),  rgb(251, 190, 40)calc(3% - 3px), rgba(0,0,0,0) calc(3% - 3px), rgba(0,0,0,0) calc(3% + 161px), rgb(251, 190, 40) calc(3% + 161px), rgb(251, 190, 40));
+    background-image: linear-gradient(to right, rgb(40, 149, 251),  rgb(40, 96, 251)calc(3% - 3px), rgba(0,0,0,0) calc(3% - 3px), rgba(0,0,0,0) calc(3% + 161px), rgb(40, 131, 251) calc(3% + 161px), rgb(40, 89, 251));
 }
 .line2 {
-    background: rgb(251, 190, 40);
+    background: rgb(40, 114, 251);
 }
 .modal-content {
     position: relative;
@@ -175,7 +175,7 @@
     margin: auto;
     padding: 0;
     margin: 0 auto;
-    border: 2px solid #fbbe28;
+    border: 2px solid #28aefb;
     border-radius: 2px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
@@ -184,7 +184,7 @@
     animation-duration: 0.4s
 }
 .close {
-    color: #fbbe28;
+    color: #28aefb;
     float: right;
     font-size: 1.4em;
 }
@@ -196,20 +196,20 @@
 }
 .clickable {
     text-decoration: underline;
-    text-decoration-color: #fbbe28;
+    text-decoration-color: #28aefb;
 }
 .clickable:hover, .clickable2:hover {
-    color: #fbbe28;
+    color: #28aefb;
 }
 .important h4 {
     text-decoration: underline; 
-    text-decoration-color: #fbbe28;
+    text-decoration-color: #28aefb;
 }
 .img-block {
     padding: 5px;
     color: #011b37;
-    background-color: #fbbe28;
-    border: 2px solid rgb(254, 190, 40);
+    background-color: #28aefb;
+    border: 2px solid rgb(40, 122, 254);
     position: absolute;
     font-family: Courier;
     font-weight: bold;
@@ -217,6 +217,6 @@
 }
 .textarea {
     font-size: 14px; 
-    border: 2px solid #fbbe28; 
+    border: 2px solid #28aefb; 
     padding: 7px 15px 5px 15px;
 }

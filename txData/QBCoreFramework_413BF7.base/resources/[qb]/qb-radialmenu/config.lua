@@ -39,11 +39,11 @@ rootMenuConfig =  {
             return not isDead
         end,
         
-        subMenus = {"general:cuff", "general:rob", "general:putin", "general:takeout"}
+        subMenus = {"general:cuff", "general:rob", "general:putin", "general:takeout", "general:escort"}
     },
     {
         id = "copDead",
-         displayName = "11-A",
+         displayName = "Panic Button",
          icon = "#police-dead",
          functionName = "police:server:11A",
          enableMenu = function()
@@ -57,7 +57,7 @@ rootMenuConfig =  {
         enableMenu = function()
              return isPolice --and onDuty
         end,
-        subMenus = {"police:mdt", "general:cuff", "police:seizecash", "police:checkvehicle", "police:takedriverlicense", "police:statuscheck", "police:searchplayer", "police:jail", "police:takeoffmask" }
+        subMenus = {"general:cuff", "police:seizecash", "police:checkvehicle", "police:takedriverlicense", "police:statuscheck", "police:searchplayer", "police:jail", "police:bill" }
     },
     {    
         id = "PoliceObjects",
@@ -66,7 +66,7 @@ rootMenuConfig =  {
         enableMenu = function()
              return isPolice --and onDuty
         end,
-        subMenus = {"police:spawn1", "police:spawn2", "police:spawn3", "police:del"}
+        subMenus = { "police:spawn2"}
         },
     {
     id = "Ambulance",
@@ -104,15 +104,7 @@ rootMenuConfig =  {
     end,
     subMenus = {"taxi:npc", "taxi-meter", "taxi:startmeter"}
 },
-    {    
-    id = "Escort",
-    displayName = "Escort",
-    icon = "#general-escort",
-    functionName = "police:client:EscortPlayer",
-    enableMenu = function()
-        return not isDead
-    end
-    },
+
     {   
         id = "Vehicle",
         displayName = "Vehicle",
@@ -227,6 +219,11 @@ newSubMenus = { -- NOTE basicly, what will be happen after clicking these button
         icon = "#general-put-in-veh",
         functionName = "police:client:PutPlayerInVehicle"
     },
+    ['general:escort'] = {
+        title = "Escort",
+        icon = "#general-contact",
+        functionName = "police:client:EscortPlayer"
+    },
     ['general:takeout'] = {
         title = "Take Out Vehicle",
         icon = "#general-unseat-nearest",
@@ -255,7 +252,7 @@ newSubMenus = { -- NOTE basicly, what will be happen after clicking these button
     },
     ['police:bill'] = {
         title = "Bill",
-        icon = "#general-cuff",
+        icon = "#police-dead",
         functionName = "police:client:BillPlayer"
     },  
     ['police:mdt'] = {
@@ -461,6 +458,18 @@ AddEventHandler("isTaxiOff", function()
     isTaxi = false
 end)
 
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
+AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+	PlayerData = QBCore.Functions.GetPlayerData()
+	firstname = PlayerData.charinfo.firstname
+	lastname = PlayerData.charinfo.lastname
+	phone = PlayerData.charinfo.phone
+	job = PlayerData.job.name
+	rank = PlayerData.job.grade.name
+    isPlayerWhitelisted = refreshPlayerWhitelisted()
+end)
+
+
 RegisterNetEvent("QBCore:Client:OnJobUpdate") -- dont edit this unless you don't use qb-core
 AddEventHandler("QBCore:Client:OnJobUpdate", function(jobInfo)
     myJob = jobInfo.name
@@ -498,10 +507,13 @@ AddEventHandler('police:server:11A', function()
     local playerPed = GetPlayerPed(player)
     local plyCoords = GetEntityCoords(playerPed)
     local pos = GetEntityCoords(PlayerPedId())
+    PlayerData = QBCore.Functions.GetPlayerData()
+	firstname = PlayerData.charinfo.firstname
+	lastname = PlayerData.charinfo.lastname
 
-local data = {displayCode = '10-99', dispatchCode = officerdown, blipSprite = 653, blipColour = 84, blipScale = 1.5, description = 'Officer Down', isImportant = 1, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-info-circle', info = 'Officer in Distress'}
+local data = {displayCode = '10-99', dispatchCode = officerdown, blipSprite = 653, blipColour = 84, blipScale = 1.5, description = 'Officer in Distress', isImportant = 1, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-info-circle', info = 'Officer ' ..firstname.. ' ' ..lastname.. ' is in Distress!'}
 local dispatchData = {dispatchData = data, caller = 'Panic Button', coords = pos}
-TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 1, "policepanic", 0.8)
+TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 3, "policepanic", 1)
 TriggerServerEvent('wf-alerts:svNotify', dispatchData)
 end)
 

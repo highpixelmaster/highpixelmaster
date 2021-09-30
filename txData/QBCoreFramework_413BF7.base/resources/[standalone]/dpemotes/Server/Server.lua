@@ -22,7 +22,7 @@ if Config.SqlKeybinding then
 	RegisterServerEvent("dp:ServerKeybindExist")
 	AddEventHandler('dp:ServerKeybindExist', function()
 		local src = source local srcid = GetPlayerIdentifier(source)
-		exports.ghmattimysql:execute("SELECT * FROM dpkeybinds WHERE `id`=@id;", { ['@id'] = srcid }, function(dpkeybinds)
+		exports.oxmysql:fetch("SELECT * FROM dpkeybinds WHERE id = ?", {license}, function(dpkeybinds)
 			if dpkeybinds[1] then
 				TriggerClientEvent("dp:ClientKeybindExist", src, true)
 			else

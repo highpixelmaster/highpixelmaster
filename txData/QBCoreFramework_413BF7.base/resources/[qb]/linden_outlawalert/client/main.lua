@@ -279,7 +279,7 @@ Citizen.CreateThread(function()
 							QBCore.Functions.TriggerCallback('linden_outlawalert:isVehicleOwned', function(hasowner) veh.owned = hasowner end, veh.plate)
 							if not veh.owned then
 								if zoneChance('Autotheft', 2, currentStreetName) then
-									data = {dispatchCode = 'autotheft', caller = _U('caller_local'), coords = playerCoords, netId = veh.id,
+									data = {dispatchCode = 'autotheft', caller = _U('caller_local'), isImportant = 1, coords = playerCoords, netId = veh.id,
 									info = ('[%s] %s %s'):format(veh.plate, veh.name..',', veh.class), info2 = veh.colour}
 									TriggerServerEvent('wf-alerts:svNotify', data)
 									Config.Timer['Autotheft'] = Config.Autotheft.Success
@@ -293,7 +293,7 @@ Citizen.CreateThread(function()
 					if Config.Timer['Shooting'] == 0 and not BlacklistedWeapon(playerPed) and not IsPedCurrentWeaponSilenced(playerPed) and IsPedArmed(playerPed, 4) then
 						sleep = 10
 						if IsPedShooting(playerPed) and zoneChance('Shooting', 2, currentStreetName) then
-							data = {dispatchCode = 'shooting', caller = _U('caller_local'), coords = playerCoords, netId = NetworkGetNetworkIdFromEntity(playerPed), length = 6000}
+							data = {dispatchCode = 'shooting', caller = _U('caller_local'), coords = playerCoords, isImportant = 1, netId = NetworkGetNetworkIdFromEntity(playerPed), length = 6000}
 							TriggerServerEvent('wf-alerts:svNotify', data)
 							Config.Timer['Shooting'] = Config.Shooting.Success
 						else
@@ -350,6 +350,9 @@ RegisterCommand('911', function(playerId, args, rawCommand)
 	if Config.Default911 then TriggerServerEvent('mdt:newCall', args, caller, playerCoords) else
 		TriggerServerEvent('wf-alerts:svNotify911', args, caller, playerCoords)
 	end
+	local data = {displayCode = '911', dispatchCode = persondown, blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Caller ".. caller, isImportant = 0, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-phone-square', info = "Complaint: " .. args}
+	local dispatchData = {dispatchData = data, caller = caller, coords = playerCoords}
+	TriggerServerEvent('wf-alerts:svNotify', dispatchData)
 	QBCore.Functions.Notify('The Authorities Have Been Notified', 'success')
 end, false)
 
@@ -359,6 +362,9 @@ RegisterCommand('911a', function(playerId, args, rawCommand)
 	if Config.Default911 then TriggerServerEvent('mdt:newCall', args, _U('caller_unknown'), playerCoords) else
 		TriggerServerEvent('wf-alerts:svNotify911', args, _U('caller_unknown'), playerCoords)
 	end
+	local data = {displayCode = '911', blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Unknown Caller", isImportant = 0, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-phone-square', info = "Complaint: " .. args}
+	local dispatchData = {dispatchData = data, caller = caller, coords = playerCoords}
+	TriggerServerEvent('wf-alerts:svNotify', dispatchData)
 	QBCore.Functions.Notify('The Authorities Have Been Notified', 'success')
 end, false)
 
