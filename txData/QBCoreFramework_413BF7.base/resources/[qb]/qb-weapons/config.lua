@@ -32,7 +32,6 @@ Config.DurabilityMultiplier = {
     ["weapon_sawnoffshotgun"] 		 = 0.15,
     ["weapon_assaultshotgun"] 		 = 0.15,
     ["weapon_bullpupshotgun"] 		 = 0.15,
-    ["weapon_stungun"] 				 = 0.15,
     ["weapon_sniperrifle"] 			 = 0.15,
     ["weapon_heavysniper"] 			 = 0.15,
     ["weapon_remotesniper"] 		 = 0.15,

@@ -274,9 +274,17 @@ function PoliceCall()
             if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then
                 gender = "Woman"
             end
+            local chance = math.random(1, 100)
             local msg = "Attempted burglary into a house by one " .. gender .." at " .. streetLabel
-            TriggerServerEvent("police:server:HouseRobberyCall", pos, msg, gender, streetLabel)
-        end
+            local data = {displayCode = 'ROBBERY', blipSprite = 362, blipColour = 59, blipScale = 1.5, description = 'House Robbery In Progress', recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-info-circle', info = msg}
+            local dispatchData = {dispatchData = data, caller = 'Panic Button', coords = pos}
+            if chance >= 25 then
+            TriggerServerEvent('wf-alerts:svNotify', dispatchData)
+            print(chance)
+            else
+                print(chance)
+            end
+            end
     end
 end
 

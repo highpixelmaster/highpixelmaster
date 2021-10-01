@@ -2,7 +2,7 @@ Config = {}
 
 Config.MinZOffset = 45
 
-Config.MinimumHouseRobberyPolice = 0
+Config.MinimumHouseRobberyPolice = 1
 
 Config.MinimumTime = 22
 Config.MaximumTime = 5
@@ -16,12 +16,24 @@ Config.Rewards = {
             "weed_skunk",
             "pistol_ammo",
             "cryptostick",
-            "weapon_golfclub",
+            "bandage",
+            "phone",
+            "radio",
+            "handcuffs",
+            "weapon_knife",
+            "trojan_usb",
         },
         ["kitchen"] = {
             "tosti",
             "sandwich",
             "goldchain",
+            "burger-moneyshot",
+            "burger-fries",
+            "radioscanner",
+            "philipsscrewdriver",
+            "screwdriverset",
+            "cleaningkit",
+            "repairkit",
         },
         ["chest"] = {
             "plastic",
@@ -32,6 +44,8 @@ Config.Rewards = {
             "pistol_ammo",
             "cryptostick",
             "weapon_combatpistol",
+            "electronickit",
+            "goldbar"
         },
     }
 }

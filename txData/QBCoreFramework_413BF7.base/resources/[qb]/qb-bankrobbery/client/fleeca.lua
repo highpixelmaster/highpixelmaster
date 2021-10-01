@@ -168,6 +168,7 @@ AddEventHandler('electronickit:UseElectronickit', function()
                             if not Config.SmallBanks[closestBank]["isOpened"] then 
                                 QBCore.Functions.TriggerCallback('QBCore:HasItem', function(result)
                                     if result then 
+                                        
                                         TriggerEvent('inventory:client:requiredItems', requiredItems, false)
                                         QBCore.Functions.Progressbar("hack_gate", "Connecting the hacking device ..", math.random(5000, 10000), false, true, {
                                             disableMovement = true,
@@ -185,7 +186,9 @@ AddEventHandler('electronickit:UseElectronickit', function()
                                             TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["electronickit"], "remove")
                                             TriggerServerEvent("QBCore:Server:RemoveItem", "trojan_usb", 1)
                                             TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["trojan_usb"], "remove")
-
+                                            local data = {displayCode = 'ROBBERY', blipSprite = 374, blipColour = 59, blipScale = 1.5, description = 'Fleeca Bank Robbery', recipientList = {'police'}, isImportant = 1, length = '25000', infoM = 'fa-info-circle', info = "The security has detected malware on system!"}
+                                            local dispatchData = {dispatchData = data, caller = 'Security', coords = pos}
+                                            TriggerServerEvent('wf-alerts:svNotify', dispatchData)
                                             TriggerEvent("mhacking:show")
                                             TriggerEvent("mhacking:start", math.random(6, 7), math.random(12, 15), OnHackDone)
                                             if not copsCalled then
@@ -197,8 +200,8 @@ AddEventHandler('electronickit:UseElectronickit', function()
                                                     streetLabel = streetLabel .. " " .. street2
                                                 end
                                                 if Config.SmallBanks[closestBank]["alarm"] then
-                                                    TriggerServerEvent("qb-bankrobbery:server:callCops", "small", closestBank, streetLabel, pos)
-                                                    copsCalled = true
+
+                                                copsCalled = true
                                                 end
                                             end
                                         end, function() -- Cancel
@@ -477,122 +480,21 @@ end)
 RegisterNetEvent('qb-bankrobbery:client:robberyCall')
 AddEventHandler('qb-bankrobbery:client:robberyCall', function(type, key, streetLabel, coords)
     if PlayerJob.name == "police" and onDuty then 
+        print("print")
         local cameraId = 4
         local bank = "Fleeca"
-        if type == "small" then
-            cameraId = Config.SmallBanks[key]["camId"]
-            bank = "Fleeca"
-            PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-            TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
-                timeOut = 10000,
-                alertTitle = "Fleeca bank robbery attempt",
-                coords = {
-                    x = coords.x,
-                    y = coords.y,
-                    z = coords.z,
-                },
-                details = {
-                    [1] = {
-                        icon = '<i class="fas fa-university"></i>',
-                        detail = bank,
-                    },
-                    [2] = {
-                        icon = '<i class="fas fa-video"></i>',
-                        detail = cameraId,
-                    },
-                    [3] = {
-                        icon = '<i class="fas fa-globe-europe"></i>',
-                        detail = streetLabel,
-                    },
-                },
-                callSign = QBCore.Functions.GetPlayerData().metadata["callsign"],
-            })
+            local data = {displayCode = 'ROBBERY', blipSprite = 362, blipColour = 59, blipScale = 1.5, description = 'Bank Robbery '.. bankLabel, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-info-circle', info = msg}
+            local dispatchData = {dispatchData = data, caller = 'Panic Button', coords = coords}
+        TriggerServerEvent('wf-alerts:svNotify', dispatchData)
         elseif type == "paleto" then
-            cameraId = Config.BigBanks["paleto"]["camId"]
-            bank = "Blaine County Savings"
-            PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-            Citizen.Wait(100)
-            PlaySoundFrontend( -1, "Beep_Red", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1 )
-            Citizen.Wait(100)
-            PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-            Citizen.Wait(100)
-            PlaySoundFrontend( -1, "Beep_Red", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1 )
-            TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
-                timeOut = 10000,
-                alertTitle = "Blain County Savings bank robbery attempt",
-                coords = {
-                    x = coords.x,
-                    y = coords.y,
-                    z = coords.z,
-                },
-                details = {
-                    [1] = {
-                        icon = '<i class="fas fa-university"></i>',
-                        detail = bank,
-                    },
-                    [2] = {
-                        icon = '<i class="fas fa-video"></i>',
-                        detail = cameraId,
-                    },
-                },
-                callSign = QBCore.Functions.GetPlayerData().metadata["callsign"],
-            })
+            local data = {displayCode = 'ROBBERY', blipSprite = 362, blipColour = 59, blipScale = 1.5, description = 'Bank Robbery '.. bankLabel, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-info-circle', info = msg}
+            local dispatchData = {dispatchData = data, caller = 'Panic Button', coords = coords}
+            TriggerServerEvent('wf-alerts:svNotify', dispatchData)
         elseif type == "pacific" then
-            bank = "Pacific Standard Bank"
-            PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-            Citizen.Wait(100)
-            PlaySoundFrontend( -1, "Beep_Red", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1 )
-            Citizen.Wait(100)
-            PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-            Citizen.Wait(100)
-            PlaySoundFrontend( -1, "Beep_Red", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1 )
-            TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
-                timeOut = 10000,
-                alertTitle = "Pacific Standard Bank robbery attempt",
-                coords = {
-                    x = coords.x,
-                    y = coords.y,
-                    z = coords.z,
-                },
-                details = {
-                    [1] = {
-                        icon = '<i class="fas fa-university"></i>',
-                        detail = bank,
-                    },
-                    [2] = {
-                        icon = '<i class="fas fa-video"></i>',
-                        detail = "1 | 2 | 3",
-                    },
-                    [3] = {
-                        icon = '<i class="fas fa-globe-europe"></i>',
-                        detail = "Alta St",
-                    },
-                },
-                callSign = QBCore.Functions.GetPlayerData().metadata["callsign"],
-            })
+            local data = {displayCode = 'ROBBERY', blipSprite = 362, blipColour = 59, blipScale = 1.5, description = 'Bank Robbery '.. bankLabel, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-info-circle', info = msg}
+            local dispatchData = {dispatchData = data, caller = 'Panic Button', coords = coords}
+            TriggerServerEvent('wf-alerts:svNotify', dispatchData)
         end
-        local transG = 250
-        local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
-        SetBlipSprite(blip, 487)
-        SetBlipColour(blip, 4)
-        SetBlipDisplay(blip, 4)
-        SetBlipAlpha(blip, transG)
-        SetBlipScale(blip, 1.2)
-        SetBlipFlashes(blip, true)
-        BeginTextCommandSetBlipName('STRING')
-        AddTextComponentString("10-90: Bank Robbery")
-        EndTextCommandSetBlipName(blip)
-        while transG ~= 0 do
-            Wait(180 * 4)
-            transG = transG - 1
-            SetBlipAlpha(blip, transG)
-            if transG == 0 then
-                SetBlipSprite(blip, 2)
-                RemoveBlip(blip)
-                return
-            end
-        end
-    end
 end)
 
 function OnHackDone(success, timeremaining)

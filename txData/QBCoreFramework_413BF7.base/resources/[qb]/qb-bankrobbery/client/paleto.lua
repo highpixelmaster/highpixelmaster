@@ -1,6 +1,19 @@
 local requiredItemsShowed = false
 local requiredItemsShowed2 = false
 
+local CurrentCops = 0
+
+RegisterNetEvent('QBCore:Client:OnJobUpdate')
+AddEventHandler('QBCore:Client:OnJobUpdate', function(JobInfo)
+    PlayerJob = JobInfo
+    onDuty = true
+end)
+
+RegisterNetEvent('police:SetCopCount')
+AddEventHandler('police:SetCopCount', function(amount)
+    CurrentCops = amount
+end)
+
 Citizen.CreateThread(function()
     Citizen.Wait(2000)
     local requiredItems = {
@@ -62,13 +75,13 @@ Citizen.CreateThread(function()
                         currentThermiteGate = Config.BigBanks["paleto"]["thermite"][1]["doorId"]
                         if not requiredItemsShowed2 then
                             requiredItemsShowed2 = true
-                            TriggerEvent('inventory:client:requiredItems', requiredItems2, true)
+                            TriggerEvent('inventory:client:requiredItems', requiredItems, true)
                         end
                     else
                         currentThermiteGate = 0
                         if requiredItemsShowed2 then
                             requiredItemsShowed2 = false
-                            TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
+                            TriggerEvent('inventory:client:requiredItems', requiredItems, false)
                         end
                     end
                 end
@@ -109,6 +122,10 @@ AddEventHandler('qb-bankrobbery:UseBankcardA', function()
                             TriggerServerEvent('qb-bankrobbery:server:setBankState', "paleto", true)
                             TriggerServerEvent("QBCore:Server:RemoveItem", "security_card_01", 1)
                             TriggerServerEvent('qb-doorlock:server:updateState', 4, false)
+                            local data = {displayCode = 'ROBBERY', blipSprite = 374, blipColour = 59, blipScale = 1.5, description = 'Paleto Bank Robbery', recipientList = {'police'}, isImportant = 1, length = '25000', infoM = 'fa-info-circle', info = "Unauthorized use of a security card for vault!"}
+                            local dispatchData = {dispatchData = data, caller = 'Security', coords = pos}
+                            TriggerServerEvent('wf-alerts:svNotify', dispatchData)
+                            
                             if not copsCalled then
                                 local s1, s2 = Citizen.InvokeNative(0x2EB41072B4C1E4C0, pos.x, pos.y, pos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
                                 local street1 = GetStreetNameFromHashKey(s1)

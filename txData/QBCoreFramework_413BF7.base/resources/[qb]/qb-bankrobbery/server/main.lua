@@ -102,7 +102,7 @@ AddEventHandler('qb-bankrobbery:server:recieveItem', function(type)
             end
         else
             ply.Functions.AddItem('weapon_stungun', 1)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_stungun'], "add")
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_smg'], "add")
         end
     elseif type == "paleto" then
         local itemType = math.random(#Config.RewardTypes)
@@ -171,6 +171,8 @@ AddEventHandler('qb-bankrobbery:server:recieveItem', function(type)
                  }
                  ply.Functions.AddItem("cryptostick", 1, false, info)
                  TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['cryptostick'], "add")
+                 TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['security_card_02'], "add")
+
             end
         else
             local chance = math.random(1, 2)
@@ -271,8 +273,10 @@ AddEventHandler('qb-bankrobbery:server:callCops', function(type, bank, streetLab
         coords = {x = coords.x, y = coords.y, z = coords.z},
         description = msg,
     }
-    TriggerClientEvent("qb-bankrobbery:client:robberyCall", -1, type, bank, streetLabel, coords)
-    TriggerClientEvent("qb-phone:client:addPoliceAlert", -1, alertData)
+    print(alertData)
+    local data = {displayCode = 'ROBBERY', blipSprite = 362, blipColour = 59, blipScale = 1.5, description = 'Bank Robbery '.. bankLabel, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-info-circle', info = msg}
+    local dispatchData = {dispatchData = data, caller = 'Panic Button', coords = coords}
+    TriggerServerEvent('wf-alerts:svNotify', dispatchData)
 end)
 
 RegisterServerEvent('qb-bankrobbery:server:SetStationStatus')

@@ -1,3 +1,16 @@
+local CurrentCops = 0
+
+RegisterNetEvent('QBCore:Client:OnJobUpdate')
+AddEventHandler('QBCore:Client:OnJobUpdate', function(JobInfo)
+    PlayerJob = JobInfo
+    onDuty = true
+end)
+
+RegisterNetEvent('police:SetCopCount')
+AddEventHandler('police:SetCopCount', function(amount)
+    CurrentCops = amount
+end)
+
 local requiredItemsShowed = false
 local requiredItemsShowed2 = false
 local requiredItemsShowed3 = false
@@ -54,25 +67,6 @@ Citizen.CreateThread(function()
                     end
                 end
             end
-            if #(pos - Config.BigBanks["pacific"]["thermite"][1]["coords"]) < 10.0 then
-                inRange = true
-                if not Config.BigBanks["pacific"]["thermite"][1]["isOpened"] then
-                    local dist = #(pos - Config.BigBanks["pacific"]["thermite"][1]["coords"])
-                    if dist < 1 then
-                        currentThermiteGate = Config.BigBanks["pacific"]["thermite"][1]["doorId"]
-                        if not requiredItemsShowed3 then
-                            requiredItemsShowed3 = true
-                            TriggerEvent('inventory:client:requiredItems', requiredItems3, true)
-                        end
-                    else
-                        currentThermiteGate = 0
-                        if requiredItemsShowed3 then
-                            requiredItemsShowed3 = false
-                            TriggerEvent('inventory:client:requiredItems', requiredItems3, false)
-                        end
-                    end
-                end
-            end
 
             if Config.BigBanks["pacific"]["isOpened"] then
                 for k, v in pairs(Config.BigBanks["pacific"]["lockers"]) do
@@ -102,41 +96,6 @@ Citizen.CreateThread(function()
             end
         end
         Citizen.Wait(1)
-    end
-end)
-
-Citizen.CreateThread(function()
-    Citizen.Wait(2000)
-    local requiredItems4 = {
-        [1] = {name = QBCore.Shared.Items["thermite"]["name"], image = QBCore.Shared.Items["thermite"]["image"]},
-    }
-    while true do 
-        Citizen.Wait(1)
-        local ped = PlayerPedId()
-        local pos = GetEntityCoords(ped)
-        local inRange = false
-        if QBCore ~= nil then
-            if #(pos - Config.BigBanks["pacific"]["thermite"][2]["coords"]) < 10.0 then
-                inRange = true
-                if not Config.BigBanks["pacific"]["thermite"][1]["isOpened"] then
-                    local dist = #(pos - Config.BigBanks["pacific"]["thermite"][2]["coords"])
-                    if dist < 1 then
-                        currentThermiteGate = Config.BigBanks["pacific"]["thermite"][2]["doorId"]
-                        if not requiredItemsShowed4 then
-                            requiredItemsShowed4 = true
-                            TriggerEvent('inventory:client:requiredItems', requiredItems4, true)
-                        end
-                    else
-                        currentThermiteGate = 0
-                        if requiredItemsShowed4 then
-                            requiredItemsShowed4 = false
-                            TriggerEvent('inventory:client:requiredItems', requiredItems4, false)
-
-                        end
-                    end
-                end
-            end
-        end
     end
 end)
 
@@ -172,7 +131,9 @@ AddEventHandler('electronickit:UseElectronickit', function()
                                         StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
                                         TriggerEvent("mhacking:show")
                                         TriggerEvent("mhacking:start", math.random(5, 9), math.random(10, 15), OnHackPacificDone)
-                                
+                                        local data = {displayCode = 'ROBBERY', blipSprite = 374, blipColour = 59, blipScale = 1.5, description = 'Pacific Bank Robbery', recipientList = {'police'}, isImportant = 1, length = '25000', infoM = 'fa-info-circle', info = "The Vault is being robbed!"}
+                                        local dispatchData = {dispatchData = data, caller = 'Security', coords = pos}
+                                        TriggerServerEvent('wf-alerts:svNotify', dispatchData)
                                         if not copsCalled then
                                             local s1, s2 = Citizen.InvokeNative(0x2EB41072B4C1E4C0, pos.x, pos.y, pos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
                                             local street1 = GetStreetNameFromHashKey(s1)
