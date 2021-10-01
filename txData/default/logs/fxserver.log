@@ -917,3 +917,29 @@
 [38;5;73m[ citizen-server-impl] Started resource qb-ambulancejob
 [38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 227 milliseconds
 [38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
+[38;5;73m[ citizen-server-impl] Stopping resource qb-hud
+[38;5;161m[    c-scripting-core] Creating script environments for qb-hud
+[38;5;73m[ citizen-server-impl] Started resource qb-hud
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 176 milliseconds
+[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
+[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
+[38;5;133m[script:qb-multichara] [qb-core] Tony (Citizen ID: CUF38163) has succesfully loaded!
+[38;5;134m[      script:qb-core] [qb-core:LOG] Tony PLAYER SAVED!
+[38;5;73m[ citizen-server-impl] Stopping resource qb-hud
+[38;5;161m[    c-scripting-core] Creating script environments for qb-hud
+[38;5;73m[ citizen-server-impl] Started resource qb-hud
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 290 milliseconds
+[38;5;73m[ citizen-server-impl] Scanning resources.
+[38;5;163m[    c-resources-core] Resource loading for qb-driversid failed:
+[38;5;163m[    c-resources-core] Could not open resource metadata file - no such file.
+[38;5;73m[ citizen-server-impl] Found 1 resources, and refreshed 167 resources.
+[38;5;73m[ citizen-server-impl] Some resources have an outdated resource manifest:
+[38;5;73m[ citizen-server-impl]     - chat
+[38;5;73m[ citizen-server-impl]     - lux_vehcontrol
+[38;5;73m[ citizen-server-impl] 
+[38;5;73m[ citizen-server-impl] Please update these resources.
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 158 milliseconds
+[38;5;73m[ citizen-server-impl] Stopping resource qb-hud
+[38;5;161m[    c-scripting-core] Creating script environments for qb-hud
+[38;5;73m[ citizen-server-impl] Started resource qb-hud
+[38;5;73m[ citizen-server-impl] server thread hitch warning: timer interval of 303 milliseconds
