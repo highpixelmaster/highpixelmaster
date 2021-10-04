@@ -153,7 +153,9 @@ AddEventHandler('lockpicks:UseLockpick', function(isAdvanced)
                         if street2 ~= nil then
                             streetLabel = streetLabel .. " " .. street2
                         end
-                        TriggerServerEvent("qb-storerobbery:server:callCops", "cashier", currentRegister, streetLabel, pos)
+                        local data = {displayCode = 'ROBBERY', blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Store Robbery", isImportant = 1, recipientList = {'police'}, length = '10000', infoM = 'fa-phone-square', caller = "Security Cameras", info = "Gas Station is being robbed!"}
+                        local dispatchData = {dispatchData = data, caller = caller, coords = pos}
+                        TriggerServerEvent('wf-alerts:svNotify', dispatchData)
                         copsCalled = true
                     end
                 else
@@ -171,10 +173,11 @@ AddEventHandler('lockpicks:UseLockpick', function(isAdvanced)
                         if street2 ~= nil then
                             streetLabel = streetLabel .. " " .. street2
                         end
-                        TriggerServerEvent("qb-storerobbery:server:callCops", "cashier", currentRegister, streetLabel, pos)
+                        local data = {displayCode = 'ROBBERY', blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Store Robbery", isImportant = 1, recipientList = {'police'}, length = '10000', infoM = 'fa-phone-square', info = "Gas Station is being robbed!"}
+                        local dispatchData = {dispatchData = data, caller = caller, coords = pos}
+                        TriggerServerEvent('wf-alerts:svNotify', dispatchData)
                         copsCalled = true
                     end
-
                 end
 
             else

@@ -1,5 +1,4 @@
-QBCore = nil
-TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+QBCore = exports['qb-core']:GetCoreObject()
 
 QBCore.Functions.CreateUseableItem("philipsscrewdriver", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)

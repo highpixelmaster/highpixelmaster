@@ -109,13 +109,10 @@ AddEventHandler('qb-storerobbery:server:callCops', function(type, safe, streetLa
     else
         cameraId = Config.Registers[safe].camId
     end
-    local alertData = {
-        title = "10-33 | Shop Robbery",
-        coords = {x = coords.x, y = coords.y, z = coords.z},
-        description = "Someone Is Trying To Rob A Store At "..streetLabel.." (CAMERA ID: "..cameraId..")"
-    }
-    TriggerClientEvent("qb-storerobbery:client:robberyCall", -1, type, safe, streetLabel, coords)
-    TriggerClientEvent("qb-phone:client:addPoliceAlert", -1, alertData)
+    local data = {displayCode = 'ROBBERY', blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Store Robbery", isImportant = 1, recipientList = {'police'}, length = '10000', infoM = 'fa-phone-square', info = "Cam: "..camId}
+	local dispatchData = {dispatchData = data, caller = caller, coords = coords}
+	TriggerServerEvent('wf-alerts:svNotify', dispatchData)
+
 end)
 
 Citizen.CreateThread(function()
