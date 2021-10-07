@@ -104,6 +104,13 @@ Garages = {
         putVehicle = vector3(-307.91, -985.63, 31.08),
         showBlip = true
     },
+    ["policeparking"] = {
+        label = "Police Parking (MRPD)",
+        takeVehicle = vector3(457.69, -993.13, 25.38),
+        spawnPoint = vector4(452.33, -987.39, 25.7, 3.71),
+        putVehicle = vector3(445.74, -991.31, 25.38),
+        showBlip = false
+    },
 }
 
 HouseGarages = {}
@@ -144,11 +151,6 @@ Depots = {
     ["hayesdepot"] = {
         label = "Hayes Depot",
         takeVehicle = vector4(491.0, -1314.69, 29.25, 304.5),
-        showBlip = true
-    },
-    ["towyard"] = {
-        label = "Towyard",
-        takeVehicle = vector4(-209.14, -1168.48, 22.32, 180.0),
         showBlip = true
     }
 }

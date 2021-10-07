@@ -4713,16 +4713,16 @@ QBShared.Vehicles = {
 		["hash"] = `previon`,
 		["shop"] = "pdm",
 	},
-	["policecharger"] = {
+	["polchar"] = {
 		["name"] = "Police Charger",
 		["brand"] = "Dodge",
 		["model"] = "polchar",
-		["price"] = 0,
+		["price"] = 25000,
 		["category"] = "emergancy",
 		["hash"] = `polchar`,
 		["shop"] = "pd",
 	},
-	["policevic"] = {
+	["polvic"] = {
 		["name"] = "Police Vic",
 		["brand"] = "Ford",
 		["model"] = "polvic",
@@ -4731,29 +4731,29 @@ QBShared.Vehicles = {
 		["hash"] = `polvic`,
 		["shop"] = "pd",
 	},
-	["policeTaurus"] = {
+	["poltaurus"] = {
 		["name"] = "Police Taurus",
 		["brand"] = "Ford",
 		["model"] = "poltaurus",
-		["price"] = 0,
+		["price"] = 10000,
 		["category"] = "emergancy",
-		["hash"] = `polchar`,
+		["hash"] = `poltaurus`,
 		["shop"] = "pd",
 	},
-	["policeCorvette"] = {
+	["npolvette"] = {
 		["name"] = "Police Corvette",
 		["brand"] = "Dodge",
 		["model"] = "npolvette",
-		["price"] = 0,
+		["price"] = 100000,
 		["category"] = "emergancy",
 		["hash"] = `npolvette`,
 		["shop"] = "pd",
 	},
-	["policeChallanger"] = {
+	["npolchal"] = {
 		["name"] = "Police Challanger",
 		["brand"] = "Dodge",
 		["model"] = "npolchal",
-		["price"] = 0,
+		["price"] = 100000,
 		["category"] = "emergancy",
 		["hash"] = `npolchal`,
 		["shop"] = "pd",

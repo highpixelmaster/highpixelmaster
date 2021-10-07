@@ -644,3 +644,41 @@ table.insert(Config.DoorList, {
     -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
     -- autoLock = 1000
 })
+
+-- 
+table.insert(Config.DoorList, {
+	objHeading = 270.00003051758,
+	maxDistance = 6.0,
+	objHash = -190780785,
+	fixText = false,
+	lockpick = false,
+	garage = true,
+	audioRemote = false,
+	locked = true,
+	objCoords = vector3(459.5504, -1014.646, 29.10957),
+	slides = true,
+	authorizedJobs = { ['police']=0 },        
+    -- oldMethod = true,
+    -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+    -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+    -- autoLock = 1000
+})
+
+-- 
+table.insert(Config.DoorList, {
+	objHeading = 270.00003051758,
+	maxDistance = 6.0,
+	objHash = -190780785,
+	fixText = false,
+	lockpick = false,
+	garage = true,
+	audioRemote = false,
+	locked = true,
+	objCoords = vector3(459.5504, -1019.699, 29.08874),
+	slides = true,
+	authorizedJobs = { ['police']=0 },        
+    -- oldMethod = true,
+    -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+    -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+    -- autoLock = 1000
+})
