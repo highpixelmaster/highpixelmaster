@@ -1,14 +1,7 @@
-QBCore = nil
+QBCore = exports['qb-core']:GetCoreObject()
 local debugProps, sitting, lastPos, currentSitCoords, currentScenario = {}
 local disableControls = false
 local currentObj = nil
-
-Citizen.CreateThread(function()
-	while QBCore == nil do
-		TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-		Citizen.Wait(0)
-	end
-end)
 
 Citizen.CreateThread(function()
 	while true do

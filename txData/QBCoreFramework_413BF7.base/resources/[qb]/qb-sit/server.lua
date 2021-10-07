@@ -1,7 +1,6 @@
-QBCore = nil
+QBCore = exports['qb-core']:GetCoreObject()
 local seatsTaken = {}
 
-TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 RegisterNetEvent('qb-sit:takePlace')
 AddEventHandler('qb-sit:takePlace', function(objectCoords)

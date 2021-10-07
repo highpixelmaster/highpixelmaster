@@ -1,7 +1,4 @@
-local QBCore = nil  
-
-QBCore = nil
-TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNetEvent('qb-weedshop:client:pickkog')
 AddEventHandler('qb-weedshop:client:pickkog', function()

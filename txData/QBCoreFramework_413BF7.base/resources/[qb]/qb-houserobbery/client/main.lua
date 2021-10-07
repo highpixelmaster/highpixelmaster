@@ -280,9 +280,7 @@ function PoliceCall()
             local dispatchData = {dispatchData = data, caller = 'Panic Button', coords = pos}
             if chance >= 25 then
             TriggerServerEvent('wf-alerts:svNotify', dispatchData)
-            print(chance)
             else
-                print(chance)
             end
             end
     end
@@ -384,7 +382,7 @@ function searchCabin(cabin)
         openingDoor = false
         ClearPedTasks(PlayerPedId())
         TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, false)
-        QBCore.Functions.Notify("Process Canceled..", "error")
+        QBCore.Functions.Notify("You stubbed your toe..", "error")
         SucceededAttempts = 0
         FreezeEntityPosition(ped, false)
         SetTimeout(500, function()

@@ -39,6 +39,54 @@ Config.PolyZones = {
 
 Config.TargetBones = {
 
+	["main"] = {
+        bones = {
+            "door_dside_f",
+            "door_dside_r",
+            'chassis',
+            "door_pside_f",
+            "door_pside_r",
+            "steering",
+            "hbgrip_l",
+            "hbgrip_r"
+        },
+        options = {
+            {
+                type = "client",
+                event = "vehiclekeys:client:GiveKeys",
+                icon = "fad fa-key",
+                label = "GIVE KEYS",
+            },
+            {
+                type = "client",
+                event = "police:client:PutPlayerInVehicle",
+                icon = "fas fa-chevron-circle-left",
+                label = "PLACE IN VEHICLE",
+            },
+            {
+                type = "client",
+                event = "police:client:SetPlayerOutVehicle",
+                icon = "fas fa-chevron-circle-right",
+                label = "TAKE OUT OF VEHICLE",
+            },
+            {
+                type = "client",
+                event = "police:client:ImpoundVehicle",
+                icon = "fas fa-car",
+                label = "IMPOUND VEHICLE",
+                job = 'police'
+            },
+            {
+                type = "client",
+                event = "police:client:ImpoundVehicle",
+                icon = "fas fa-car",
+                label = "IMPOUND VEHICLE",
+                job = 'mechanic'
+            },
+        },
+        distance = 3.0
+    },
+
 }
 
 Config.TargetEntities = {
@@ -217,6 +265,26 @@ if Config.EnableDefaultOptions then
 				end,
 				action = function(entity)
 					Config.ToggleDoor(entity, 2)
+				end
+			},
+			{
+				icon = "fas fa-sign-in-alt",
+				label = "Seat In",
+				canInteract = function(entity)
+					return GetEntityBoneIndexByName(entity, 'door_dside_r') ~= -1
+				end,
+				action = function(entity)
+					TriggerEvent("police:client:PutInVehicle")
+				end
+			},
+			{
+				icon = "fas fa-sign-out-alt",
+				label = "Seat Out",
+				canInteract = function(entity)
+					return GetEntityBoneIndexByName(entity, 'door_dside_r') ~= -1
+				end,
+				action = function(entity)
+					TriggerEvent("police:client:SetOutVehicle")
 				end
 			},
 		},

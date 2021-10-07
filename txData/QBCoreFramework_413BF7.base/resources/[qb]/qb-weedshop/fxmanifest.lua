@@ -21,6 +21,10 @@ exports {
 'GetActiveRegister',
 }
 
+shared_scripts { 
+	'@qb-core/import.lua',
+}
+
 files {
  'html/index.html',
  'html/css/style.css',

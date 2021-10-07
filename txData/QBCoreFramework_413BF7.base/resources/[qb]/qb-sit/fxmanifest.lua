@@ -18,6 +18,12 @@ client_scripts {
 	'client.lua'
 }
 
+shared_scripts {
+
+	'@qb-core/import.lua',
+
+}
+
 dependencies { 
   'PolyZone', 
   'qb-target' 
