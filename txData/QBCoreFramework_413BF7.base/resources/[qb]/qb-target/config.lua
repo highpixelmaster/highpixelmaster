@@ -53,7 +53,7 @@ Config.TargetBones = {
         options = {
             {
                 type = "client",
-                event = "vehiclekeys:client:GiveKeys",
+                event = "vehiclekeys:server:GiveVehicleKeys",
                 icon = "fad fa-key",
                 label = "GIVE KEYS",
             },
@@ -71,17 +71,9 @@ Config.TargetBones = {
             },
             {
                 type = "client",
-                event = "police:client:ImpoundVehicle",
-                icon = "fas fa-car",
-                label = "IMPOUND VEHICLE",
-                job = 'police'
-            },
-            {
-                type = "client",
-                event = "police:client:ImpoundVehicle",
-                icon = "fas fa-car",
-                label = "IMPOUND VEHICLE",
-                job = 'mechanic'
+                event = "LegacyFuel:client:fuelcar",
+                icon = "fas fa-gas-pump",
+                label = "Refuel Vehicle",
             },
         },
         distance = 3.0
