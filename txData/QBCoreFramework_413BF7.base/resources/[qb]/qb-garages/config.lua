@@ -148,9 +148,14 @@ GangGarages = {
 
 
 Depots = {
-    ["hayesdepot"] = {
-        label = "Hayes Depot",
-        takeVehicle = vector4(491.0, -1314.69, 29.25, 304.5),
+    ["towyard"] = {
+        label = "Impound Lot",
+        takeVehicle = vector4(-209.02, -1168.95, 23.04, 177.9),
         showBlip = true
-    }
+    },
+    ["pdlot"] = {
+        label = "PD Yard",
+        takeVehicle = vector4(442.25, -1014.86, 28.65, 90.0),
+        showBlip = false
+    },
 }
