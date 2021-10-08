@@ -530,7 +530,7 @@ Config.Locations = {
         ["label"] = "Digital Den",
         ["type"] = "normal",
         ["coords"] = {
-            [1] = vector3(-507.76, 282.34, 83.23)
+            [1] = vector3(-509.63, 278.87, 83.32)
         },
         ["products"] = Config.Products["digitalden"],
         ["showblip"] = true,
