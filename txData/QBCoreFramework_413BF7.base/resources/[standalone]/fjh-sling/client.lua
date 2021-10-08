@@ -1,6 +1,6 @@
 local attached_weapons = {}
 local hotbar = {}
-local sling = "Back"
+local sling = "Front"
 local playerLoaded = false
 
 Citizen.CreateThread(function()
