@@ -375,7 +375,7 @@ Config.Items = {
         [14] = {
             name = "police_stormram",
             price = 0,
-            amount = 50,
+            amount = 1,
             info = {},
             type = "item",
             slot = 14,
@@ -384,7 +384,7 @@ Config.Items = {
         [15] = {
             name = "armor",
             price = 0,
-            amount = 50,
+            amount = 5,
             info = {},
             type = "item",
             slot = 15,
@@ -393,7 +393,7 @@ Config.Items = {
         [16] = {
             name = "radio",
             price = 0,
-            amount = 50,
+            amount = 1,
             info = {},
             type = "item",
             slot = 17,
@@ -402,11 +402,20 @@ Config.Items = {
         [17] = {
             name = "heavyarmor",
             price = 0,
-            amount = 50,
+            amount = 5,
             info = {},
             type = "item",
             slot = 16,
             authorizedJobGrades = {0, 1, 2, 3, 4}
-        }
+        },
+        [18] = {
+            name = "firstaid",
+            price = 0,
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 18,
+            authorizedJobGrades = {0, 1, 2, 3, 4}
+        },
     }
 }
