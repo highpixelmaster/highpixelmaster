@@ -21,13 +21,5 @@ label = "Weed Shop Items",
             type = "item",
             slot = 2,
         },
-        [3] = {
-            name = "dabpenempty",
-            price = 650,
-            amount = 100,
-            info = {},
-            type = "item",
-            slot = 3,
-        },
     }
 }
