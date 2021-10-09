@@ -175,12 +175,12 @@ QB.VehicleShops = {
             },
         },
     }, -- Add your next table under this comma
-    [2] = {
+    [3] = {
         -- Vehicle Shop options
         ["ShopName"] = "pd", -- Name to get in the shared.lua
         ["ShopLabel"] = "Police Shop", -- Blip name
         ["Categories"] = {
-            ["emergancy"]  = "Emergancy",
+            ["emergancy"]  = "Police Vehicles",
         },
         ["TestDriveTimeLimit"] = 3, -- Time in minutes until the vehicle gets deleted
         ["Location"] = vector3(463.23, -1014.88, 28.07), -- Blip Location
