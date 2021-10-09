@@ -28,6 +28,7 @@ Config.loot = {
         'radio',
         'walkstick',
         'phone',
+        'skateboard',
 
     },
     ['tier3'] = {

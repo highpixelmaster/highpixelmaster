@@ -45,7 +45,8 @@ Config.Rewards = {
             "cryptostick",
             "weapon_combatpistol",
             "electronickit",
-            "goldbar"
+            "goldbar",
+            "skateboard"
         },
     }
 }
