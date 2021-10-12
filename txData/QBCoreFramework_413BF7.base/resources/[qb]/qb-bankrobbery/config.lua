@@ -3,7 +3,7 @@ Config = Config or {}
 Config.ItemTiers = 1
 
 Config.MinimumPaletoPolice = 5
-Config.MinimumPacificPolice = 4
+Config.MinimumPacificPolice = 3
 Config.MinimumFleecaPolice = 2
 Config.MinimumThermitePolice = 0
 

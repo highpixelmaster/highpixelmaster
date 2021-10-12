@@ -44,10 +44,18 @@ AddEventHandler('__cfx_internal:serverPrint', function(msg)
   })
 end)
 
-AddEventHandler('chat:addMessage', function(message)
+AddEventHandler('chat:addMessage', function(author, ctype, text)
+  local args = {text}
+  if author ~= "" then
+      table.insert(args, 1, author)
+  end
+  local ctype = ctype ~= false and ctype or "normal"
   SendNUIMessage({
-    type = 'ON_MESSAGE',
-    message = message
+      type = 'ON_MESSAGE',
+      message = {
+          template = '<div class="chat-message ' .. ctype .. '"><div class="chat-message-body"><strong>{0}:</strong> {1}</div></div>',
+          args = {author, text}
+      }
   })
 end)
 

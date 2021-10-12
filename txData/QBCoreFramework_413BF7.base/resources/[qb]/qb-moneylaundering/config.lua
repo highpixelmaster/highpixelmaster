@@ -32,8 +32,8 @@ Config.washingmachines = {
     }
 }
 
-Config.timer = 60 -- seconds
+Config.timer = 120 -- seconds
 Config.percentage = { -- % that gets lost when laundering
     min = 5,
-    max = 20
+    max = 10
 }

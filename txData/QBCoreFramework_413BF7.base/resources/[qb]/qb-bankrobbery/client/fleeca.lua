@@ -348,28 +348,28 @@ function openLocker(bankId, lockerId)
                 local DrillObject = CreateObject(GetHashKey("hei_prop_heist_drill"), pos.x, pos.y, pos.z, true, true, true)
                 AttachEntityToEntity(DrillObject, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 57005), 0.14, 0, -0.01, 90.0, -90.0, 180.0, true, true, false, true, 1, true)
                 IsDrilling = true
-                QBCore.Functions.Progressbar("open_locker_drill", "Breaking open the safe ..", math.random(18000, 30000), false, true, {
-                    disableMovement = true,
-                    disableCarMovement = true,
-                    disableMouse = false,
-                    disableCombat = true,
-                }, {}, {}, {}, function() -- Done
+                exports["memorygame_2"]:thermiteminigame(15, 4, 3, 10,
+                function() -- success
                     StopAnimTask(PlayerPedId(), "anim@heists@fleeca_bank@drilling", "drill_straight_idle", 1.0)
                     DetachEntity(DrillObject, true, true)
                     DeleteObject(DrillObject)
                     TriggerServerEvent('qb-bankrobbery:server:setLockerState', bankId, lockerId, 'isOpened', true)
                     TriggerServerEvent('qb-bankrobbery:server:setLockerState', bankId, lockerId, 'isBusy', false)
-                    TriggerServerEvent('qb-bankrobbery:server:recieveItem', 'paleto')
+                    TriggerServerEvent('qb-bankrobbery:server:recieveItem', 'small')
                     QBCore.Functions.Notify("Successful!", "success")
-                    IsDrilling = false
-                end, function() -- Cancel
+                    IsDrilling = false                
+                end,
+                function() -- failure
                     StopAnimTask(PlayerPedId(), "anim@heists@fleeca_bank@drilling", "drill_straight_idle", 1.0)
                     TriggerServerEvent('qb-bankrobbery:server:setLockerState', bankId, lockerId, 'isBusy', false)
                     DetachEntity(DrillObject, true, true)
                     DeleteObject(DrillObject)
-                    QBCore.Functions.Notify("Canceled..", "error")
+                    QBCore.Functions.Notify("Failed..", "error")
                     IsDrilling = false
-                end)
+                 end)
+
+                    
+
                 Citizen.CreateThread(function()
                     while IsDrilling do
                         TriggerServerEvent('hud:server:GainStress', math.random(4, 8))
@@ -390,29 +390,25 @@ function openLocker(bankId, lockerId)
                 local DrillObject = CreateObject(GetHashKey("hei_prop_heist_drill"), pos.x, pos.y, pos.z, true, true, true)
                 AttachEntityToEntity(DrillObject, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 57005), 0.14, 0, -0.01, 90.0, -90.0, 180.0, true, true, false, true, 1, true)
                 IsDrilling = true
-                QBCore.Functions.Progressbar("open_locker_drill", "Breaking open the safe ..", math.random(18000, 30000), false, true, {
-                    disableMovement = true,
-                    disableCarMovement = true,
-                    disableMouse = false,
-                    disableCombat = true,
-                }, {}, {}, {}, function() -- Done
+                exports["memorygame_2"]:thermiteminigame(10, 3, 3, 10,
+                function() -- success
                     StopAnimTask(PlayerPedId(), "anim@heists@fleeca_bank@drilling", "drill_straight_idle", 1.0)
                     DetachEntity(DrillObject, true, true)
                     DeleteObject(DrillObject)
-                    
                     TriggerServerEvent('qb-bankrobbery:server:setLockerState', bankId, lockerId, 'isOpened', true)
                     TriggerServerEvent('qb-bankrobbery:server:setLockerState', bankId, lockerId, 'isBusy', false)
-                    TriggerServerEvent('qb-bankrobbery:server:recieveItem', 'pacific')
+                    TriggerServerEvent('qb-bankrobbery:server:recieveItem', 'small')
                     QBCore.Functions.Notify("Successful!", "success")
-                    IsDrilling = false
-                end, function() -- Cancel
+                    IsDrilling = false                
+                end,
+                function() -- failure
                     StopAnimTask(PlayerPedId(), "anim@heists@fleeca_bank@drilling", "drill_straight_idle", 1.0)
                     TriggerServerEvent('qb-bankrobbery:server:setLockerState', bankId, lockerId, 'isBusy', false)
                     DetachEntity(DrillObject, true, true)
                     DeleteObject(DrillObject)
-                    QBCore.Functions.Notify("Canceled..", "error")
+                    QBCore.Functions.Notify("Failed..", "error")
                     IsDrilling = false
-                end)
+                 end)
                 Citizen.CreateThread(function()
                     while IsDrilling do
                         TriggerServerEvent('hud:server:GainStress', math.random(4, 8))
@@ -426,28 +422,25 @@ function openLocker(bankId, lockerId)
         end, "drill")
     else
         IsDrilling = true
-        QBCore.Functions.Progressbar("open_locker", "Breaking open the safe ..", math.random(27000, 37000), false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true,
-        }, {
-            animDict = "anim@gangops@facility@servers@",
-            anim = "hotwire",
-            flags = 16,
-        }, {}, {}, function() -- Done
-            StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
+        exports["memorygame_2"]:thermiteminigame(6, 3, 3, 15,
+        function() -- success
+            StopAnimTask(PlayerPedId(), "anim@heists@fleeca_bank@drilling", "drill_straight_idle", 1.0)
+            DetachEntity(DrillObject, true, true)
+            DeleteObject(DrillObject)
             TriggerServerEvent('qb-bankrobbery:server:setLockerState', bankId, lockerId, 'isOpened', true)
             TriggerServerEvent('qb-bankrobbery:server:setLockerState', bankId, lockerId, 'isBusy', false)
             TriggerServerEvent('qb-bankrobbery:server:recieveItem', 'small')
             QBCore.Functions.Notify("Successful!", "success")
-            IsDrilling = false
-        end, function() -- Cancel
-            StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
+            IsDrilling = false                
+        end,
+        function() -- failure
+            StopAnimTask(PlayerPedId(), "anim@heists@fleeca_bank@drilling", "drill_straight_idle", 1.0)
             TriggerServerEvent('qb-bankrobbery:server:setLockerState', bankId, lockerId, 'isBusy', false)
-            QBCore.Functions.Notify("Canceled..", "error")
+            DetachEntity(DrillObject, true, true)
+            DeleteObject(DrillObject)
+            QBCore.Functions.Notify("Failed..", "error")
             IsDrilling = false
-        end)
+         end)
         Citizen.CreateThread(function()
             while IsDrilling do
                 TriggerServerEvent('hud:server:GainStress', math.random(4, 8))

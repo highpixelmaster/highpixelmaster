@@ -60,11 +60,15 @@ RegisterNetEvent('qb-moneylaundering:launder:collect', function(k)
     local Player = QBCore.Functions.GetPlayer(src)
     local Subtract = math.percent(math.random(Config.percentage.min, Config.percentage.max), Config.washingmachines[k].worth)
     local Reward = Config.washingmachines[k].worth - Subtract
-    Player.Functions.AddMoney('cash', Reward, "washed-money")
+    Player.Functions.AddMoney('cash', RoundNumber(Reward), "washed-money")
     Config.washingmachines[k].inUse = false
     Config.washingmachines[k].worth = 0
 end)
 
+function RoundNumber(num, numRoundNumber)
+    local mult = 10^(numRoundNumber or 0)
+    return math.floor(num * mult + 0.5) / mult
+  end
 
 -- FUNCTIONS
 function HasItem(src)

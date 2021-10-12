@@ -53,12 +53,6 @@ Config.TargetBones = {
         options = {
             {
                 type = "client",
-                event = "vehiclekeys:server:GiveVehicleKeys",
-                icon = "fad fa-key",
-                label = "GIVE KEYS",
-            },
-            {
-                type = "client",
                 event = "police:client:PutPlayerInVehicle",
                 icon = "fas fa-chevron-circle-left",
                 label = "PLACE IN VEHICLE",
@@ -68,12 +62,6 @@ Config.TargetBones = {
                 event = "police:client:SetPlayerOutVehicle",
                 icon = "fas fa-chevron-circle-right",
                 label = "TAKE OUT OF VEHICLE",
-            },
-            {
-                type = "client",
-                event = "LegacyFuel:client:fuelcar",
-                icon = "fas fa-gas-pump",
-                label = "Refuel Vehicle",
             },
         },
         distance = 3.0
@@ -105,14 +93,66 @@ Config.TargetModels = {
         },
         distance = 2.5,
     },
-	["ATM"] = {
+    ["male"] = {
         models = {
-            `prop_atm_01`,
-            `prop_atm_02`,
-            `prop_atm_03`,
-            `prop_fleeca_atm`,
+            "mp_m_freemode_01"
         },
         options = {
+            {
+                type = "client",
+                event = "police:client:EscortPlayer",
+                icon = "fas fa-hands-helping",
+                label = "Escort Person",
+            },
+            {
+                type = "client",
+                event = "police:client:RobPlayer",
+                icon = "fas fa-mask",
+                label = "Rob Person",
+            },
+            {
+                type = "client",
+                event = "qb-phone:client:GiveContactDetails",
+                icon = "fas fa-phone-square",
+                label = "Give Contact",
+            },
+        },
+        distance = 2.5,
+    },
+    ["female"] = {
+        models = {
+            "mp_f_freemode_01"
+        },
+        options = {
+            {
+                type = "client",
+                event = "police:client:EscortPlayer",
+                icon = "fas fa-hands-helping",
+                label = "Escort Person",
+            },
+            {
+                type = "client",
+                event = "police:client:RobPlayer",
+                icon = "fas fa-mask",
+                label = "Rob Person",
+            },
+            {
+                type = "client",
+                event = "qb-phone:client:GiveContactDetails",
+                icon = "fas fa-phone-square",
+                label = "Give Contact",
+            },
+        },
+        distance = 2.5,
+    },
+	["ATM"] = {
+        models = {  
+            'prop_atm_01',
+            'prop_atm_02',
+            'prop_atm_03',
+            'prop_fleeca_atm',
+        },
+        options = { 
             {
                 type = "command",
                 event = "atm",
@@ -125,9 +165,9 @@ Config.TargetModels = {
     },
 	["SODA"] = {
         models = {
-            `prop_vend_soda_01`,
-            `prop_vend_soda_02`,
-			`prop_vend_water_01`,
+            'prop_vend_soda_01',
+            'prop_vend_soda_02',
+			'prop_vend_water_01',
         },
         options = {
             {
@@ -142,7 +182,7 @@ Config.TargetModels = {
     },
 	["SNACK"] = {
         models = {
-            `prop_vend_snak_01`,
+            'prop_vend_snak_01',
         },
         options = {
             {
@@ -157,7 +197,7 @@ Config.TargetModels = {
     },
 	["COFFEE"] = {
         models = {
-            `prop_vend_coffe_01`,
+            'prop_vend_coffe_01',
         },
         options = {
             {

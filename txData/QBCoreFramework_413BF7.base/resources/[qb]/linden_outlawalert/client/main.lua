@@ -347,9 +347,6 @@ RegisterCommand('911', function(playerId, args, rawCommand)
 	args = table.concat(args, ' ')
 	local caller
 	if Config.PhoneNumber then caller = phone else caller = ('%s %s'):format(firstname, lastname) end
-	if Config.Default911 then TriggerServerEvent('mdt:newCall', args, caller, playerCoords) else
-		TriggerServerEvent('wf-alerts:svNotify911', args, caller, playerCoords)
-	end
 	local data = {displayCode = '911', dispatchCode = persondown, blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Caller ".. caller, isImportant = 0, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-phone-square', info = "Complaint: " .. args}
 	local dispatchData = {dispatchData = data, caller = caller, coords = playerCoords}
 	TriggerServerEvent('wf-alerts:svNotify', dispatchData)
@@ -359,9 +356,6 @@ end, false)
 RegisterCommand('911a', function(playerId, args, rawCommand)
 	if not args[1] then QBCore.Functions.Notify('You must include a message with your 911 call', 'error') return end
 	args = table.concat(args, ' ')
-	if Config.Default911 then TriggerServerEvent('mdt:newCall', args, _U('caller_unknown'), playerCoords) else
-		TriggerServerEvent('wf-alerts:svNotify911', args, _U('caller_unknown'), playerCoords)
-	end
 	local data = {displayCode = '911', blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Unknown Caller", isImportant = 0, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-phone-square', info = "Complaint: " .. args}
 	local dispatchData = {dispatchData = data, caller = caller, coords = playerCoords}
 	TriggerServerEvent('wf-alerts:svNotify', dispatchData)

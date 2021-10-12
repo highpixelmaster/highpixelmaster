@@ -1,7 +1,7 @@
 Config = {}
 
-Config.minEarn = 100
-Config.maxEarn = 450
+Config.minEarn = 500
+Config.maxEarn = 1500
 Config.RegisterEarnings = math.random(Config.minEarn, Config.maxEarn)
 Config.MinimumStoreRobberyPolice = 0
 
@@ -9,7 +9,7 @@ Config.Registers = {
     [1] = {vector3(-47.24,-1757.65, 29.53), robbed = false, time = 0, safeKey = 1, camId = 4},
     [2] = {vector3(-48.58,-1759.21, 29.59), robbed = false, time = 0, safeKey = 1, camId = 4},
     [3] = {vector3(-1486.26,-378.0,  40.16), robbed = false, time = 0, safeKey = 2, camId = 5},
-    [4] = {vector3(1222.03,-908.32, 12.32), robbed = false, time = 0, safeKey = 3, camId = 6},
+    [4] = {vector3(-1222.03,-908.32, 12.32), robbed = false, time = 0, safeKey = 3, camId = 6},
     [5] = {vector3(-706.08, -915.42, 19.21), robbed = false, time = 0, safeKey = 4, camId = 7},
     [6] = {vector3(-706.16, -913.5, 19.21), robbed = false, time = 0, safeKey = 4, camId = 7},
     [7] = {vector3( 24.47, -1344.99, 29.49), robbed = false, time = 0, safeKey = 5, camId = 8},
@@ -40,10 +40,31 @@ Config.Registers = {
     [32] = {vector3(162.16, 6643.22, 31.6), robbed = false, time = 0, safeKey = 19, camId = 29},
 }
 
+
+-- Time until safe opens up
+Config.SafeWait = (60000 * 3)
+
 Config.Safes = {
-    [1] = {vector4(-43.43, -1748.3, 29.42,  52.5), type = "keypad", robbed = false, camId = 4}, 
-    [2] = {vector4(-1478.94, -375.5, 39.16,  229.5), type = "padlock", robbed = false, camId = 5},
-    [3] = {vector4(-1220.85, -916.05, 11.32,  229.5), type = "padlock", robbed = false, camId = 6},
+    [1] = {
+        coords = vector3(-1220.85, -916.05, 11.32),
+        vector4(-43.43, -1748.3, 29.42,  52.5),
+        type = "keypad",
+        robbed = false,
+        camId = 4
+    }, 
+    [2] = {
+        vector4(-1478.94, -375.5, 39.16,  229.5),
+        type = "padlock",
+        robbed = false,
+        camId = 5
+    },
+    [3] = {
+        coords = vector3(-1220.85, -916.05, 11.32),
+        vector4(-1220.85, -916.05, 11.32,  229.5),
+        type = "padlock",
+        robbed = false,
+        camId = 6
+    },
     [4] = {vector4(-709.74, -904.15, 19.21, 229.5), type = "keypad", robbed = false, camId = 7},
     [5] = {vector3(28.21, -1339.14, 29.49), type = "keypad", robbed = false, camId = 8},
     [6] = {vector3(1126.77, -980.1, 45.41), type = "padlock", robbed = false, camId = 9},

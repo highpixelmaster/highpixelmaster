@@ -1,34 +1,7 @@
-local SafeCodes = {}
-local cashA = 250 				--<<how much minimum you can get from a robbery
-local cashB = 450				--<< how much maximum you can get from a robbery
-
-
-Citizen.CreateThread(function()
-    while true do
-        SafeCodes = {
-            [1] = math.random(1000, 9999),
-            [2] = {math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149)},
-            [3] = {math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149)},
-            [4] = math.random(1000, 9999),
-            [5] = math.random(1000, 9999),
-            [6] = {math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149)},
-            [7] = math.random(1000, 9999),
-            [8] = math.random(1000, 9999),
-            [9] = math.random(1000, 9999),
-            [10] = {math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149)},
-            [11] = math.random(1000, 9999),
-            [12] = math.random(1000, 9999),
-            [13] = math.random(1000, 9999),
-            [14] = {math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149)},
-            [15] = math.random(1000, 9999),
-            [16] = math.random(1000, 9999),
-            [17] = math.random(1000, 9999),
-            [18] = {math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149), math.random(150.0, 359.0), math.random(1, 149)},
-            [19] = math.random(1000, 9999),
-        }
-        Citizen.Wait((1000 * 60) * 40)
-    end
-end)
+local cashA = 200 				--<<how much minimum you can get from a robbery
+local cashB = 300				--<< how much maximum you can get from a robbery
+local ScashA = 1000 			--<<how much minimum you can get from a robbery
+local ScashB = 1500				--<< how much maximum you can get from a robbery
 
 RegisterServerEvent('qb-storerobbery:server:takeMoney')
 AddEventHandler('qb-storerobbery:server:takeMoney', function(register, isDone)
@@ -43,19 +16,9 @@ AddEventHandler('qb-storerobbery:server:takeMoney', function(register, isDone)
 	Player.Functions.AddItem('markedbills', bags, false, info)
 	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
         if math.random(1, 100) <= 10 then
-            local code = SafeCodes[Config.Registers[register].safeKey]
-            local info = {}
-            if Config.Safes[Config.Registers[register].safeKey].type == "keypad" then
-                info = {
-                    label = "Safe Code: "..tostring(code)
-                }
-            else
-                info = {
-                    label = "Safe Code: "..tostring(math.floor((code[1] % 360) / 3.60)).."-"..tostring(math.floor((code[2] % 360) / 3.60)).."-"..tostring(math.floor((code[3] % 360) / 3.60)).."-"..tostring(math.floor((code[4] % 360) / 3.60)).."-"..tostring(math.floor((code[5] % 360) / 3.60))
-                }
-            end
-            Player.Functions.AddItem("stickynote", 1, false, info)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["stickynote"], "add")
+            -- Give Special Item (Safe Cracker)
+            Player.Functions.AddItem("safecracker", 1)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["safecracker"], 'add')
         end
     end
 end)
@@ -82,17 +45,17 @@ RegisterServerEvent('qb-storerobbery:server:SafeReward')
 AddEventHandler('qb-storerobbery:server:SafeReward', function(safe)
     local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
-	local bags = math.random(1,3)
+	local bags = math.random(3,5)
 	local info = {
-		worth = math.random(cashA, cashB)
+		worth = math.random(ScashA, ScashB)
 	}
 	Player.Functions.AddItem('markedbills', bags, false, info)
 	TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
     local luck = math.random(1, 100)
     local odd = math.random(1, 100)
     if luck <= 10 then
-        Player.Functions.AddItem("rolex", math.random(3, 7))
-        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["rolex"], "add")
+            Player.Functions.AddItem("rolex", 1)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["rolex"], "add")
         if luck == odd then
             Citizen.Wait(500)
             Player.Functions.AddItem("goldbar", 1)
@@ -109,10 +72,11 @@ AddEventHandler('qb-storerobbery:server:callCops', function(type, safe, streetLa
     else
         cameraId = Config.Registers[safe].camId
     end
-    local data = {displayCode = 'ROBBERY', blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Store Robbery", isImportant = 1, recipientList = {'police'}, length = '10000', infoM = 'fa-phone-square', info = "Cam: "..camId}
-	local dispatchData = {dispatchData = data, caller = caller, coords = coords}
-	TriggerServerEvent('wf-alerts:svNotify', dispatchData)
 
+    local msg = "Store Robbery in Progress"
+    local data = {displayCode = 'ROBBERY', blipSprite = 362, blipColour = 52, blipScale = 1.5, description = 'Store Robbery | CAM: '.. cameraId, recipientList = {'police'}, length = '10000', infoM = 'fa-info-circle', info = msg}
+    local dispatchData = {dispatchData = data, caller = 'Store Alarm', coords = coords}
+    TriggerEvent('wf-alerts:svNotify', dispatchData)
 end)
 
 Citizen.CreateThread(function()
@@ -141,18 +105,21 @@ Citizen.CreateThread(function()
     end
 end)
 
-QBCore.Functions.CreateCallback('qb-storerobbery:server:isCombinationRight', function(source, cb, safe)
-    cb(SafeCodes[safe])
-end)
-
-QBCore.Functions.CreateCallback('qb-storerobbery:server:getPadlockCombination', function(source, cb, safe)
-    cb(SafeCodes[safe])
-end)
-
 QBCore.Functions.CreateCallback('qb-storerobbery:server:getRegisterStatus', function(source, cb)
     cb(Config.Registers)
 end)
 
 QBCore.Functions.CreateCallback('qb-storerobbery:server:getSafeStatus', function(source, cb)
     cb(Config.Safes)
+end)
+
+RegisterServerEvent('qb-storerobbery:server:CheckItem')
+AddEventHandler('qb-storerobbery:server:CheckItem', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+    local ItemData = Player.Functions.GetItemByName("safecracker")
+    if ItemData ~= nil then
+        TriggerClientEvent('qb-storerobbery:client:hacksafe', source)
+    else
+        TriggerClientEvent('QBCore:Notify', source, "You appear to be missing something?")
+    end
 end)

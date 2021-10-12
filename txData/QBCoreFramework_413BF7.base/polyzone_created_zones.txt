@@ -95,3 +95,21 @@ BoxZone:Create(vector3(-1192.82, -906.38, 13.98), 1, 1, {
   --debugPoly=true
 })
 
+--Name: weedshopstash | 2021-10-08T23:44:45Z
+BoxZone:Create(vector3(381.86, -819.76, 29.3), 2.4, 1.0, {
+  name="weedshopstash",
+  heading=0,
+  --debugPoly=true,
+  minZ=26.7,
+  maxZ=30.7
+})
+
+--Name: exchange | 2021-10-12T03:26:31Z
+BoxZone:Create(vector3(172.91, -999.43, -99.0), 0.6, 0.6, {
+  name="exchange",
+  heading=0,
+  --debugPoly=true,
+  minZ=-98.95,
+  maxZ=-98.35
+})
+

@@ -1142,7 +1142,7 @@ end)
 QBCore.Commands.Add("radar", "Enable Police Radar (Police Only)", {}, false, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
     if Player.PlayerData.job.name == "police" then
-        TriggerClientEvent('QBCore:Notify', source, 'Press F5 while in a police vehicle!', 'error')
+        TriggerClientEvent('QBCore:Notify', source, 'Press CTRL + M for your radar!', 'error')
     end
 end)
 

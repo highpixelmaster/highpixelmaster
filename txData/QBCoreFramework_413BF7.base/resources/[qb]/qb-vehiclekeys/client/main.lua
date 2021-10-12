@@ -89,13 +89,7 @@ CreateThread(function()
                                     SetVehicleDoorsLocked(entering, 1)
                                     HasKey = true
                                 else
-                                    local rand = math.random(1,10)
-                                    if rand > 5 then
                                     SetVehicleDoorsLocked(entering, 2)
-                                    print("unlucky")
-                                    else
-                                        print("lucky")
-                                    end
                                 end
                             else
                                 TriggerEvent("vehiclekeys:client:SetOwner", plate)
@@ -221,6 +215,8 @@ end
 
 -- Lockpicking
 
+local usingAdvanced
+
 RegisterNetEvent('lockpicks:UseLockpick')
 AddEventHandler('lockpicks:UseLockpick', function(isAdvanced)
     LockpickDoor(isAdvanced)
@@ -235,20 +231,50 @@ function LockpickDoor(isAdvanced)
         if #(pos - vehpos) < 1.5 then
             local vehLockStatus = GetVehicleDoorLockStatus(vehicle)
             if (vehLockStatus > 0) then
-                TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
-            end
+                usingAdvanced = isAdvanced
+                local time = math.random(7,10)
+                local circles = math.random(2,4)
+                LockpickDoorAnim(5000)
+
+                local success = exports['qb-lockgame']:StartLockPickCircle(circles, time, success)
+                print(success)
+                if success then
+                    lockpickFinish(true)
+                else
+
+                end           
+             end
         end
     end
+end
+
+function LockpickDoorAnim(time)
+    time = time / 1000
+    loadAnimDict("veh@break_in@0h@p_m_one@")
+    TaskPlayAnim(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds" ,3.0, 3.0, -1, 16, 0, false, false, false)
+    openingDoor = true
+    Citizen.CreateThread(function()
+        while openingDoor do
+            TaskPlayAnim(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
+            Citizen.Wait(1000)
+            time = time - 1
+            if time <= 0 then
+                openingDoor = false
+                StopAnimTask(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 1.0)
+            end
+        end
+    end)
 end
 
 function lockpickFinish(success)
     local ped = PlayerPedId()
     local pos = GetEntityCoords(ped)
     local vehicle = QBCore.Functions.GetClosestVehicle(pos)
-    local chance = math.random(1, 100)
+    local chance = math.random()
     if success then
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
         QBCore.Functions.Notify('Opened Door!', 'success')
+        TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 8, "unlock", 0.3)
         SetVehicleDoorsLocked(vehicle, 1)
         lockpicked = true
         lockpickedPlate = GetVehicleNumberPlateText(vehicle)
@@ -257,10 +283,16 @@ function lockpickFinish(success)
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
         QBCore.Functions.Notify('Someone Called The Police!', 'error')
     end
-
-    if chance <= 50 then
-        TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["lockpick"], "remove")
-        TriggerServerEvent("QBCore:Server:RemoveItem", "lockpick", 1)
+    if usingAdvanced then
+        if chance <= Config.RemoveLockpickAdvanced then
+            TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["advancedlockpick"], "remove")
+            TriggerServerEvent("QBCore:Server:RemoveItem", "advancedlockpick", 1)
+        end
+    else
+        if chance <= Config.RemoveLockpickNormal then
+            TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["lockpick"], "remove")
+            TriggerServerEvent("QBCore:Server:RemoveItem", "lockpick", 1)
+        end
     end
 end
 
@@ -276,34 +308,24 @@ function Hotwire()
         SetVehicleAlarm(vehicle, true)
         SetVehicleAlarmTimeLeft(vehicle, hotwireTime)
         PoliceCall()
-        QBCore.Functions.Progressbar("hotwire_vehicle", "Engaging the ignition switch", hotwireTime, false, true, {
-            disableMovement = true,
-            disableCarMovement = true,
-            disableMouse = false,
-            disableCombat = true
-        }, {
-            animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
-            anim = "machinic_loop_mechandplayer",
-            flags = 16
-        }, {}, {}, function() -- Done
-            StopAnimTask(ped, "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", 1.0)
-            if (math.random(0, 100) < 50) then
+
+        local time = math.random(7,10)
+        local circles = math.random(2,4)
+        local success = exports['qb-lockgame']:StartLockPickCircle(circles, time, success)
+        print(success)
+        if success then
+            if (math.random() <= Config.HotwireChance) then
                 lockpicked = false
                 TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
                 TriggerEvent('vehiclekeys:client:SetOwner', GetVehicleNumberPlateText(vehicle))
                 QBCore.Functions.Notify("Hotwire succeeded!")
-            else
-                SetVehicleEngineOn(veh, false, false, true)
-                TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
-                QBCore.Functions.Notify("Hotwire failed!", "error")
             end
-            IsHotwiring = false
-        end, function() -- Cancel
+            else
             StopAnimTask(ped, "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", 1.0)
             SetVehicleEngineOn(veh, false, false, true)
             QBCore.Functions.Notify("Hotwire failed!", "error")
             IsHotwiring = false
-        end)
+        end
     end
 end
 
@@ -313,11 +335,11 @@ function PoliceCall()
     if not AlertSend then
         local ped = PlayerPedId()
         local pos = GetEntityCoords(ped)
-        local chance = 20
+        local chance = Config.PoliceAlertChance
         if GetClockHours() >= 1 and GetClockHours() <= 6 then
-            chance = 10
+            chance = Config.PoliceNightAlertChance
         end
-        if math.random(1, 100) <= chance then
+        if math.random() <= chance then
             local closestPed = GetNearbyPed()
             if closestPed ~= nil then
                 local msg = ""
@@ -341,6 +363,9 @@ function PoliceCall()
                     local msg = "Vehicle theft attempt at " .. streetLabel .. ". Vehicle: " .. Name .. ", Licenseplate: " .. modelPlate
                     local alertTitle = "Vehicle theft attempt at"
                     TriggerServerEvent("police:server:VehicleCall", pos, msg, alertTitle, streetLabel, modelPlate, Name)
+                    local data = {displayCode = 'THEFT', blipSprite = 380, blipColour = 47, blipScale = 1.5, description = alertTitle, recipientList = {'police'}, isImportant = 1, length = '25000', infoM = 'fa-info-circle', info = msg}
+                    local dispatchData = {dispatchData = data, caller = 'Local', coords = pos}
+                    TriggerServerEvent('wf-alerts:svNotify', dispatchData)
                 else
                     local vehicle = QBCore.Functions.GetClosestVehicle()
                     local modelName = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle)):lower()
@@ -352,12 +377,14 @@ function PoliceCall()
                     end
                     local msg = "Vehicle theft attempt at " .. streetLabel .. ". Vehicle: " .. Name .. ", Licenseplate: " .. modelPlate
                     local alertTitle = "Vehicle theft attempt at"
-                    TriggerServerEvent("police:server:VehicleCall", pos, msg, alertTitle, streetLabel, modelPlate, Name)
+                    local data = {displayCode = 'THEFT', blipSprite = 380, blipColour = 47, blipScale = 1.5, description = alertTitle, recipientList = {'police'}, isImportant = 1, length = '25000', infoM = 'fa-info-circle', info = msg}
+                    local dispatchData = {dispatchData = data, caller = 'Local', coords = pos}
+                    TriggerServerEvent('wf-alerts:svNotify', dispatchData)
                 end
             end
         end
         AlertSend = true
-        SetTimeout(2 * (60 * 1000), function()
+        SetTimeout(Config.AlertCooldown, function()
             AlertSend = false
         end)
     end
@@ -370,8 +397,8 @@ function RobVehicle(target)
     loadAnimDict('mp_am_hold_up')
     TaskPlayAnim(target, "mp_am_hold_up", "holdup_victim_20s", 8.0, -8.0, -1, 2, 0, false, false, false)
     QBCore.Functions.Progressbar("rob_keys", "Attempting Robbery..", 6000, false, true, {}, {}, {}, {}, function()
-        local chance = math.random(1, 100)
-        if chance >= 50 then
+        local chance = math.random()
+        if chance <= Config.RobberyChance then
             TaskLeaveVehicle(target, GetVehiclePedIsUsing(target), 256)
             Wait(500)
             ClearPedTasksImmediately(target)

@@ -106,12 +106,21 @@ AddEventHandler('thermite:UseThermite', function()
                     loadAnimDict("weapon@w_sp_jerrycan")
                     TaskPlayAnim(PlayerPedId(), "weapon@w_sp_jerrycan", "fire", 3.0, 3.9, 180, 49, 0, 0, 0, 0)
                     TriggerEvent('inventory:client:requiredItems', requiredItems, false)
-                    SetNuiFocus(true, true)
-                    SendNUIMessage({
-                        action = "openThermite",
-                        amount = math.random(5, 10),
-                    })
+                    
                     currentStation = closestStation
+
+                    exports["memorygame_2"]:thermiteminigame(10, 3, 5, 10,
+                    function() -- success
+                        SetNuiFocus(false, false)
+                            print("nice")
+                        TriggerEvent('qb-bankrobbery:client:thermitesuccess')
+                    end,
+                    function() -- failure
+                        SetNuiFocus(false, false)
+                        print("not")
+
+                        TriggerEvent('qb-bankrobbery:client:thermitefailed')
+                    end)
                 else
                     QBCore.Functions.Notify("It seems that the fuses have blown.", "error")
                 end
@@ -148,7 +157,8 @@ RegisterNUICallback('thermiteclick', function()
     PlaySound(-1, "CLICK_BACK", "WEB_NAVIGATION_SOUNDS_PHONE", 0, 0, 1)
 end)
 
-RegisterNUICallback('thermitefailed', function()
+RegisterNetEvent('qb-bankrobbery:client:thermitefailed')
+AddEventHandler('qb-bankrobbery:client:thermitefailed', function()
     PlaySound(-1, "Place_Prop_Fail", "DLC_Dmod_Prop_Editor_Sounds", 0, 0, 1)
     TriggerServerEvent("QBCore:Server:RemoveItem", "thermite", 1)
     TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["thermite"], "remove")
@@ -158,7 +168,9 @@ RegisterNUICallback('thermitefailed', function()
     CreateFire(coords, randTime)
 end)
 
-RegisterNUICallback('thermitesuccess', function()
+
+RegisterNetEvent('qb-bankrobbery:client:thermitesuccess')
+AddEventHandler('qb-bankrobbery:client:thermitesuccess', function()
     ClearPedTasks(PlayerPedId())
     local time = 3
     local coords = GetEntityCoords(PlayerPedId())
@@ -178,6 +190,7 @@ RegisterNUICallback('thermitesuccess', function()
         currentGate = 0
     end
 end)
+
 
 RegisterNUICallback('closethermite', function()
     SetNuiFocus(false, false)

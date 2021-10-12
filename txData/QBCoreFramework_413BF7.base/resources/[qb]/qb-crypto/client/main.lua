@@ -92,6 +92,8 @@ AddEventHandler('qb-crypto:client:SyncReboot', function()
 	SystemCrashCooldown()
 end)
 
+
+
 function SystemCrashCooldown()
 	Citizen.CreateThread(function()
 		while Crypto.Exchange.RebootInfo.state do
@@ -143,3 +145,36 @@ AddEventHandler('qb-crypto:client:GetRebootState', function(RebootInfo)
 		SystemCrashCooldown()
 	end
 end)
+
+RegisterNetEvent('qb-crypto:client:startHack')
+AddEventHandler('qb-crypto:client:startHack', function()
+
+	QBCore.Functions.TriggerCallback('qb-crypto:server:HasSticky', function(HasItem)
+		if HasItem then
+			TriggerEvent("mhacking:show")
+			TriggerEvent("mhacking:start", math.random(4, 6), 45, HackingSuccess)
+		else
+			QBCore.Functions.Notify('You have no Cryptostick ..', 'error')
+		end
+	end)
+
+end)
+
+
+exports['qb-target']:AddBoxZone("exchange", vector3(172.91, -999.43, -99.0), 0.6, 0.6, {
+	name="exchange",
+	heading=0.0,
+	debugPoly=false,
+	minZ=-98.95,
+	maxZ=-98.35
+	}, {
+		options = {
+			{
+            	type = "client",
+            	event = "qb-crypto:client:startHack",
+				icon = "fas fa-usb-drive",
+				label = "Start Crypto Exchange",
+			},
+		},
+		distance = 3.5
+})

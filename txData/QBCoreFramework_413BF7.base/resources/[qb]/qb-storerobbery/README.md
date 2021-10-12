@@ -1,21 +1,19 @@
 # qb-storerobbery
 Store Robberies For QB-Core
+Edited by Nathan#8860
 
-# License
+# Reworked qb-storerobbery
+Hit the cash registers to get quick cash (10-20 secs [advanced lockpick], 20-40 secs [lockpick])
+10% chance to get a Safe Cracker from hitting the cash registers
+You can use the Safe Cracker to trigger the memory game on a 5x5 grid or use the standard 6x6 (I considered this too difficult for a simple store)
+3 Minute timer for the safe to open - Configurable in Config.SafeWait
+Target options added to the safe for opening and grabbing loot
+Uses a circle based lock for the cash registers
 
-    QBCore Framework
-    Copyright (C) 2021 Joshua Eger
+# Dependancies
+- qb-lock - https://github.com/ArcadiaRoleplay/qb-lock
+- memorygame_2 - https://github.com/ArcadiaRoleplay/memorygame_2
+- qb-target - https://github.com/BerkieBb/qb-target
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>
-
+# Shared.lua item
+	["safecracker"] 			 	 = {["name"] = "safecracker", 			 		["label"] = "Safe Cracker", 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "advancedlockpick.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Useful for opening strong locks."},

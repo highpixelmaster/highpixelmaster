@@ -1,7 +1,7 @@
 -- Framework Stuff ---------------------------------------------------------------
 
 QBCore.Functions.CreateCallback('linden_outlawalert:isVehicleOwned', function(source, cb, plate)
-	exports.ghmattimysql:execute('SELECT plate FROM player_vehicles WHERE plate = @plate', {
+	exports.oxmysql:execute('SELECT plate FROM player_vehicles WHERE plate = @plate', {
 		['@plate'] = plate
 	}, function(result)
 		if result[1] then
