@@ -542,10 +542,9 @@ Citizen.CreateThread(function()
             local takeDist = #(pos - vector3(Garages[k].takeVehicle.x, Garages[k].takeVehicle.y, Garages[k].takeVehicle.z))
             if takeDist <= 15 then
                 inGarageRange = true
-                DrawMarker(2, Garages[k].takeVehicle.x, Garages[k].takeVehicle.y, Garages[k].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                 if takeDist <= 1.5 then
                     if not IsPedInAnyVehicle(ped) then
-                        DrawText3Ds(Garages[k].takeVehicle.x, Garages[k].takeVehicle.y, Garages[k].takeVehicle.z + 0.5, '~g~E~w~ - Garage')
+                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Open Garage")
                         if IsControlJustPressed(1, 177) and not Menu.hidden then
                             close()
                             PlaySound(-1, "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", 0, 0, 1)
@@ -564,6 +563,7 @@ Citizen.CreateThread(function()
 
                 if takeDist >= 4 and not Menu.hidden then
                     closeMenuFull()
+
                 end
             end
 
@@ -571,9 +571,8 @@ Citizen.CreateThread(function()
 
             if putDist <= 25 and IsPedInAnyVehicle(ped) then
                 inGarageRange = true
-                DrawMarker(2, Garages[k].putVehicle.x, Garages[k].putVehicle.y, Garages[k].putVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 255, 255, 255, 255, false, false, false, true, false, false, false)
                 if putDist <= 1.5 then
-                    DrawText3Ds(Garages[k].putVehicle.x, Garages[k].putVehicle.y, Garages[k].putVehicle.z + 0.5, '~g~E~w~ - Park Vehicle')
+                    TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Park the Whip")
                     if IsControlJustPressed(0, 38) then
                         local curVeh = GetVehiclePedIsIn(ped)
                         local plate = GetVehicleNumberPlateText(curVeh)
@@ -602,6 +601,7 @@ Citizen.CreateThread(function()
         end
 
         if not inGarageRange then
+            TriggerEvent('cd_drawtextui:HideUI')
             Citizen.Wait(1000)
         end
     end
@@ -636,10 +636,9 @@ Citizen.CreateThread(function()
                 local ballasDist = #(pos - vector3(GangGarages[Name].takeVehicle.x, GangGarages[Name].takeVehicle.y, GangGarages[Name].takeVehicle.z))
                 if ballasDist <= 15 then
                     inGarageRange = true
-                    DrawMarker(2, GangGarages[Name].takeVehicle.x, GangGarages[Name].takeVehicle.y, GangGarages[Name].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                     if ballasDist <= 1.5 then
                         if not IsPedInAnyVehicle(ped) then
-                            DrawText3Ds(GangGarages[Name].takeVehicle.x, GangGarages[Name].takeVehicle.y, GangGarages[Name].takeVehicle.z + 0.5, '~g~E~w~ - Garage')
+                            TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Open Garage")
                             if IsControlJustPressed(1, 177) and not Menu.hidden then
                                 close()
                                 PlaySound(-1, "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", 0, 0, 1)
@@ -665,9 +664,8 @@ Citizen.CreateThread(function()
 
                 if putDist <= 25 and IsPedInAnyVehicle(ped) then
                     inGarageRange = true
-                    DrawMarker(2, GangGarages[Name].putVehicle.x, GangGarages[Name].putVehicle.y, GangGarages[Name].putVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 255, 255, 255, 255, false, false, false, true, false, false, false)
                     if putDist <= 1.5 then
-                        DrawText3Ds(GangGarages[Name].putVehicle.x, GangGarages[Name].putVehicle.y, GangGarages[Name].putVehicle.z + 0.5, '~g~E~w~ - Park Vehicle')
+                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Park the Whip")
                         if IsControlJustPressed(0, 38) then
                             local curVeh = GetVehiclePedIsIn(ped)
                             local plate = GetVehicleNumberPlateText(curVeh)
@@ -700,6 +698,8 @@ Citizen.CreateThread(function()
         end
         if not inGarageRange then
             Citizen.Wait(1000)
+            TriggerEvent('cd_drawtextui:HideUI')
+
         end
     end
 end)
@@ -717,10 +717,9 @@ Citizen.CreateThread(function()
                 local takeDist = #(pos - vector3(HouseGarages[currentHouseGarage].takeVehicle.x, HouseGarages[currentHouseGarage].takeVehicle.y, HouseGarages[currentHouseGarage].takeVehicle.z))
                 if takeDist <= 15 then
                     inGarageRange = true
-                    DrawMarker(2, HouseGarages[currentHouseGarage].takeVehicle.x, HouseGarages[currentHouseGarage].takeVehicle.y, HouseGarages[currentHouseGarage].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                     if takeDist < 2.0 then
                         if not IsPedInAnyVehicle(ped) then
-                            DrawText3Ds(HouseGarages[currentHouseGarage].takeVehicle.x, HouseGarages[currentHouseGarage].takeVehicle.y, HouseGarages[currentHouseGarage].takeVehicle.z + 0.5, '~g~E~w~ - Garage')
+                            TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Open Garage")
                             if IsControlJustPressed(1, 177) and not Menu.hidden then
                                 close()
                                 PlaySound(-1, "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", 0, 0, 1)
@@ -730,7 +729,7 @@ Citizen.CreateThread(function()
                                 Menu.hidden = not Menu.hidden
                             end
                         elseif IsPedInAnyVehicle(ped) then
-                            DrawText3Ds(HouseGarages[currentHouseGarage].takeVehicle.x, HouseGarages[currentHouseGarage].takeVehicle.y, HouseGarages[currentHouseGarage].takeVehicle.z + 0.5, '~g~E~w~ - To Park')
+                            TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Park the Whip")
                             if IsControlJustPressed(0, 38) then
                                 local curVeh = GetVehiclePedIsIn(ped)
                                 local plate = GetVehicleNumberPlateText(curVeh)
@@ -772,6 +771,7 @@ Citizen.CreateThread(function()
 
         if not inGarageRange then
             Citizen.Wait(5000)
+            TriggerEvent('cd_drawtextui:HideUI')
         end
     end
 end)
@@ -788,10 +788,9 @@ Citizen.CreateThread(function()
             local takeDist = #(pos - vector3(Depots[k].takeVehicle.x, Depots[k].takeVehicle.y, Depots[k].takeVehicle.z))
             if takeDist <= 15 then
                 inGarageRange = true
-                DrawMarker(2, Depots[k].takeVehicle.x, Depots[k].takeVehicle.y, Depots[k].takeVehicle.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                 if takeDist <= 1.5 then
                     if not IsPedInAnyVehicle(ped) then
-                        DrawText3Ds(Depots[k].takeVehicle.x, Depots[k].takeVehicle.y, Depots[k].takeVehicle.z + 0.5, '~g~E~w~ - Garage')
+                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Open Garage")
                         if IsControlJustPressed(1, 177) and not Menu.hidden then
                             close()
                             PlaySound(-1, "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", 0, 0, 1)
@@ -814,6 +813,8 @@ Citizen.CreateThread(function()
 
         if not inGarageRange then
             Citizen.Wait(5000)
+            TriggerEvent('cd_drawtextui:HideUI')
+
         end
     end
 end)

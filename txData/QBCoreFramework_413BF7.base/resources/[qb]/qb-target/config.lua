@@ -216,6 +216,7 @@ Config.TargetModels = {
 
 Config.GlobalPedOptions = {
 
+
 }
 
 Config.GlobalVehicleOptions = {
@@ -227,6 +228,7 @@ Config.GlobalObjectOptions = {
 }
 
 Config.GlobalPlayerOptions = {
+
 
 }
 

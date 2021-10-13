@@ -26,9 +26,8 @@ Citizen.CreateThread(function()
                 local dist = #(PlayerPos - vector3(loc["x"], loc["y"], loc["z"]))
                 if dist < 10 then
                     InRange = true
-                    DrawMarker(2, loc["x"], loc["y"], loc["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 255, 255, 155, 0, 0, 0, 1, 0, 0, 0)
                     if dist < 1 then
-                        DrawText3Ds(loc["x"], loc["y"], loc["z"] + 0.15, '~g~E~w~ - Shop')
+                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Open Shop")
                         if IsControlJustPressed(0, 38) then -- E
                             local ShopItems = {}
                             ShopItems.items = {}
@@ -69,6 +68,7 @@ Citizen.CreateThread(function()
 
         if not InRange then
             Citizen.Wait(5000)
+            TriggerEvent('cd_drawtextui:HideUI')
         end
         Citizen.Wait(5)
     end

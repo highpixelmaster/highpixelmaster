@@ -98,6 +98,14 @@ Config.Products = {
             type = "item",
             slot = 12,
         },
+        [13] = {
+            name = "lotto",
+            price = 500,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 13,
+        },
     },
 
     ["VendingItem"] = {
@@ -461,33 +469,82 @@ Config.Products = {
             requiredJob = {"mechanic"}
         },
         [3] = {
-            name = 'tunerlaptop',
-            price = 15000,
-            amount = 3,
-            info = {},
-            type = 'item',
-            slot = 3,
-            requiredJob = {"mechanic"}
-        },
-        [4] = {
             name = 'advancedrepairkit',
             price = 750,
             amount = 10,
             info = {},
             type = 'item',
-            slot = 2,
-            requiredJob = {"mechanic"}
-        },
-        [5] = {
-            name = 'nitrous',
-            price = 5000,
-            amount = 5,
-            info = {},
-            type = 'item',
-            slot = 5,
+            slot = 3,
             requiredJob = {"mechanic"}
         },
     },
+    
+    ["tuner"] = {
+        [1] = {
+            name = 'repairkit',
+            price = 300,
+            amount = 25,
+            info = {},
+            type = 'item',
+            slot = 1,
+            requiredJob = {"mechanic2"}
+        },
+        [2] = {
+            name = 'advancedlockpick',
+            price = 500,
+            amount = 15,
+            info = {},
+            type = 'item',
+            slot = 4,
+            requiredJob = {"mechanic2"}
+        },
+        [3] = {
+            name = 'tunerlaptop',
+            price = 100000,
+            amount = 1,
+            info = {},
+            type = 'item',
+            slot = 3,
+            requiredJob = {"mechanic2"}
+        },
+        [4] = {
+            name = 'advancedrepairkit',
+            price = 750,
+            amount = 15,
+            info = {},
+            type = 'item',
+            slot = 2,
+            requiredJob = {"mechanic2"}
+        },
+        [5] = {
+            name = 'nitrous',
+            price = 7500,
+            amount = 15,
+            info = {},
+            type = 'item',
+            slot = 5,
+            requiredJob = {"mechanic2"}
+        },
+        [6] = {
+            name = 'harness',
+            price = 500,
+            amount = 50,
+            info = {},
+            type = 'item',
+            slot = 6,
+            requiredJob = {"mechanic2"}
+        },
+        [7] = {
+            name = 'tunerkey',
+            price = 1,
+            amount = 2,
+            info = {},
+            type = 'item',
+            slot = 7,
+            requiredJob = {"mechanic2"}
+        },
+    },
+
     ["digitalden"] = {
         [1] = {
             name = "phone",
@@ -542,6 +599,15 @@ Config.Locations = {
             [1] = vector3(-40.04, -1056.02, 28.4)
         },
         ["products"] = Config.Products["bennys"],
+        ["showblip"] = false,
+    },
+    ["tuner"] = {
+        ["label"] = "Tuner Shop",
+        ["type"] = "normal",
+        ["coords"] = {
+            [1] = vector3(147.72, -3013.33, 7.04)
+        },
+        ["products"] = Config.Products["tuner"],
         ["showblip"] = false,
     },
     ["casino"] = {

@@ -19,9 +19,9 @@ QB.Spawns = {
         label = "Legion Sqaure Parking",
     },
 
-    ["motel"] = {
-        coords = vector4(327.56, -205.08, 53.08, 163.5),
-        location = "motel",
-        label = "Motels",
+    ["tuner"] = {
+        coords = vector4(216.36, -3030.21, 5.83, 90.0),
+        location = "tuner",
+        label = "Tuner Shop",
     },
 }

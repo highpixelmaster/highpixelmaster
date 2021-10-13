@@ -281,6 +281,17 @@ QBShared.Items = {
 	["drill"] 				 		 = {["name"] = "drill", 			    		["label"] = "Drill", 					["weight"] = 20000, 	["type"] = "item", 		["image"] = "drill.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "The real deal..."},
 	["weed_white-widow"] 			 = {["name"] = "weed_white-widow", 			 	["label"] = "White Widow 2g", 			["weight"] = 200, 		["type"] = "item", 		["image"] = "weed-baggie.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A weed bag with 2g White Widow"},
 	["weed_skunk"] 				  	 = {["name"] = "weed_skunk", 			 		["label"] = "Skunk 2g", 				["weight"] = 200, 		["type"] = "item", 		["image"] = "weed-baggie.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A weed bag with 2g Skunk"},
+	["lotto"] = {
+		["name"] = "lotto",
+		["label"] = "Lotto ticket",
+		["weight"] = 10,
+		["type"] = "item", 
+		["image"] = "lotto.png",
+		["unique"] = false, 
+		["useable"] = true, 
+		["shouldClose"] = true,  
+		["combinable"] = nil,  
+		["description"] = "Lucky Ticket"},
 	["weed_purple-haze"] 			 = {["name"] = "weed_purple-haze", 			 	["label"] = "Purple Haze 2g", 			["weight"] = 200, 		["type"] = "item", 		["image"] = "weed-baggie.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A weed bag with 2g Purple Haze"},
 	["weed_og-kush"] 				 = {["name"] = "weed_og-kush", 			 		["label"] = "OGKush 2g", 				["weight"] = 200, 		["type"] = "item", 		["image"] = "weed-baggie.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A weed bag with 2g OG Kush"},
 	["weed_amnesia"] 				 = {["name"] = "weed_amnesia", 			 		["label"] = "Amnesia 2g", 				["weight"] = 200, 		["type"] = "item", 		["image"] = "weed-baggie.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A weed bag with 2g Amnesia"},
@@ -316,6 +327,8 @@ QBShared.Items = {
 	["rolling_paper"] 			 	 = {["name"] = "rolling_paper", 			  	["label"] = "Rolling Paper", 			["weight"] = 0, 		["type"] = "item", 		["image"] = "rolling_paper.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,	   ["combinable"] = {accept = {"weed_white-widow", "weed_skunk", "weed_purple-haze", "weed_og-kush", "weed_amnesia", "weed_ak47"}, reward = "joint", anim = {["dict"] = "anim@amb@business@weed@weed_inspecting_high_dry@", ["lib"] = "weed_inspecting_high_base_inspector", ["text"] = "Rolling joint", ["timeOut"] = 5000,}},   ["description"] = "Paper made specifically for encasing and smoking tobacco or cannabis."},
 	["radio"] 			 	 		 = {["name"] = "radio", 			  			["label"] = "Radio", 					["weight"] = 2000, 		["type"] = "item", 		["image"] = "radio.png", 				["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "You can communicate with this through a signal"},
 	["safecracker"] 			 	 = {["name"] = "safecracker", 			 		["label"] = "Safe Key", 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "labkey.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Useful for opening safes?"},
+	["tunerkey"] 			 		 = {["name"] = "tunerkey", 			 			["label"] = "Door Keys", 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "labkey.png", 			["unique"] = true, 		["useable"] = false, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Who Trusted you with these keys?"},
+
 	["stickynote"] 			 	 	 = {["name"] = "stickynote", 			  		["label"] = "Sticky note", 				["weight"] = 0, 		["type"] = "item", 		["image"] = "stickynote.png", 			["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Sometimes handy to remember something :)"},
 	["phone"] 			 	 	 	 = {["name"] = "phone", 			  			["label"] = "Phone", 					["weight"] = 700, 		["type"] = "item", 		["image"] = "phone.png", 				["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Neat phone ya got there"},
 	["fitbit"] 			 	 	 	 = {["name"] = "fitbit", 			  			["label"] = "Fitbit", 					["weight"] = 500, 		["type"] = "item", 		["image"] = "fitbit.png", 				["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "I like fitbit"},
@@ -854,29 +867,57 @@ QBShared.Jobs = {
         },
 	},
 	["mechanic"] = {
-		label = "Mechanic",
+		label = "Bennys Mechanic",
 		defaultDuty = true,
 		grades = {
             ['0'] = {
-                name = "Recruit",
+                name = "Employee",
                 payment = 100
             },
 			['1'] = {
-                name = "Novice",
+                name = "Senior Employee",
                 payment = 250
             },
 			['2'] = {
-                name = "Experienced",
+                name = "Manager",
                 payment = 500
             },
 			['3'] = {
-                name = "Advanced",
+                name = "COO",
                 payment = 750
             },
 			['4'] = {
-                name = "Manager",
+                name = "CEO",
 				isboss = true,
                 payment = 1000
+            },
+        },
+	},
+	["mechanic2"] = {
+		label = "Turner Shop",
+		defaultDuty = true,
+		grades = {
+            ['0'] = {
+                name = "Mechanic",
+                payment = 250
+            },
+			['1'] = {
+                name = "Tuner",
+                payment = 500
+            },
+			['2'] = {
+                name = "Vehicle Sales Team",
+                payment = 750
+            },
+			['3'] = {
+                name = "Management",
+				isboss = true,
+                payment = 1000
+            },
+			['4'] = {
+                name = "Founder",
+				isboss = true,
+                payment = 1250
             },
         },
 	},
@@ -3773,15 +3814,6 @@ QBShared.Vehicles = {
 		["hash"] = `novak`,
 		["shop"] = "pdm",
 	},
-	["oppressor"] = {
-		["name"] = "Oppressor",
-		["brand"] = "Pegassi",
-		["model"] = "oppressor",
-		["price"] = 9999999,
-		["category"] = "super",
-		["hash"] = `oppressor`,
-		["shop"] = "pdm",
-	},
 	["outlaw"] = {
 		["name"] = "Outlaw",
 		["brand"] = "Nagasaki",
@@ -4417,13 +4449,13 @@ QBShared.Vehicles = {
 		["hash"] = `viseris`,
 		["shop"] = "pdm",
 	},
-	["voltic2"] = {
-		["name"] = "Rocket Voltic",
-		["brand"] = "Coil",
-		["model"] = "voltic2",
-		["price"] = 9830400,
+	["veto2"] = {
+		["name"] = "GO KART",
+		["brand"] = "Dink",
+		["model"] = "veto2",
+		["price"] = 1500,
 		["category"] = "super",
-		["hash"] = `voltic2`,
+		["hash"] = `veto2`,
 		["shop"] = "pdm",
 	},
 	["vortex"] = {

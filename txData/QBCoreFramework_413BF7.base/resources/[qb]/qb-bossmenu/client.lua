@@ -169,7 +169,7 @@ CreateThread(function()
                 if k == PlayerJob.name and PlayerJob.isboss then
                     if #(pos - v) < 1.0 then
                         sleep = 7
-                        DrawText3D(v, "~g~E~w~ - Boss Menu")
+                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Manage Business")
                         if IsControlJustReleased(0, 38) then
                             MenuV:OpenMenu(menu)
                         end

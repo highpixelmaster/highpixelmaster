@@ -362,14 +362,13 @@ Citizen.CreateThread(function()
 		local dist = #(pos - Config.Stores[k].coords)
                 if dist < 30 then
                     if not creatingCharacter then
-                        DrawMarker(2, Config.Stores[k].coords.x,Config.Stores[k].coords.y,Config.Stores[k].coords.z + 0.98, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.2, 255, 255, 255, 255, 0, 0, 0, 1, 0, 0, 0)
                         if dist < 5 then
                             if Config.Stores[k].shopType == "clothing" then
-                                 DrawText3Ds(Config.Stores[k].coords.x, Config.Stores[k].coords.y, Config.Stores[k].coords.z + 1.25, '~g~E~w~ - To Shop For Clothes')
+                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Shop for Clothing")
                             elseif Config.Stores[k].shopType == "barber" then
-                                DrawText3Ds(Config.Stores[k].coords.x, Config.Stores[k].coords.y, Config.Stores[k].coords.z + 1.25, '~g~E~w~ - To Get A Haircut')
+                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Like ya cut G")
                             elseif Config.Stores[k].shopType == "surgeon" then
-                                DrawText3Ds(Config.Stores[k].coords.x, Config.Stores[k].coords.y, Config.Stores[k].coords.z + 1.25, '~g~E~w~ - To Get Plastic Surgery')
+                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Fix that grill")
                             end
                             if IsControlJustPressed(0, 38) then -- E
                                 if Config.Stores[k].shopType == "clothing" then
@@ -397,6 +396,8 @@ Citizen.CreateThread(function()
             end
 
             if not inRange then
+                TriggerEvent('cd_drawtextui:HideUI')
+
                 Citizen.Wait(2000)
             end
 
