@@ -694,9 +694,13 @@ end)
 
 QBCore.Functions.CreateUseableItem("police_stormram", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
+    local plyPed = GetPlayerPed(-1)
+    local plyPos = GetEntityCoords(plyPed)
+    local plyHeading = GetEntityHeading(plyPed)
 
     if (Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty) then
         TriggerClientEvent("qb-houses:client:HomeInvasion", source)
+        TriggerClientEvent("nui_doorlock:client:BreakDoor", source)
     else
         TriggerClientEvent('QBCore:Notify', source, "This is only possible for emergency services!", "error")
     end

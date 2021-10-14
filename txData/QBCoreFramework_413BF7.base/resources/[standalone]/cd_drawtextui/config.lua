@@ -15,7 +15,7 @@ Config.Locations = {
 		eventname = '',
 		text = '<b>[E] Enter Shop</b>'
 	},
-	[2] = {
+	[3] = {
 		coords = vector3(434.77, -975.89, 25.02),
 		distance = 25,
 		key = 38,

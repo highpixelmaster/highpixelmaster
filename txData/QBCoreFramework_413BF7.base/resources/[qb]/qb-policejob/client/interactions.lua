@@ -399,9 +399,11 @@ end)
 RegisterNetEvent('police:client:GetCuffed')
 AddEventHandler('police:client:GetCuffed', function(playerId, isSoftcuff)
     if not isHandcuffed then
-        local seconds = math.random(3,6)
+        local seconds = math.random(4,8)
         local success = exports['qb-lockgame']:StartLockPickCircle(1, seconds, success)
         print(success)
+        GetCuffedAnimation(playerId)
+
         if not success then
             isHandcuffed = true
             TriggerServerEvent("police:server:SetHandcuffStatus", true)
