@@ -784,6 +784,7 @@ AddEventHandler('inventory:server:SetInventoryData', function(fromInventory, toI
 			end
 		elseif QBCore.Shared.SplitStr(shopType, "_")[1] == "Itemshop" then
 			if Player.Functions.RemoveMoney("cash", price, "itemshop-bought-item") then
+				if itemData.name == 'duffel-bag' then itemData.info.bagid = math.random(11111,99999) end
 				if QBCore.Shared.SplitStr(itemData.name, "_")[1] == "weapon" then
                     itemData.info.serie = tostring(Config.RandomInt(2) .. Config.RandomStr(3) .. Config.RandomInt(1) .. Config.RandomStr(2) .. Config.RandomInt(3) .. Config.RandomStr(4))
                 end
@@ -1474,6 +1475,8 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 					info.uses = 20
 				elseif itemData["name"] == "markedbills" then
 					info.worth = math.random(5000, 10000)
+				elseif itemData['name'] == 'duffel-bag' then
+					info.bagid = math.random(11111,99999)
 				elseif itemData["name"] == "labkey" then
 					info.lab = exports["qb-methlab"]:GenerateRandomLab()
 				elseif itemData["name"] == "printerdocument" then

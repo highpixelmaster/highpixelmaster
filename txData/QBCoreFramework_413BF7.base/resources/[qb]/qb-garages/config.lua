@@ -111,6 +111,13 @@ Garages = {
         putVehicle = vector3(445.74, -991.31, 25.38),
         showBlip = false
     },
+    ["tunergarage"] = {
+        label = "Tuner Garage",
+        takeVehicle = vector3(161.43, -3013.1, 5.97),
+        spawnPoint = vector4(162.59, -3006.13, 5.95, 268.61),
+        putVehicle = vector3(162.47, -3009.03, 5.95),
+        showBlip = true
+    },
 }
 
 HouseGarages = {}

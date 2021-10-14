@@ -135,6 +135,25 @@ Config.Products = {
         },
     },
 
+    ["Fishing"] = {
+        [1] = {
+            name = "fishingrod",
+            price = 50,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 1,
+        },
+        [2] = {
+            name = "bait",
+            price = 50,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 2,
+        },
+    },
+
     ["hardware"] = {
         [1] = {
             name = "lockpick",
@@ -1033,5 +1052,24 @@ Config.Coffee = {
         info = {},
         type = "item",
         slot = 1,
+    },
+}
+
+Config.FishingShop = {
+    [1] = {
+        name = "fishingrod",
+        price = 50,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 1,
+    },
+    [2] = {
+        name = "fishbait",
+        price = 50,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 2,
     },
 }

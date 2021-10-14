@@ -5,7 +5,7 @@ Crypto = {
     },
 
     Worth = {
-        ["qbit"] = 0
+        ["qbit"] = 800
     },
     
     Labels = {

@@ -22,6 +22,7 @@ Config.Rewards = {
             "handcuffs",
             "weapon_knife",
             "trojan_usb",
+            "standard_cpu",
         },
         ["kitchen"] = {
             "tosti",
@@ -46,7 +47,9 @@ Config.Rewards = {
             "weapon_combatpistol",
             "electronickit",
             "goldbar",
-            "skateboard"
+            "skateboard",
+            "e2_cpu",
+            "quantum_cpu"
         },
     }
 }

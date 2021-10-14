@@ -114,6 +114,16 @@ AddEventHandler("qb-shops:client:UseVending", function()
         TriggerServerEvent("inventory:server:OpenInventory", "shop", "Vendingshop_"..math.random(1, 99), ShopItems)
 end)
 
+
+RegisterNetEvent("qb-shops:client:BuyFishStuff")
+AddEventHandler("qb-shops:client:BuyFishStuff", function()
+        local ShopItems = {}
+        ShopItems.label = "Fish Stuff"
+        ShopItems.items = Config.FishingShop
+        ShopItems.slots = #Config.FishingShop
+        TriggerServerEvent("inventory:server:OpenInventory", "shop", "Fishing_"..math.random(1, 99), ShopItems)
+end)
+
 RegisterNetEvent("qb-shops:client:UseVending2")
 AddEventHandler("qb-shops:client:UseVending2", function()
         local ShopItems = {}

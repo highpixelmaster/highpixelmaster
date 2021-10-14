@@ -382,22 +382,23 @@ QBShared.Items = {
 	["grape"] 					 	 = {["name"] = "grape", 						["label"] = "Grape", 					["weight"] = 100, 		["type"] = "item", 		["image"] = "grape.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Mmmmh yummie, grapes"},
 	["wine"] 					 	 = {["name"] = "wine", 							["label"] = "Wine", 					["weight"] = 300, 		["type"] = "item", 		["image"] = "wine.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Some good wine to drink on a fine evening"},
 	["grapejuice"] 					 = {["name"] = "grapejuice", 					["label"] = "Grape Juice", 				["weight"] = 200, 		["type"] = "item", 		["image"] = "grapejuice.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Grape juice is said to be healthy"},
-	["cocaleaf"] 					 = {["name"] = "cocaleaf", 						["label"] = "Cocaine Leaf", 			["weight"] = 200, 		["type"] = "item", 		["image"] = "cocaineleaf.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Make that white girl"},
-	["fish"] 			 		 	 = {["name"] = "fish", 							["label"] = "Fish",                     ["weight"] = 1100,      ["type"] = "item",      ["image"] = "fish.png",                 ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A normal fish Tatses pretty good!"},
-	["killerwhalemeat"] 			 = {["name"] = "killerwhalemeat", 				["label"] = "Killer Whale Meat",        ["weight"] = 1100,      ["type"] = "item",      ["image"] = "killerwhalemeat.png",      ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Meat cut from a Killer Whale"},
-	["stingraymeat"] 			     = {["name"] = "stingraymeat", 				    ["label"] = "Stingray Meat",            ["weight"] = 1111,      ["type"] = "item",      ["image"] = "stingraymeat.png",         ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Stingray Meat"},
-	["tigersharkmeat"] 			     = {["name"] = "tigersharkmeat", 				["label"] = "Tigershark Meat",          ["weight"] = 1111,      ["type"] = "item",      ["image"] = "tigersharkmeat.png",       ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Meat cut from a Tigershark"},
-	["catfish"] 			         = {["name"] = "catfish", 				        ["label"] = "Catfish",                  ["weight"] = 1111,      ["type"] = "item",      ["image"] = "catfish.png",              ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A Catfish"},
-	["salmon"] 			             = {["name"] = "salmon", 				        ["label"] = "Salmon",                   ["weight"] = 1111,      ["type"] = "item",      ["image"] = "salmon.png",               ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A Salmon Fish"},
-	["largemouthbass"] 			     = {["name"] = "largemouthbass", 				["label"] = "Largemouth Bass",          ["weight"] = 1111,      ["type"] = "item",      ["image"] = "largemouthbass.png",       ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
-	["goldfish"] 			         = {["name"] = "goldfish", 			        	["label"] = "Goldfish",                 ["weight"] = 1111,      ["type"] = "item",      ["image"] = "goldfish.png",             ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A Goldfish... I wonder how he got there..."},
-	["redfish"] 			         = {["name"] = "redfish", 			        	["label"] = "Redfish",                  ["weight"] = 1111,      ["type"] = "item",      ["image"] = "redfish.png",              ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "One fish two fish..."},
-	["bluefish"] 			         = {["name"] = "bluefish", 			        	["label"] = "Bluefish",                 ["weight"] = 1111,      ["type"] = "item",      ["image"] = "bluefish.png",             ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "One fish two fish redfish..."},
-	["stripedbass"] 			     = {["name"] = "stripedbass", 			        ["label"] = "Striped Bass",             ["weight"] = 1111,      ["type"] = "item",      ["image"] = "stripedbass.png",          ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A Striped Bass"},
+	["cocaleaf"] 					 = {["name"] = "cocaleaf", 						["label"] = "Cocaine Leaf", 			["weight"] = 200, 		["type"] = "item", 		["image"] = "cocaineleaf.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Make that white girl"},	["fish"] 			 		 	 = {["name"] = "fish", 							["label"] = "Fish",                     ["weight"] = 1100,      ["type"] = "item",      ["image"] = "fish.png",                 ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["killerwhalemeat"] 			 = {["name"] = "killerwhalemeat", 				["label"] = "killerwhalemeat",          ["weight"] = 1100,      ["type"] = "item",      ["image"] = "killerwhalemeat.png",      ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["stingraymeat"] 			     = {["name"] = "stingraymeat", 				    ["label"] = "stingraymeat",              ["weight"] = 1111,      ["type"] = "item",      ["image"] = "stingraymeat.png",         ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["tigersharkmeat"] 			     = {["name"] = "tigersharkmeat", 				["label"] = "tigersharkmeat",            ["weight"] = 1111,      ["type"] = "item",      ["image"] = "tigersharkmeat.png",       ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["catfish"] 			         = {["name"] = "catfish", 				        ["label"] = "catfish",                   ["weight"] = 1111,      ["type"] = "item",      ["image"] = "catfish.png",              ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["salmon"] 			             = {["name"] = "salmon", 				        ["label"] = "salmon",                    ["weight"] = 1111,      ["type"] = "item",      ["image"] = "salmon.png",               ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["largemouthbass"] 			     = {["name"] = "largemouthbass", 				["label"] = "largemouthbass",            ["weight"] = 1111,      ["type"] = "item",      ["image"] = "largemouthbass.png",       ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["goldfish"] 			         = {["name"] = "goldfish", 			        	["label"] = "goldfish",                  ["weight"] = 1111,      ["type"] = "item",      ["image"] = "goldfish.png",             ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["redfish"] 			         = {["name"] = "redfish", 			        	["label"] = "redfish",                   ["weight"] = 1111,      ["type"] = "item",      ["image"] = "redfish.png",              ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["bluefish"] 			         = {["name"] = "bluefish", 			        	["label"] = "bluefish",                  ["weight"] = 1111,      ["type"] = "item",      ["image"] = "bluefish.png",             ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
+	["stripedbass"] 			     = {["name"] = "stripedbass", 			        ["label"] = "stripedbass",               ["weight"] = 1111,      ["type"] = "item",      ["image"] = "stripedbass.png",          ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
 	["fishingrod"] 			 		 = {["name"] = "fishingrod", 					["label"] = "Fishing Rod", 				["weight"] = 5000, 		["type"] = "item", 		["image"] = "fishingrod.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "A fishing rod for adventures with friends!!"},	
-	["fishingbait"] 			     = {["name"] = "fishingbait", 					["label"] = "Fish Bait", 				["weight"] = 400, 		["type"] = "item", 		["image"] = "fishbait.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "A fish bait"},
-	["fishingbait"] 			     = {["name"] = "fishingbait", 					["label"] = "Fish Bait", 				["weight"] = 400, 		["type"] = "item", 		["image"] = "fishbait.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "A fish bait"},
-	["skateboard"] 		 	 		 = {["name"] = "skateboard", 					["label"] = "Skateboard", 			["weight"] = 1425, 		["type"] = "item", 			["image"] = "skateboard.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A cool skateboard!"}, 
+	["fishbait"] 			 		 = {["name"] = "fishbait", 						["label"] = "Fish Bait", 				["weight"] = 400, 		["type"] = "item", 		["image"] = "fishbait.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "A fish bait"},["skateboard"] 		 	 		 = {["name"] = "skateboard", 					["label"] = "Skateboard", 			["weight"] = 1425, 		["type"] = "item", 			["image"] = "skateboard.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A cool skateboard!"}, 
+	["standard_cpu"] 			 	 = {["name"] = "standard_cpu", 			  			["label"] = "Standard Cpu", 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "standard_cpu.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sometimes you'd want everything to burn.."},	
+	["e2_cpu"] 			 	 	     = {["name"] = "e2_cpu", 			  			["label"] = "E2", 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "e2_cpu.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sometimes you'd want everything to burn.."},	
+	["quantum_cpu"] 			 	 	 = {["name"] = "quantum_cpu", 			  			["label"] = "Quantum", 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "quantum_cpu.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sometimes you'd want everything to burn.."},
+
 
 	--Joints--
 	["og_kush"] 					 = {["name"] = "og_kush", 			  	  		["label"] = "OG-Kush", 					["weight"] = 0, 		["type"] = "item", 		["image"] = "og-kush.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "OG-Kush Rolled Up"},
@@ -458,6 +459,30 @@ QBShared.Items = {
 ['chair']                          = {['name'] = 'chair',                             ['label'] = 'green Chair',             ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'chair.png',                 ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Kick back and Relax'},
 ['chair2']                          = {['name'] = 'chair2',                             ['label'] = 'Plad Chair',             ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'chair2.png',                 ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Kick back and Relax'},
 ['chair3']                          = {['name'] = 'chair3',                             ['label'] = 'Blue Chair',             ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'chair3.png',                 ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Kick back and Relax'},    
+["duffel-bag"] = {
+	["name"] = "duffel-bag",
+	["label"] = "Bag",
+	["weight"] = 5000,
+	["type"] = "item",
+	["image"] = "duffel.png",
+	["unique"] = true,
+	["useable"] = true,
+	["shouldClose"] = false,
+	["combinable"] = nil,   
+	["description"] = "im bag im baag im baaaaag"
+	},
+	["nightvision"] = {
+        ["name"] = "nightvision",
+        ["label"] = "Night Vision goggles",
+        ["weight"] = 5,
+        ["type"] = "item",
+        ["image"] = "nightvision.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Bravo Six, going dark"
+	},
 -- // HASH WEAPON ITEMS, NEED SOMETIMES TO GET INFO FOR CLIENT
 	}
 QBShared.Weapons = {
@@ -4972,4 +4997,346 @@ QBShared.Vehicles = {
 		["hash"] = `16charger`,
 		["shop"] = "luxury",
 	},
+	["500gtrlam"] = {
+        ["name"] = "Lambo",
+        ["brand"] = "500gtr",
+        ["model"] = "500gtrlam",
+        ["price"] = 500000,
+        ["category"] = "Imports",
+        ["hash"] = `500gtrlam`,
+        ["shop"] = "tuner"
+    },
+	["720s"] = {
+        ["name"] = "Mclaren",
+        ["brand"] = "720s",
+        ["model"] = "720s",
+        ["price"] = 500000,
+        ["category"] = "Imports",
+        ["hash"] = `720s`,
+        ["shop"] = "tuner"
+    },
+	["acs8"] = {
+        ["name"] = "BMW",
+        ["brand"] = "I8",
+        ["model"] = "acs8",
+        ["price"] = 500000,
+        ["category"] = "Imports",
+        ["hash"] = `acs8`,
+        ["shop"] = "tuner"
+    },
+	["ap2"] = {
+        ["name"] = "Honda",
+        ["brand"] = "S200",
+        ["model"] = "ap2",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `ap2`,
+        ["shop"] = "tuner"
+    },
+	["audirs6tk"] = {
+        ["name"] = "Audi",
+        ["brand"] = "RS6",
+        ["model"] = "audirs6tk",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `audirs6tk`,
+        ["shop"] = "tuner"
+    },
+	["bmwr"] = {
+        ["name"] = "BMW",
+        ["brand"] = "R1100 RS",
+        ["model"] = "bmwr",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `bmwr`,
+        ["shop"] = "tuner"
+    },
+	["c63"] = {
+        ["name"] = "Mercedes",
+        ["brand"] = "C63 AMG",
+        ["model"] = "c63",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `c63`,
+        ["shop"] = "tuner"
+    },
+	["cp9a"] = {
+        ["name"] = "Mitsubishi",
+        ["brand"] = "Lancer",
+        ["model"] = "cp9a",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `cp9a`,
+        ["shop"] = "tuner"
+    },
+	["dc5"] = {
+        ["name"] = "Honda",
+        ["brand"] = "Integra Type R",
+        ["model"] = "dc5",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `dc5`,
+        ["shop"] = "tuner"
+    },
+	["e36prb"] = {
+        ["name"] = "BMW",
+        ["brand"] = "M3",
+        ["model"] = "e36prb",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `e36prb`,
+        ["shop"] = "tuner"
+    },
+	["ellie6str"] = {
+        ["name"] = "Ellie",
+        ["brand"] = "6STR",
+        ["model"] = "ellie6str",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `ellie6str`,
+        ["shop"] = "tuner"
+    },
+	["evo9"] = {
+        ["name"] = "Mitsubishi",
+        ["brand"] = "Lancer Evolution",
+        ["model"] = "evo9",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `evo9`,
+        ["shop"] = "tuner"
+    },
+	["exor"] = {
+        ["name"] = "Chevrolet",
+        ["brand"] = "ZL1",
+        ["model"] = "exor",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `exor`,
+        ["shop"] = "tuner"
+    },
+	["f150"] = {
+        ["name"] = "Ford F150",
+        ["brand"] = "Raptor",
+        ["model"] = "f150",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `f150`,
+        ["shop"] = "tuner"
+    },
+	["fk8"] = {
+        ["name"] = "Honda",
+        ["brand"] = "Civic TypeR",
+        ["model"] = "fk8",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `fk8`,
+        ["shop"] = "tuner"
+    },
+	["filthynsx"] = {
+        ["name"] = "Acura",
+        ["brand"] = "NSX",
+        ["model"] = "filthynsx",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `filthynsx`,
+        ["shop"] = "tuner"
+    },
+	["fnf4r34"] = {
+        ["name"] = "Nissan GTR",
+        ["brand"] = "R34",
+        ["model"] = "fnf4r34",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `fnf4r34`,
+        ["shop"] = "tuner"
+    },
+	["fnfrx7"] = {
+        ["name"] = "Mazda",
+        ["brand"] = "RX7",
+        ["model"] = "fnfrx7",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `fnfrx7`,
+        ["shop"] = "tuner"
+    },
+	["granlb"] = {
+        ["name"] = "Maserati",
+        ["brand"] = "Widebody",
+        ["model"] = "granlb",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `granlb`,
+        ["shop"] = "tuner"
+    },
+	["gtr"] = {
+        ["name"] = "Nissan GTR",
+        ["brand"] = "R35 LibertyWalk",
+        ["model"] = "gtr",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `gtr`,
+        ["shop"] = "tuner"
+    },
+	["gtrc"] = {
+        ["name"] = "Mercedes",
+        ["brand"] = "GTR",
+        ["model"] = "gtrc",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `gtrc`,
+        ["shop"] = "tuner"
+    },
+	["laferrari17"] = {
+        ["name"] = "Ferrari",
+        ["brand"] = "Laferrari",
+        ["model"] = "laferrari17",
+        ["price"] = 500000,
+        ["category"] = "Imports",
+        ["hash"] = `laferrari17`,
+        ["shop"] = "tuner"
+    },
+	["lfa"] = {
+        ["name"] = "Lexus",
+        ["brand"] = "LFA",
+        ["model"] = "lfa",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `lfa`,
+        ["shop"] = "tuner"
+    },
+	["lp670"] = {
+        ["name"] = "Lambourgini",
+        ["brand"] = "LP670",
+        ["model"] = "lp670",
+        ["price"] = 500000,
+        ["category"] = "Imports",
+        ["hash"] = `lp670`,
+        ["shop"] = "tuner"
+    },
+	["m3e46"] = {
+        ["name"] = "BMW",
+        ["brand"] = "M3 E46 Widebody",
+        ["model"] = "m3e46",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `m3e46`,
+        ["shop"] = "tuner"
+    },
+	["m4"] = {
+        ["name"] = "BMW",
+        ["brand"] = "M4",
+        ["model"] = "m4",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `m4`,
+        ["shop"] = "tuner"
+    },
+	["m5e60"] = {
+        ["name"] = "BMW",
+        ["brand"] = "M5 E60",
+        ["model"] = "m5e60",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `m5e60`,
+        ["shop"] = "tuner"
+    },
+	["mustang19"] = {
+        ["name"] = "Mustang",
+        ["brand"] = "GT",
+        ["model"] = "mustang19",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `mustang19`,
+        ["shop"] = "tuner"
+    },
+	["na1"] = {
+        ["name"] = "Honda",
+        ["brand"] = "NA1",
+        ["model"] = "na1",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `na1`,
+        ["shop"] = "tuner"
+    },
+	["na6"] = {
+        ["name"] = "Mazda",
+        ["brand"] = "Miata",
+        ["model"] = "na6",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `na6`,
+        ["shop"] = "tuner"
+    },
+	["panamera17turbo"] = {
+        ["name"] = "Porsche",
+        ["brand"] = "Panamera",
+        ["model"] = "panamera17turbo",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `panamera17turbo`,
+        ["shop"] = "tuner"
+    },
+	["por930"] = {
+        ["name"] = "Porsche",
+        ["brand"] = "930",
+        ["model"] = "por930",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `por930`,
+        ["shop"] = "tuner"
+    },
+	["r8v10"] = {
+        ["name"] = "Audi",
+        ["brand"] = "R8 V10",
+        ["model"] = "r8v10",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `r8v10`,
+        ["shop"] = "tuner"
+    },
+	["rmodmustang"] = {
+        ["name"] = "Mustang GT",
+        ["brand"] = "Widebody",
+        ["model"] = "rmodmustang",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `rmodmustang`,
+        ["shop"] = "tuner"
+    },
+	["s15rb"] = {
+        ["name"] = "Nissan",
+        ["brand"] = "Silva",
+        ["model"] = "s15rb",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `s15rb`,
+        ["shop"] = "tuner"
+    },
+	["senna"] = {
+        ["name"] = "Mclaren",
+        ["brand"] = "Senna",
+        ["model"] = "senna",
+        ["price"] = 500000,
+        ["category"] = "Imports",
+        ["hash"] = `senna`,
+        ["shop"] = "tuner"
+    },
+	["tsgr20"] = {
+        ["name"] = "Toyota",
+        ["brand"] = "Supra GR",
+        ["model"] = "tsgr20",
+        ["price"] = 150000,
+        ["category"] = "Imports",
+        ["hash"] = `tsgr20`,
+        ["shop"] = "tuner"
+    },
+	["zx10"] = {
+        ["name"] = "Kawasaki",
+        ["brand"] = "ZX10",
+        ["model"] = "zx10",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `zx10`,
+        ["shop"] = "tuner"
+    },
 }

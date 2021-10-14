@@ -227,7 +227,61 @@ QB.VehicleShops = {
                 ["buttons"] = {}
             },
         },
-    }, -- Add your next table under this comma
+    },
+    
+    [4] = {
+        -- Vehicle Shop options
+        ["ShopName"] = "tuner", -- Name to get in the shared.lua
+        ["ShopLabel"] = "Tuner Shop", -- Blip name
+        ["Categories"] = {
+            ["Imports"]  = "Import Vehicles",
+        },
+        ["TestDriveTimeLimit"] = 3, -- Time in minutes until the vehicle gets deleted
+        ["Location"] = vector3(130.32, -3043.95, 7.04), -- Blip Location
+        ["ReturnLocation"] = vector3(125.04, -3041.02, 7.04), -- Location to return vehicle, only enables if the vehicleshop has a job owned
+        ["VehicleSpawn"] = vector4(131.76, -3046.9, 7.04,267.4), -- Spawn location when vehicle is bought
+        ["OwnedJob"] = "mechanic2", -- false or a job inside a string like "cardealer"
+        ["ShowroomVehicles"] = {
+            [1] = {
+                coords = vector4(124.07, -3047.48, 5.62, 304.13),
+                defaultVehicle = 'laferrari17', -- The vehicle that needs to be there on restart
+                chosenVehicle = 'laferrari17', -- Keep this the same as defaultvehicle
+                inUse = false, -- When changing vehicle this gets set to true, don't change
+                buying = false, -- When buying a vehicle from an owned job this gets set to true, don't change
+            }, 
+        },
+        
+        -- Non-changeable options (Don't touch these)
+        ["opened"] = false,
+        ["currentmenu"] = "main",
+        ["lastmenu"] = nil,
+        ["currentpos"] = nil,
+        ["selectedbutton"] = 0,
+        ["marker"] = { r = 0, g = 155, b = 255, a = 250, type = 1 },
+        ["menu"] = {
+            ["x"] = 0.14,
+            ["y"] = 0.15,
+            ["width"] = 0.12,
+            ["height"] = 0.03,
+            ["buttons"] = 10,
+            ["from"] = 1,
+            ["to"] = 10,
+            ["scale"] = 0.29,
+            ["font"] = 0,
+            ["main"] = {
+                ["title"] = "CATEGORIES",
+                ["Name"] = "main",
+                ["buttons"] = {
+                    {name = "Categories", description = ""},
+                }
+            },
+            ["vehicles"] = {
+                ["title"] = "VEHICLES",
+                ["name"] = "vehicles",
+                ["buttons"] = {}
+            },
+        },
+    },-- Add your next table under this comma
 }
 
 QB.GarageLabel = {

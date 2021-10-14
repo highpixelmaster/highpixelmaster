@@ -33,7 +33,7 @@ $(document).on('click', '.racing-race', function(e){
             OpenedRaceElement = this;
         }
     } else {
-        QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "The race already started..", "#1DA1F2");
+        QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "The race already started..", "#FFFFFF");
     }
 });
 
@@ -138,13 +138,13 @@ $(document).on('click', '#join-race', function(e){
                                 SetupRaces(Races);
                             });
                         } else {
-                            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You're in a editor..", "#1DA1F2");
+                            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You're in a editor..", "#FFFFFF");
                         }
                     });
                 }
             })
         } else {
-            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You're already in a race..", "#1DA1F2");
+            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You're already in a race..", "#FFFFFF");
         }
     });
 });
@@ -260,14 +260,14 @@ $(document).on('click', '#create-race', function(e){
                     if (!InRace) {
                         $(".racing-create").fadeIn(200);
                     } else {
-                        QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You're in a race..", "#1DA1F2");
+                        QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You're in a race..", "#FFFFFF");
                     }
                 });
             } else {
-                QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You're already setting up a track..", "#1DA1F2");
+                QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You're already setting up a track..", "#FFFFFF");
             }
         } else {
-            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You don't have rights to make Race Tracks..", "#1DA1F2");
+            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You don't have rights to make Race Tracks..", "#FFFFFF");
         }
     });
 });
@@ -294,14 +294,14 @@ $(document).on('click', '#racing-create-accept', function(e){
                         $(".racing-create-trackname").val("");
                     });
                 } else {
-                    QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "This name is not available..", "#1DA1F2");
+                    QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "This name is not available..", "#FFFFFF");
                 }
             } else {
-                QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You don't have any rights to create Race Tracks..", "#1DA1F2");
+                QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You don't have any rights to create Race Tracks..", "#FFFFFF");
             }
         });
     } else {
-        QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You have to enter a track name..", "#1DA1F2");
+        QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You have to enter a track name..", "#FFFFFF");
     }
 });
 
@@ -347,19 +347,19 @@ $(document).on('click', '#setup-race-accept', function(e){
                                         $('.dropdown').find('span').text("Select a Track");
                                     });
                                 } else {
-                                    QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "There can't be any ..", "#1DA1F2");
+                                    QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "There can't be any ..", "#FFFFFF");
                                 }
                             });
                         } else {
-                            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "Fill in an amount of laps..", "#1DA1F2");
+                            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "Fill in an amount of laps..", "#FFFFFF");
                         }
                     } else {
-                        QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You haven't selected a track..", "#1DA1F2");
+                        QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You haven't selected a track..", "#FFFFFF");
                     }
                 }
             })
         } else {
-            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You already have a race active..", "#1DA1F2");
+            QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You already have a race active..", "#FFFFFF");
         }
     });
 });
