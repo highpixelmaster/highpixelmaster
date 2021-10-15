@@ -416,5 +416,14 @@ Config.Items = {
             slot = 18,
             authorizedJobGrades = {0, 1, 2, 3, 4}
         },
+        [19] = {
+            name = "specialbadge",
+            price = 0,
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 19,
+            authorizedJobGrades = {0, 1, 2, 3, 4}
+        },
     }
 }
