@@ -1240,7 +1240,7 @@ QBCore.Commands.Add("ankletlocation", "Get the location of a persons anklet", {{
         end
     end)
 
-QBCore.Commands.Add("removeanklet", "Remove Tracking Anklet (Police Only)", {{"bsn", "BSN of person"}}, true,
+QBCore.Commands.Add("removeanklet", "Remove Tracking Anklet (Police Only)", {{"csn", "CSN of person"}}, true,
     function(source, args)
         local Player = QBCore.Functions.GetPlayer(source)
 

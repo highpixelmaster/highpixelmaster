@@ -4,17 +4,19 @@ game 'gta5'
 description 'QB-Multicharacter'
 version '1.0.0'
 
-ui_page 'html/index.html'
-
-shared_script '@qb-core/import.lua'
+shared_script 'config.lua'
 client_script 'client/main.lua'
 server_script 'server/main.lua'
+
+ui_page 'html/index.html'
 
 files {
     'html/index.html',
     'html/style.css',
     'html/reset.css',
-    'html/script.js'
+    'html/script.js',
+    'html/logo.png',
+    'html/images/*.png', 
 }
 
 dependencies {

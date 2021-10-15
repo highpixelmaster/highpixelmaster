@@ -300,7 +300,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [6] = {
-            name = "weapon_nightstick",
+            name = "weapon_sawnoffshotgun",
             price = 0,
             amount = 1,
             info = {},

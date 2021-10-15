@@ -8,9 +8,9 @@ Config.EnableCircleMap = true -- Switch Between Circular and Square Map
 Config.Money.ShowConstant = false -- Always Show Money
 Config.MinimumStress = 50 -- Minimum Stress Level For Screen Shaking
 Config.MinimumSpeed = 100 -- Going Over This Speed Will Cause Stress
-Config.compass.show = true -- Show Compass
+Config.compass.show = false -- Show Compass
 Config.compass.followGameplayCam = true -- Moving Mouse Around Reacts with Compass
-Config.streetName.show = true
+Config.streetName.show = false
 
 -- Stress 
 

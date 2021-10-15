@@ -447,7 +447,7 @@ QBCore.Commands.Add('bill', 'Bill A Player', {{
     local amount = tonumber(args[2])
 
     if biller.PlayerData.job.name == "police" or biller.PlayerData.job.name == 'ambulance' or biller.PlayerData.job.name ==
-        'mechanic' then
+        'mechanic' or biller.PlayerData.job.name == 'mechanic2' then
         if billed ~= nil then
             if biller.PlayerData.citizenid ~= billed.PlayerData.citizenid then
                 if amount and amount > 0 then

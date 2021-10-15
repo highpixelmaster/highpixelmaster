@@ -12,7 +12,7 @@ QBShared.RandomStr = function(length) -- QBShared.RandomStr falls under GPL Lice
 		return QBShared.RandomStr(length-1) .. StringCharset[math.random(1, #StringCharset)]
 	else
 		return ''
-	end
+	end 
 end
 
 QBShared.RandomInt = function(length)

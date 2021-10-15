@@ -592,13 +592,13 @@ exports['qb-target']:AddBoxZone("fingerprints", vector3(483.61, -988.7, 30.69), 
 
 RegisterNetEvent('evidence:view1')
 AddEventHandler('evidence:view1', function(playerId)
-    local drawer = Input("Which drawer do you want to look at?", "", 4)
+    local drawer = Input("Which Case Number do you want to look at?", "", 4)
         if drawer ~= nil then
-            TriggerServerEvent("inventory:server:OpenInventory", "stash", " 1 | Drawer "..drawer, {
+            TriggerServerEvent("inventory:server:OpenInventory", "stash", "| Case Number #"..drawer, {
                 maxweight = 4000000,
                 slots = 500,
             })
-            TriggerEvent("inventory:client:SetCurrentStash", " 1 | Drawer "..drawer)
+            TriggerEvent("inventory:client:SetCurrentStash", "| Case Number #"..drawer)
         end
 end)
 
