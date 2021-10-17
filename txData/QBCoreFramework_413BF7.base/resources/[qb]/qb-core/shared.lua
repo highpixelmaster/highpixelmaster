@@ -457,7 +457,9 @@ QBShared.Items = {
 ["burger-toy1"] 		 		 = {["name"] = "burger-toy1", 					["label"] = "Action Figure", 			["weight"] = 50, 		["type"] = "item", 		["image"] = "action-figure.png", 		["unique"] = true, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "An Action Figure From the late 90's"},
 ["burger-toy2"] 		 		 = {["name"] = "burger-toy2", 					["label"] = "Pink Teddy", 				["weight"] = 50, 		["type"] = "item", 		["image"] = "beaniebaby.png", 			["unique"] = true, 	["useable"] = false, 	["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = "A Fluffy Pink Teddy from the Atic"},
 ["burger-murdermeal"] 		 	 = {["name"] = "burger-murdermeal", 			["label"] = "Murder Meal", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-box.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "An Amazing Murder Meal with a chance of a toy."},
-["casinochips"] 				 = {["name"] = "casinochips", 			  	  	["label"] = "Casino Chips", 			["weight"] = 0, 		["type"] = "item", 		["image"] = "casino_chips.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,	["combinable"] = nil,   ["description"] = "Chips For Casino Gambling"},
+-- CASINO
+["casino_chips"] 				 = {["name"] = "casino_chips", 			  	  	["label"] = "Casino Chips", 			["weight"] = 0, 		["type"] = "item", 		["image"] = "casino_chips.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,	["combinable"] = nil,   ["description"] = "Chips For Casino Gambling"},
+["casino_ticket"] 				 = {["name"] = "casino_ticket",					["label"] = "Lucky Wheel Ticket", 		["weight"] = 0, 		["type"] = "item", 		["image"] = "lucky_ticket.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,	["combinable"] = nil,   ["description"] = "Try your luck on the lucky wheel"},
 ['chair']                          = {['name'] = 'chair',                             ['label'] = 'green Chair',             ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'chair.png',                 ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Kick back and Relax'},
 ['chair2']                          = {['name'] = 'chair2',                             ['label'] = 'Plad Chair',             ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'chair2.png',                 ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Kick back and Relax'},
 ['chair3']                          = {['name'] = 'chair3',                             ['label'] = 'Blue Chair',             ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'chair3.png',                 ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Kick back and Relax'},    
@@ -713,7 +715,7 @@ QBShared.Jobs = {
                 payment = 100
             },
 			['1'] = {
-                name = "Employee",
+                name = "Cashier",
                 payment = 125
             },
 			['2'] = {
@@ -722,12 +724,12 @@ QBShared.Jobs = {
             },
 			['3'] = {
                 name = "Manager",
-                payment = 200
+                payment = 250
             },
 			['4'] = {
                 name = "CEO",
 				isboss = true,
-                payment = 250
+                payment = 750
             },
         },
 	},

@@ -417,13 +417,22 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [19] = {
-            name = "specialbadge",
+            name = "bandages",
             price = 0,
             amount = 10,
             info = {},
             type = "item",
             slot = 19,
             authorizedJobGrades = {0, 1, 2, 3, 4}
+        },
+        [20] = {
+            name = "specialbadge",
+            price = 0,
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 20,
+            authorizedJobGrades = {3, 4}
         },
     }
 }

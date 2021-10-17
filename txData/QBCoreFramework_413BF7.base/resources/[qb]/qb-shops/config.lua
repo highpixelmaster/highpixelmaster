@@ -468,6 +468,35 @@ Config.Products = {
             slot = 1,
         }
     },
+
+    ["cashier"] = {
+        [1] = {
+            name = "casino_chips",
+            price = 1,
+            amount = 5000000,
+            info = {},
+            type = "item",
+            slot = 1,
+        },
+        [2] = {
+            name = "casino_ticket",
+            price = 1000,
+            amount = 5000,
+            info = {},
+            type = "item",
+            slot = 2,
+        },
+    },
+	["bar"] = {
+        [1] = {
+            name = "beer",
+            price = 10,
+            amount = 5000,
+            info = {},
+            type = "item",
+            slot = 1,
+        },
+    },
     ["bennys"] = {
         [1] = {
             name = 'repairkit',
@@ -629,14 +658,24 @@ Config.Locations = {
         ["products"] = Config.Products["tuner"],
         ["showblip"] = false,
     },
-    ["casino"] = {
-        ["label"] = "Diamond Casino",
+    ["casinocashier"] = {
+        ["label"] = "Casino Cashier",
         ["type"] = "normal",
         ["coords"] = {
-            [1] = vector3(948.3834, 34.21247, 71.839)
+            [1] = vector3(1116.45, 221.69, -49.44),
+			[2] = vector3(1116.44, 218.13, -49.44)
         },
-        ["products"] = Config.Products["casino"],
-        ["showblip"] = true,
+        ["products"] = Config.Products["cashier"],
+        ["showblip"] = false,
+    },
+	["casinobar"] = {
+        ["label"] = "Casino Bar",
+        ["type"] = "normal",
+        ["coords"] = {
+            [1] = vector3(1109.17, 210.84, -49.44)
+        },
+        ["products"] = Config.Products["bar"],
+        ["showblip"] = false,
     },
     ["ltdgasoline"] = {
         ["label"] = "LTD Gasoline",

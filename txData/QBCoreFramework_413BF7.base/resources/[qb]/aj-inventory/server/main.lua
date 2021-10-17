@@ -947,6 +947,65 @@ function SetupShopItems(shop, shopItems)
 	return items
 end
 
+AddEventHandler("inventory:server:SearchLocalVehicleInventory", function(plate, list, cb)
+	local TRUNK = Trunks[plate]
+	local GLOVEBOX = Gloveboxes[plate]
+	local RESULT = false
+	
+	if TRUNK ~= nil then
+		for k, v in pairs(TRUNK.items) do
+			local ITEM = TRUNK.items[k].name
+			if HasItem(list, ITEM) then
+				RESULT = true
+			end
+		end
+	else
+		TRUNK = GetOwnedVehicleItems(plate)
+	
+		for k, v in pairs(TRUNK) do
+	
+			local ITEM = TRUNK[k].name
+			if HasItem(list, ITEM) then
+				RESULT = true
+			end
+		end
+	
+	end
+	
+	if GLOVEBOX ~= nil then
+		for k, v in pairs(GLOVEBOX.items) do
+	
+			local ITEM = GLOVEBOX.items[k].name
+			if HasItem(list, ITEM) then
+				RESULT = true
+			end
+		end
+	else
+		GLOVEBOX = GetOwnedVehicleGloveboxItems(plate)
+	
+		for k, v in pairs(GLOVEBOX) do
+			local ITEM = GLOVEBOX[k].name
+			if HasItem(list, ITEM) then
+				RESULT = true
+			end
+		end
+	end
+	cb(RESULT)
+	end)
+	
+	
+	function HasItem(list, item)
+	
+		for i = 1, #list do
+	
+			if item == list[i] then
+				return true
+			end
+		end
+	
+		return false
+	end
+
 -- Stash Items
 function GetStashItems(stashId)
 	local items = {}

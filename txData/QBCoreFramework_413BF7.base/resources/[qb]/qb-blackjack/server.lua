@@ -1,3 +1,5 @@
+QBCore = exports['qb-core']:GetCoreObject()
+
 ranks = {'02', '03', '04', '05', '06', '07', '08', '09', '10', --[['11',]] 'JACK', 'QUEEN', 'KING', 'ACE'}
 suits = {'SPD', 'HRT', 'DIA', 'CLUB'}
 
@@ -189,12 +191,12 @@ AddEventHandler('BLACKJACK:SetPlayerBet', SetPlayerBet)
 function CheckPlayerBet(i, bet)
 	local Player = QBCore.Functions.GetPlayer(source)
 	local ItemList = {
-		["casinochips"] = 1,
+		["casino_chips"] = 1,
 	}
 	
 	DebugPrint("TABLE "..i..": CHECKING "..GetPlayerName(source):upper().."'s CHIPS")
 
-	local playerChips = Player.Functions.GetItemByName("casinochips")
+	local playerChips = Player.Functions.GetItemByName("casino_chips")
 
 	local canBet = false
 

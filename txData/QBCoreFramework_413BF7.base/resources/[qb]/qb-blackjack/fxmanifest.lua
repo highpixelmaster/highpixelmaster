@@ -6,11 +6,7 @@ description 'Playable Blackjack at the casino, similar to GTAOnline.'
 author 'Xinerki - https://github.com/Xinerki/'
 url 'https://github.com/Xinerki/ACG-blackjack'
 
-shared_scripts {
-	'coords.lua',
-	'@qb-core/import.lua'
-}
-
+shared_scripts {'coords.lua','@qb-core/import.lua'}
 client_script 'timerbars.lua'
 client_script 'client.lua'
 server_script 'server.lua'
