@@ -417,7 +417,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [19] = {
-            name = "bandages",
+            name = "bandage",
             price = 0,
             amount = 10,
             info = {},

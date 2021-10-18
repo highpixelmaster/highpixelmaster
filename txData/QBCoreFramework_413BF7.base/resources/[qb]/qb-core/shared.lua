@@ -330,7 +330,7 @@ QBShared.Items = {
 	["radio"] 			 	 		 = {["name"] = "radio", 			  			["label"] = "Radio", 					["weight"] = 2000, 		["type"] = "item", 		["image"] = "radio.png", 				["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Say hi over the radio waves!"},
 	["safecracker"] 			 	 = {["name"] = "safecracker", 			 		["label"] = "Safe Key", 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "labkey.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Useful for opening safes?"},
 	["tunerkey"] 			 		 = {["name"] = "tunerkey", 			 			["label"] = "Door Keys", 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "labkey.png", 			["unique"] = true, 		["useable"] = false, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Who Trusted you with these keys?"},
-
+	["latinkeys"] 			 		 = {["name"] = "latinkeys", 			 		["label"] = "LS Door Keys", 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "labkey.png", 			["unique"] = true, 		["useable"] = false, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Who ya think ya talking to huh? HUH?"},
 	["stickynote"] 			 	 	 = {["name"] = "stickynote", 			  		["label"] = "Sticky note", 				["weight"] = 0, 		["type"] = "item", 		["image"] = "stickynote.png", 			["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Sometimes handy to remember something :)"},
 	["phone"] 			 	 	 	 = {["name"] = "phone", 			  			["label"] = "Phone", 					["weight"] = 700, 		["type"] = "item", 		["image"] = "phone.png", 				["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Neat phone ya got there"},
 	["fitbit"] 			 	 	 	 = {["name"] = "fitbit", 			  			["label"] = "Fitbit", 					["weight"] = 500, 		["type"] = "item", 		["image"] = "fitbit.png", 				["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "I like fitbit"},
@@ -691,7 +691,37 @@ QBShared.Gangs = {
 				isboss = true
             },
         },
-	}
+	},
+		["latinsyndicate"] = {
+			label = "Latin Syndicate",
+			grades = {
+				['0'] = {
+					name = "Recruit"
+				},
+				['1'] = {
+					name = "Soldier"
+				},
+				['2'] = {
+					name = "Armsmen"
+				},
+				['3'] = {
+					name = "Captian",
+					isboss = true
+				},
+				['4'] = {
+					name = "Advisor",
+					isboss = true
+				},
+				['5'] = {
+					name = "Underboss",
+					isboss = true
+				},
+				['6'] = {
+					name = "Boss",
+					isboss = true
+				},
+			},
+		},
 }
 
 -- Jobs

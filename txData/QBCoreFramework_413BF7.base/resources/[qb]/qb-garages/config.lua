@@ -118,6 +118,13 @@ Garages = {
         putVehicle = vector3(162.47, -3009.03, 5.95),
         showBlip = true
     },
+    ["latinsyndicategarge"] = {
+        label = "Latin Syndicate House",
+        takeVehicle = vector3(1400.64, 1123.01, 114.84),
+        spawnPoint = vector4(1391.62, 1117.89, 114.83, 86.33),
+        putVehicle = vector3(1399.47, 1117.67, 114.84),
+        showBlip = false
+    },
 }
 
 HouseGarages = {}
@@ -151,6 +158,7 @@ GangGarages = {
         putVehicle = vector3(1407.18, 1118.04, 114.84),
         job = "cartel"
     },
+
 }
 
 

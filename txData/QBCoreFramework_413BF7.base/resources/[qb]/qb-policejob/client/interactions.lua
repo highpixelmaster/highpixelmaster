@@ -403,6 +403,7 @@ AddEventHandler('police:client:GetCuffed', function(playerId, isSoftcuff)
         local success = exports['qb-lockgame']:StartLockPickCircle(1, seconds, success)
         print(success)
         GetCuffedAnimation(playerId)
+		TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 3, 'Cuff', 1.0)
 
         if not success then
             isHandcuffed = true

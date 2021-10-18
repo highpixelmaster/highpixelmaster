@@ -146,6 +146,13 @@ GangGarages = {
         isHouse = false,
         job = "cartel"
     },
+    ["latinsyndicategarge"] = {
+        label = "Latin Syndicate",
+        takeVehicle = vector3(1400.64, 1123.01, 114.84),
+        spawnPoint = vector4(1391.62, 1117.89, 114.83, 86.33),
+        putVehicle = vector3(1399.47, 1117.67, 114.84),
+        job = "latinsyndicate"
+    },
 }
 
 
