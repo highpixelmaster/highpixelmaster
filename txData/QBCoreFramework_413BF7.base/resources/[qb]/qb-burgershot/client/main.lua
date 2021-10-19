@@ -99,7 +99,7 @@ end)
 --Meal Creations
 RegisterNetEvent("qb-burgershot:MurderMeal")
 AddEventHandler("qb-burgershot:MurderMeal", function()
-		local randomToy = math.random(1,10)
+		local randomToy = math.random(1,100)
 		--remove box
 		TriggerServerEvent('QBCore:Server:RemoveItem', "burger-murdermeal", 1)
 		--add items from box
@@ -107,19 +107,19 @@ AddEventHandler("qb-burgershot:MurderMeal", function()
 		TriggerServerEvent('QBCore:Server:AddItem', "burger-softdrink", 1)
 		TriggerServerEvent('QBCore:Server:AddItem', "burger-fries", 1)
 
-		if randomToy < 4 then
+		if randomToy > 75 then
 			QBCore.Functions.Notify("No toy in Box Looool", "error")
-		elseif randomToy == 4 then
-			TriggerServerEvent('QBCore:Server:AddItem', "burger-toy1", 1)
-            		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-toy1"], "add")
-		elseif randomToy < 10 and randomToy > 4 then
+		elseif randomToy > 50 then
+			TriggerServerEvent('QBCore:Server:AddItem', "burger-toy3", 1)
+            TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-toy3"], "add")
+		elseif randomToy > 75 and randomToy < 50 then
 			QBCore.Functions.Notify("No toy in Box Looool", "error")
-		elseif randomToy == 10 then
-			TriggerServerEvent('QBCore:Server:AddItem', "burger-toy2", 1)
-            		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-toy2"], "add")
+		elseif randomToy > 1 then
+			TriggerServerEvent('QBCore:Server:AddItem', "burger-toy4", 1)
+            		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["burger-toy4"], "add")
 		else
             		QBCore.Functions.Notify("No toy in Box Looool", "error")
-        	end
+        end
 end)
 
 RegisterNetEvent("qb-burgershot:CreateMurderMeal")

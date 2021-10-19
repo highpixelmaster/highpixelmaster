@@ -145,12 +145,25 @@ Config.Teleports = {
             [1] = {
                 coords = vector4(-787.06, -911.92, 18.09, 265.27),
                 ["AllowVehicle"] = false, 
-                drawText = '[E] Enter Building | NotACop'
+                drawText = '[E] Enter Building'
             },
             [2] = {
                 coords = vector4(178.9, -1000.12, -99.0, 182.57),
                 ["AllowVehicle"] = false,
                 drawText = '[E] Exit Building'
+            },
+        },
+        -- Court Holding
+        [7] = {
+            [1] = {
+                coords = vector4(345.09, -1644.31, 32.53, 132.72),
+                ["AllowVehicle"] = false, 
+                drawText = '[E] Enter Holding'
+            },
+            [2] = {
+                coords = vector4(337.39, -1619.88, 60.53, 142.62),
+                ["AllowVehicle"] = false,
+                drawText = '[E] Exit Holding'
             },
         },
 }

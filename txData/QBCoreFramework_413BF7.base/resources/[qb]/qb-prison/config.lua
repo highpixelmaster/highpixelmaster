@@ -31,7 +31,7 @@ Config.Locations = {
         },
     },
     ["freedom"] = {
-        coords = vector4(1836.37, 2585.33, 45.89, 272.96),
+        coords = vector4(1818.64, 2594.51, 45.72, 0),
     },
     ["outside"] = {
         coords = vector4(1848.13, 2586.05, 45.67, 269.5),

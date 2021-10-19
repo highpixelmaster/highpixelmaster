@@ -6,7 +6,7 @@ Config.Framework = QBCore                               -- Set your Framework Na
 -------------------------------
 -------Configs
 -------------------------------
-Config.DetectorActMessage = 'Detector Alarm Activated.'  -- Notification Mesage
+Config.DetectorActMessage = 'You set off the detector!'  -- Notification Mesage
 Config.InteractSoundAlert = "metaldetected"                  -- Interact Sound Alert file name
 Config.InteractSoundAlertDist = 10                       -- Distance it can be heard server sided.(requires you to make xsound or interact work serversided for OneSync infinity)
 Config.InteractSoundAlertVol = 1.0                       -- Alert Volume. Ideal Range is 0.5 -1.0
@@ -27,10 +27,11 @@ Config.Detectors = {                                    -- Add More Locations He
     { x = -547.58, y = -199.89, z = 38.22 },
     { x = -546.43, y = -199.29, z = 38.22 },
     { x = -3010.79, y = 7488.95, z = 59.9  },
-    { x = 1841.68, y = 2585.83, z = 45.89 },    -- Bollingbrook
     { x= 323.27, y=-1632.56, z=32.53  },    -- CourtHouse
     { x=326.12, y=-1628.79, z=32.53  }, 
     { x=321.09, y=-1634.85, z=32.53  }, 
+    { x=328.85, y=-1620.64, z=60.53  }, 
+
 
 
 }

@@ -41,7 +41,7 @@ AddEventHandler('qb-fishing:receiveFish', function(cabin, house)
                 Player.Functions.AddItem(randomItem, 1)
 				TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")
 			elseif luck >= 98 and luck <= 99 then
-				randomItem = "tigersharkmeat"
+				randomItem = "10kgoldchain"
 				itemInfo = QBCore.Shared.Items[randomItem]
                 Player.Functions.AddItem(randomItem, 1)
 				TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "add")

@@ -29,4 +29,11 @@ Config.Locations = {
 		eventname = 'qb-clothing:client:openOutfitMenu',
 		text = '<b>[E] Closet</b>'
 	},
+	[5] = {
+		coords = vector3(331.4, -1622.5, 60.53),
+		distance = 2,
+		key = 38,
+		eventname = 'qb-clothing:client:openOutfitMenu',
+		text = '<b>[E] Closet</b>'
+	},
 }

@@ -832,6 +832,25 @@ table.insert(Config.DoorList, {
 	maxDistance = 2.0,
 	lockpick = false,
 	audioRemote = false,
+	items = { '' },        
+    -- oldMethod = true,
+    -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+    -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+    -- autoLock = 1000
+})
+
+table.insert(Config.DoorList, {
+	objHash = -228773386,
+	fixText = false,
+	locked = true,
+	items = {},
+	objHeading = 90.0,
+	objCoords = vector3(1406.76, 1128.19, 114.34),
+	slides = false,
+	garage = false,
+	maxDistance = 2.0,
+	lockpick = false,
+	audioRemote = false,
 	items = { 'latinkeys' },        
     -- oldMethod = true,
     -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
@@ -851,7 +870,7 @@ table.insert(Config.DoorList, {
 	maxDistance = 2.0,
 	lockpick = false,
 	audioRemote = false,
-	items = { 'latinkeys' },        
+	items = { '' },        
     -- oldMethod = true,
     -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
     -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
@@ -878,6 +897,44 @@ table.insert(Config.DoorList, {
 })
 
 table.insert(Config.DoorList, {
+	objHash = -652726635,
+	fixText = false,
+	locked = true,
+	items = {},
+	objHeading = 185.79,
+	objCoords = vector3(331.63, -1616.85, 60.53),
+	slides = true,
+	garage = false,
+	maxDistance = 2.0,
+	lockpick = false,
+	audioRemote = false,
+	authorizedJobs = { ['police']=0 },        
+    -- oldMethod = true,
+    -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+    -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+    -- autoLock = 1000
+})
+
+table.insert(Config.DoorList, {
+	objHash = -652726635,
+	fixText = false,
+	locked = true,
+	items = {},
+	objHeading = 185.79,
+	objCoords = vector3(334.08, -1618.78, 60.53),
+	slides = true,
+	garage = false,
+	maxDistance = 2.0,
+	lockpick = false,
+	audioRemote = false,
+	authorizedJobs = { ['police']=0 },        
+    -- oldMethod = true,
+    -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+    -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+    -- autoLock = 1000
+})
+
+table.insert(Config.DoorList, {
 	audioRemote = false,
 	lockpick = false,
 	maxDistance = 2.5,
@@ -887,7 +944,7 @@ table.insert(Config.DoorList, {
 		{objHash = -1032171637, objHeading = 80.0, objCoords = vector3(1401.08, 1128.35, 114.34)},
 		{objHash = -52575179, objHeading = 280.0, objCoords = vector3(1399.72, 1128.26, 114.33)}
  },
-	items = { 'latinkeys' },        
+	items = { '' },        
     -- oldMethod = true,
     -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
     -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
@@ -904,7 +961,7 @@ table.insert(Config.DoorList, {
 		{objHash = -1032171637, objHeading = 0.0, objCoords = vector3(1408.15, 1164.22, 114.34)},
 		{objHash = -52575179, objHeading = 180.0, objCoords = vector3(1408.18, 1165.29, 114.34)}
  },
-	items = { 'latinkeys' },        
+	items = { '' },        
     -- oldMethod = true,
     -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
     -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
@@ -921,7 +978,7 @@ table.insert(Config.DoorList, {
 		{objHash = -1032171637, objHeading = 0.0, objCoords = vector3(1390.51, 1161.89, 114.34)},
 		{objHash = -52575179, objHeading = 180.0, objCoords = vector3(1390.52, 1162.88, 114.34)}
  },
-	items = { 'latinkeys' },        
+	items = { '' },        
     -- oldMethod = true,
     -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
     -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
@@ -937,6 +994,23 @@ table.insert(Config.DoorList, {
 	doors = {
 		{objHash = -1032171637, objHeading = 0.0, objCoords = vector3(1408.12, 1159.52, 114.34)},
 		{objHash = -52575179, objHeading = 180.0, objCoords = vector3(1408.09, 1160.62, 114.34)}
+ },
+	items = { '' },        
+    -- oldMethod = true,
+    -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+    -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+    -- autoLock = 1000
+})
+
+table.insert(Config.DoorList, {
+	audioRemote = false,
+	lockpick = false,
+	maxDistance = 2.5,
+	slides = false,
+	locked = true,
+	doors = {
+		{objHash = -228773386, objHeading = 0.0, objCoords = vector3(1395.81, 1141.22, 114.65)},
+		{objHash = -228773386, objHeading = 180.0, objCoords = vector3(1395.96, 1142.35, 114.65)}
  },
 	items = { 'latinkeys' },        
     -- oldMethod = true,
@@ -955,7 +1029,7 @@ table.insert(Config.DoorList, {
 		{objHash = -1032171637, objHeading = 0.0, objCoords = vector3(1395.92, 1152.22, 114.34)},
 		{objHash = -1032171637, objHeading = 180.0, objCoords = vector3(1395.83, 1153.22, 114.34)}
  },
-	items = { 'latinkeys' },        
+	items = { '' },        
     -- oldMethod = true,
     -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
     -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
@@ -972,7 +1046,7 @@ table.insert(Config.DoorList, {
 		{objHash = -1032171637, objHeading = 0.0, objCoords = vector3(1390.37, 1131.72, 114.33)},
 		{objHash = -52575179, objHeading = 180.0, objCoords = vector3(1390.85, 1132.82, 114.34)}
  },
-	items = { 'latinkeys' },        
+	items = { '' },        
     -- oldMethod = true,
     -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
     -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},

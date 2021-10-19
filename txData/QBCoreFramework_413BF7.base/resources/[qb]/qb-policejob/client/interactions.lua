@@ -462,3 +462,27 @@ function GetCuffedAnimation(playerId)
 	TaskPlayAnim(PlayerPedId(), "mp_arrest_paired", "crook_p2_back_right", 3.0, 3.0, -1, 32, 0, 0, 0, 0)
 	Citizen.Wait(2500)
 end
+
+RegisterNetEvent('police:client:BangGaval')
+AddEventHandler('police:client:BangGaval', function()
+    TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 20, 'gavel', 5.0)
+end)
+
+exports['qb-target']:AddBoxZone("gaval", vector3(319.62, -1626.9, 61.25), 0.4, 0.4, {
+	name="gaval",
+	heading=13,
+	debugPoly=false,
+    minZ=60.85,
+    maxZ=61.65
+	}, {
+		options = {
+			{
+            	type = "client",
+            	event = "police:client:BangGaval",
+				icon = "fas fa-gavel",
+				label = "Order in Court!",
+			},
+		},
+		distance = 3.5
+})
+

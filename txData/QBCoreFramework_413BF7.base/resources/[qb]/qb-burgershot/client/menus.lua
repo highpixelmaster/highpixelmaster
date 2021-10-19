@@ -144,6 +144,25 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
+            
+        exports['qb-target']:AddBoxZone("burgershotdrinks3", vector3(-1189.94, -904.21, 13.98), 2.4, 1.0, {
+            name="burgershotdrinks3",
+            heading=35,
+            debugPoly=false,
+            minZ=13.78,
+            maxZ=14.98
+            }, {
+                options = {
+                    {
+                        event = "nh-context:DrinkMenu",
+                        icon = "fas fa-filter",
+                        label = "Make Some Drinks",
+                        job = "burgershot",
+                    },
+                },
+                distance = 1.5
+            })
+
 
          exports['qb-target']:AddBoxZone("burgerfridge", vector3(-1203.71, -895.86, 14.0), 1.6, 1, {
             name="burgerfridge",
