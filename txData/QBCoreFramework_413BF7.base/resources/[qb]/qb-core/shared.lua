@@ -369,7 +369,7 @@ QBShared.Items = {
 	["labkey"] 			 			 = {["name"] = "labkey", 						["label"] = "Key", 						["weight"] = 500, 		["type"] = "item", 		["image"] = "labkey.png", 				["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Key for a lock...?"},
 	["pinger"] 			 			 = {["name"] = "pinger", 						["label"] = "Pinger", 					["weight"] = 1000, 		["type"] = "item", 		["image"] = "pinger.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "With a pinger and your phone you can send out your location"},
 	["firstaid"] 			 		 = {["name"] = "firstaid", 						["label"] = "First Aid", 				["weight"] = 2500, 		["type"] = "item", 		["image"] = "firstaid.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "You can use this First Aid kit to get people back on their feet"},
-	["printerdocument"] 			 = {["name"] = "printerdocument", 				["label"] = "Document", 				["weight"] = 500, 		["type"] = "item", 		["image"] = "printerdocument.png", 		["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "A nice document"},
+	["printerdocument"] 			 = {["name"] = "printerdocument", 				["label"] = "Document", 				["weight"] = 500, 		["type"] = "item", 		["image"] = "printerdocument.png", 		["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "This could be anything just warning you."},
 	["weaponlicense"] 				 = {["name"] = "weaponlicense",				    ["label"] = "Weapon License",			["weight"] = 0,			["type"] = "item",		["image"] = "weapon_license.png",		["unique"] = true,		["useable"] = true,		["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Weapon License"},
 	["oxy"] 				 		 = {["name"] = "oxy",				    		["label"] = "Prescription Oxy",			["weight"] = 0,			["type"] = "item",		["image"] = "oxy.png",					["unique"] = false,		["useable"] = true,		["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "The Label Has Been Ripped Off"},
 	["visa"] 					 	 = {["name"] = "visa", 			 	  	  		["label"] = "Visa Card", 				["weight"] = 0, 		["type"] = "item", 		["image"] = "visacard.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Visa can be used via ATM"},
@@ -397,9 +397,9 @@ QBShared.Items = {
 	["stripedbass"] 			     = {["name"] = "stripedbass", 			        ["label"] = "stripedbass",               ["weight"] = 1111,      ["type"] = "item",      ["image"] = "stripedbass.png",          ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Fish for Fishing."},
 	["fishingrod"] 			 		 = {["name"] = "fishingrod", 					["label"] = "Fishing Rod", 				["weight"] = 5000, 		["type"] = "item", 		["image"] = "fishingrod.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "A fishing rod for adventures with friends!!"},	
 	["fishbait"] 			 		 = {["name"] = "fishbait", 						["label"] = "Fish Bait", 				["weight"] = 400, 		["type"] = "item", 		["image"] = "fishbait.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "A fish bait"},["skateboard"] 		 	 		 = {["name"] = "skateboard", 					["label"] = "Skateboard", 			["weight"] = 1425, 		["type"] = "item", 			["image"] = "skateboard.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A cool skateboard!"}, 
-	["standard_cpu"] 			 	 = {["name"] = "standard_cpu", 			  			["label"] = "Standard Cpu", 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "standard_cpu.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sometimes you'd want everything to burn.."},	
-	["e2_cpu"] 			 	 	     = {["name"] = "e2_cpu", 			  			["label"] = "E2", 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "e2_cpu.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sometimes you'd want everything to burn.."},	
-	["quantum_cpu"] 			 	 	 = {["name"] = "quantum_cpu", 			  			["label"] = "Quantum", 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "quantum_cpu.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sometimes you'd want everything to burn.."},
+	["gpu1"] 			 	 		 = {["name"] = "gpu1", 			  				["label"] = "RTX 2070", 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "gpu1.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Time to game like a gamer."},	
+	["gpu2"] 			 	 	     = {["name"] = "gpu2", 			  				["label"] = "RX 5700 XT", 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "gpu2.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "What PYSCHO USES AMD FOR GPUS!!!!?"},	
+	["gpu3"] 			 	 	 	 = {["name"] = "gpu3", 			  				["label"] = "RTX 3060 Ti", 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "gpu3.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Took months to get it just to overpay for it to a reseller."},
 
 
 	--Joints--
@@ -4852,6 +4852,15 @@ QBShared.Vehicles = {
 		["price"] = 100000,
 		["category"] = "emergancy",
 		["hash"] = `npolchal`,
+		["shop"] = "pd",
+	},
+	["npolstang"] = {
+		["name"] = "Police Mustang",
+		["brand"] = "Ford",
+		["model"] = "npolstang",
+		["price"] = 100000,
+		["category"] = "emergancy",
+		["hash"] = `npolstang`,
 		["shop"] = "pd",
 	},
 	["r35"] = {

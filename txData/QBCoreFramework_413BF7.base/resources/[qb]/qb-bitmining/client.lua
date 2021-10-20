@@ -1,9 +1,9 @@
 local isLoggedIn = false
 local inRange = false
 local prop_model = {
-	["Standard CPU"] = "v_corp_servercln",
-	["E2 CPU"] = "v_corp_servercln",
-	["Quantum CPU"] = "v_corp_servercln2",
+	["RTX 2070"] = "v_corp_servercln",
+	["5700 XT"] = "v_corp_servercln",
+	["3060 Ti"] = "v_corp_servercln",
 }
 local active_machines = {}
 
@@ -26,7 +26,7 @@ Citizen.CreateThread(function()
 			for k, v in pairs(active_machines) do
 				if #(pos - v.coords) < 3.0 then
 					inRange = true
-					DrawText3Ds(v.coords, "Mining Time Left: ~r~"..v.time)
+					DrawText3Ds(v.coords, "Mining on the Blockchain: ~r~"..v.time)
 					DrawText3Ds(vector3(v.coords.x, v.coords.y, v.coords.z+0.3), "Machine: ~b~"..v.name)
 				end
 			end
@@ -83,25 +83,27 @@ RegisterNetEvent("qb-cryptomining:client:installCPU")
 AddEventHandler("qb-cryptomining:client:installCPU", function(name, reward, item)
 	local ped = PlayerPedId()
 	local pos = GetEntityCoords(ped)
-	if #(pos - Config.MiningLab["coords"]) < 50.0 then
-		exports["memorygame_2"]:thermiteminigame(10, 3, 3, 10,
+		exports["memorygame_2"]:thermiteminigame(6, 3, 3, 10,
 		function() -- success
 			InstallCPU(name, reward, item.name)
 		end,
 		function() -- failure
 			QBCore.Functions.Notify("You can do better than this", "error")
    	 	end)
-	else
-		QBCore.Functions.Notify('Not a suitable location for installing','error')
-	end
 end)
 
 function InstallCPU(name, reward, itemname)
 	if #active_machines == 0 then
 		local ped = PlayerPedId()
-		local coords = GetOffsetFromEntityInWorldCoords(ped, 0.0, 2.0, 0.0)
+
+		object = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 1.5, GetHashKey('v_corp_servercln'))
+		if object ~= 0 then
+			coords = GetEntityCoords(object)
+			x,y,z = table.unpack(coords)
+		end
+
 		local machine = {}
-		QBCore.Functions.Progressbar("cpuinstall", "Installing RIG", 10000, false, true, {
+		QBCore.Functions.Progressbar("cpuinstall", "Installing new GPU", 10000, false, true, {
 			disableMovement = false,
 			disableCarMovement = false,
 			disableMouse = false,
@@ -111,7 +113,7 @@ function InstallCPU(name, reward, itemname)
 			anim = "idle_e",
 			flags = 0,
 		}, {}, {}, function() -- Done
-			machine.object = CreateObject(GetHashKey(prop_model[name]),coords,true,true,false)
+
 			machine.name = name
 			machine.reward = reward
 			machine.time = Config.MiningLab["mining_time"][name]

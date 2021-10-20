@@ -2,7 +2,7 @@ Config = {}
 
 Config.MinZOffset = 45
 
-Config.MinimumHouseRobberyPolice = 0
+Config.MinimumHouseRobberyPolice = 1
 
 Config.MinimumTime = 22
 Config.MaximumTime = 5
@@ -22,7 +22,8 @@ Config.Rewards = {
             "handcuffs",
             "weapon_knife",
             "trojan_usb",
-            "standard_cpu",
+            "gpu1",
+            "gpu2",
         },
         ["kitchen"] = {
             "tosti",
@@ -48,8 +49,7 @@ Config.Rewards = {
             "electronickit",
             "goldbar",
             "skateboard",
-            "e2_cpu",
-            "quantum_cpu"
+            "gpu3"
         },
     }
 }
