@@ -771,11 +771,11 @@ QBShared.Jobs = {
 		defaultDuty = false,
 		grades = {
             ['0'] = {
-                name = "Recruit",
+                name = "Officer/Recruit",
                 payment = 250
             },
 			['1'] = {
-                name = "Officer",
+                name = "Corporal",
                 payment = 500
             },
 			['2'] = {
