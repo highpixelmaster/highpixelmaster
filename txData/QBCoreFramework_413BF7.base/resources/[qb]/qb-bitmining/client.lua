@@ -26,8 +26,8 @@ Citizen.CreateThread(function()
 			for k, v in pairs(active_machines) do
 				if #(pos - v.coords) < 3.0 then
 					inRange = true
-					DrawText3Ds(v.coords, "Mining on the Blockchain: ~r~"..v.time)
-					DrawText3Ds(vector3(v.coords.x, v.coords.y, v.coords.z+0.3), "Machine: ~b~"..v.name)
+					DrawText3Ds(vector3(v.coords.x, v.coords.y, v.coords.z), "Mining on the Blockchain: ~r~"..v.time)
+					DrawText3Ds(vector3(v.coords.x, v.coords.y, v.coords.z+0.5), "Machine: ~b~"..v.name)
 				end
 			end
 		end
@@ -93,7 +93,7 @@ AddEventHandler("qb-cryptomining:client:installCPU", function(name, reward, item
 end)
 
 function InstallCPU(name, reward, itemname)
-	if #active_machines == 0 then
+	if #active_machines < 5 then
 		local ped = PlayerPedId()
 
 		object = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 1.5, GetHashKey('v_corp_servercln'))
@@ -117,7 +117,7 @@ function InstallCPU(name, reward, itemname)
 			machine.name = name
 			machine.reward = reward
 			machine.time = Config.MiningLab["mining_time"][name]
-			machine.coords = coords
+			machine.coords = vector3(coords.x, coords.y, coords.z+0.5)
 			table.insert(active_machines, machine)
 			PlaceObjectOnGroundProperly(machine.object)
 			FreezeEntityPosition(machine.object, true)
@@ -128,7 +128,7 @@ function InstallCPU(name, reward, itemname)
 			QBCore.Functions.Notify("Installation stopped..", "error")
 		end)
 	else
-		QBCore.Functions.Notify("You already have a machine running", "error")
+		QBCore.Functions.Notify("You already have to many machines running", "error")
 	end
 end
 
