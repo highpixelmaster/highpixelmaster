@@ -989,7 +989,15 @@ QBShared.Jobs = {
 		grades = {
             ['0'] = {
                 name = "Judge",
-                payment = 2000
+                payment = 2500
+            },
+			['1'] = {
+                name = "District Judge",
+                payment = 3000
+            },
+			['2'] = {
+                name = "Supreme Judge",
+                payment = 5000
             },
         },
 	},
@@ -1013,12 +1021,20 @@ QBShared.Jobs = {
         },
 	},
 	["lawyer"] = {
-		label = "Law Firm",
+		label = "Judicial Lawyer",
 		defaultDuty = true,
 		grades = {
             ['0'] = {
-                name = "Laywer",
-                payment = 750
+                name = "Public Defender",
+                payment = 1000
+            },
+			['1'] = {
+                name = "Lawyer",
+                payment = 1500
+            },
+			['1'] = {
+                name = "Prosecutor",
+                payment = 2000
             },
         },
 	},
