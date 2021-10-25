@@ -12,6 +12,10 @@ Config.IllegalActions = {
         minimum = 1,
         busy = false,
     },
+    ["houserobbery"] = {
+        minimum = 1,
+        busy = false,
+    },
     ["bankrobbery"] = {
         minimum = 2,
         busy = false,

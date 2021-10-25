@@ -11,7 +11,7 @@
   display: none;
   border-radius: 2vh;
   position: absolute;
-  height: 28vh;
+  height: 32vh;
   width: 40vh;
   background-color: rgb(23 23 23 / 80%);
   right: 3vh;
@@ -82,6 +82,7 @@
   border-bottom-left-radius: 2vh;
   border-bottom-right-radius: 2vh;
 }
+
 
 .fa-times {
   color: #23ad77;
