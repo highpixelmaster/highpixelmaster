@@ -824,19 +824,6 @@
           <AmmoFlags />
         </Item>
         <Item type="CAmmoInfo">
-          <Name>AMMO_STUNGUN</Name>
-          <Model />
-          <Audio />
-          <Slot />
-          <AmmoMax value="16" />
-          <AmmoMax50 value="64" />
-          <AmmoMax100 value="96" />
-          <AmmoMaxMP value="250" />
-          <AmmoMax50MP value="1000" />
-          <AmmoMax100MP value="9999" />
-          <AmmoFlags>InfiniteAmmo</AmmoFlags>
-        </Item>
-        <Item type="CAmmoInfo">
           <Name>AMMO_SNIPER</Name>
           <Model />
           <Audio />
@@ -8738,14 +8725,14 @@
           <Group>GROUP_STUNGUN</Group>
           <AmmoInfo ref="AMMO_STUNGUN" />
           <AimingInfo ref="PISTOL_2H_BASE_STRAFE" />
-          <ClipSize value="2104529083" />
+          <ClipSize value="-1" />
           <AccuracySpread value="1.000000" />
           <AccurateModeAccuracyModifier value="0.500000" />
           <RunAndGunAccuracyModifier value="1.000000" />
           <RunAndGunAccuracyMinOverride value="-1.000000" />
-          <RecoilAccuracyMax value="1.000000" />
+          <RecoilAccuracyMax value="100.000000" />
           <RecoilErrorTime value="0.000000" />
-          <RecoilRecoveryRate value="1.000000" />
+          <RecoilRecoveryRate value="5.000000" />
           <RecoilAccuracyToAllowHeadShotAI value="1000.000000" />
           <MinHeadShotDistanceAI value="1000.000000" />
           <MaxHeadShotDistanceAI value="1000.000000" />
@@ -8778,12 +8765,12 @@
           <Speed value="2000.000000" />
           <BulletsInBatch value="1" />
           <BatchSpread value="0.000000" />
-          <ReloadTimeMP value="-1.000000" />
-          <ReloadTimeSP value="-1.000000" />
+          <ReloadTimeMP value="30.000000" />
+          <ReloadTimeSP value="30.000000" />
           <VehicleReloadTime value="2.000000" />
-          <AnimReloadRate value="1.500000" />
+          <AnimReloadRate value="30.500000" />
           <BulletsPerAnimLoop value="1" />
-          <TimeBetweenShots value="1.000000" />
+          <TimeBetweenShots value="15.000000" />
           <TimeLeftBetweenShotsWhereShouldFireIsCached value="-1.000000" />
           <SpinUpTime value="0.000000" />
           <SpinTime value="0.000000" />
@@ -8859,7 +8846,7 @@
           <AlternativeOrScopedCameraHash />
           <RunAndGunAlternativeOrScopedCameraHash />
           <CinematicShootingAlternativeOrScopedCameraHash />
-          <CameraFov value="45.000000" />
+          <CameraFov value="30.000000" />
           <FirstPersonAimFovMin value="47.000000" />
           <FirstPersonAimFovMax value="70.000000" />
           <FirstPersonScopeFov value="45.00000"/>

@@ -15,16 +15,11 @@ local function GiveStarterItems(source)
             info.birthdate = Player.PlayerData.charinfo.birthdate
             info.gender = Player.PlayerData.charinfo.gender
             info.nationality = Player.PlayerData.charinfo.nationality
-            info.fingerprint = Player.PlayerData.metadata["fingerprint"]
         elseif v.item == "driver_license" then
             info.firstname = Player.PlayerData.charinfo.firstname
             info.lastname = Player.PlayerData.charinfo.lastname
             info.birthdate = Player.PlayerData.charinfo.birthdate
             info.type = "Class C Driver License"
-        elseif v.item == "phone" then
-            info.firstname = Player.PlayerData.charinfo.firstname
-            info.lastname = Player.PlayerData.charinfo.lastname
-            info.phone = Player.PlayerData.charinfo.phone
         end
         Player.Functions.AddItem(v.item, v.amount, false, info)
     end
@@ -33,7 +28,7 @@ end
 local function loadHouseData()
     local HouseGarages = {}
     local Houses = {}
-    local result = exports.oxmysql:fetchSync('SELECT * FROM houselocations', {})
+    local result = exports.oxmysql:executeSync('SELECT * FROM houselocations', {})
     if result[1] ~= nil then
         for k, v in pairs(result) do
             local owned = false
@@ -128,13 +123,13 @@ QBCore.Functions.CreateCallback("qb-multicharacter:server:GetUserCharacters", fu
     local src = source
     local license = QBCore.Functions.GetIdentifier(src, 'license')
 
-    exports.oxmysql:fetch('SELECT * FROM players WHERE license = ?', {license}, function(result)
+    exports.oxmysql:execute('SELECT * FROM players WHERE license = ?', {license}, function(result)
         cb(result)
     end)
 end)
 
 QBCore.Functions.CreateCallback("qb-multicharacter:server:GetServerLogs", function(source, cb)
-    exports.oxmysql:fetch('SELECT * FROM server_logs', {}, function(result)
+    exports.oxmysql:execute('SELECT * FROM server_logs', {}, function(result)
         cb(result)
     end)
 end)
@@ -142,7 +137,7 @@ end)
 QBCore.Functions.CreateCallback("qb-multicharacter:server:setupCharacters", function(source, cb)
     local license = QBCore.Functions.GetIdentifier(source, 'license')
     local plyChars = {}
-    exports.oxmysql:fetch('SELECT * FROM players WHERE license = ?', {license}, function(result)
+    exports.oxmysql:execute('SELECT * FROM players WHERE license = ?', {license}, function(result)
         for i = 1, (#result), 1 do
             result[i].charinfo = json.decode(result[i].charinfo)
             result[i].money = json.decode(result[i].money)
@@ -154,7 +149,7 @@ QBCore.Functions.CreateCallback("qb-multicharacter:server:setupCharacters", func
 end)
 
 QBCore.Functions.CreateCallback("qb-multicharacter:server:getSkin", function(source, cb, cid)
-    local result = exports.oxmysql:fetchSync('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {cid, 1})
+    local result = exports.oxmysql:executeSync('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {cid, 1})
     if result[1] ~= nil then
         cb(result[1].model, result[1].skin)
     else

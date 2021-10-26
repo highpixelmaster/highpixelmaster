@@ -8,6 +8,7 @@ Config.WomanPlayerModels = {
 Config.ManPlayerModels = {
     'mp_f_freemode_01',
     'mp_m_freemode_01',
+    'MMyers'
 }
 
 Config.LoadedManModels = {}

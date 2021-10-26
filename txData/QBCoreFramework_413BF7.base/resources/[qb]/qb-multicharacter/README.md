@@ -1,30 +1,49 @@
 # qb-multicharacter
-All Credits to go to the original qbcore-framework repository
+Multi Character Feature for QB-Core Framework :people_holding_hands:
+
+# License
+
+    QBCore Framework
+    Copyright (C) 2021 Joshua Eger
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 
+## Dependencies
+- [qb-core](https://github.com/qbcore-framework/qb-core)
+- [qb-spawn](https://github.com/qbcore-framework/qb-spawn) - Spawn selector
+- [qb-apartments](https://github.com/qbcore-framework/qb-apartments) - For giving the player a apartment after creating a character.
+- [qb-clothing](https://github.com/qbcore-framework/qb-clothing) - For the character creation and saving outfits.
+- [qb-weathersync](https://github.com/qbcore-framework/qb-weathersync) - For adjusting the weather while player is creating a character.
 
+## Screenshots
+![Character Selection](https://i.imgur.com/EUB5X6Y.png)
+![Character Registration](https://i.imgur.com/RKxiyed.png)
 
+## Features
+- Ability to create up to 5 characters and delete any character.
+- Ability to see character information during selection.
 
-## Required
-
-https://drive.google.com/drive/folders/1o9lNYIHxqYJHS9VNz2Wt_wDSkx4Ed9LI?usp=sharing
-
-[Google Drive Download Includes] 
-- Peds
-- Station
-- textUi (not needed)
-
-## Optinal 
-- qb-spawn
-
-https://github.com/dojwun/qb-spawn
-
-
-## Video
-https://streamable.com/45b1j9
-
-## Screenshot
-![General](https://i.imgur.com/gmNCQuF.png)
-
-## CFG (reference for loading)
-![CFG](https://i.imgur.com/m7X0TIu.png)
+## Installation
+### Manual
+- Download the script and put it in the `[qb]` directory.
+- Add the following code to your server.cfg/resouces.cfg
+```
+ensure qb-core
+ensure qb-multicharacter
+ensure qb-spawn
+ensure qb-apartments
+ensure qb-clothing
+ensure qb-weathersync
+```

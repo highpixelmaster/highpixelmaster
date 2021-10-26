@@ -618,6 +618,14 @@ Config.Products = {
             type = "item",
             slot = 3,
         },
+        [4] = {
+            name = "rccar",
+            price = 1500,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 4,
+        },
     },
 }
 
@@ -1035,6 +1043,15 @@ Config.Locations = {
         ["products"] = Config.Products["mustapha"],
         ["showblip"] = true,
     },   
+    ["prison"] = {
+        ["label"] = "Prison Food",
+        ["type"] = "VendingItem",
+        ["coords"] = {
+            [1] = vector3(1779.03, 2557.63, 45.67)
+        },
+        ["products"] = Config.Products["VendingItem"],
+        ["showblip"] = false,
+    }, 
 }
 
 Config.VendingItem = {

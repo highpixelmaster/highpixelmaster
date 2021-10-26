@@ -342,6 +342,14 @@ end, false)
 
 RegisterKeyMapping('alert_dead', 'Send distress signal to Police/EMS', 'keyboard', 'G')
 
+
+function LoadAnimation(dict)
+	RequestAnimDict(dict)
+	while not HasAnimDictLoaded(dict) do
+		Citizen.Wait(1)
+	end
+end
+
 RegisterCommand('911', function(playerId, args, rawCommand)
 	if not args[1] then QBCore.Functions.Notify('You must include a message with your 911 call', 'error') return end
 	args = table.concat(args, ' ')
@@ -349,6 +357,11 @@ RegisterCommand('911', function(playerId, args, rawCommand)
 	if Config.PhoneNumber then caller = phone else caller = ('%s %s'):format(firstname, lastname) end
 	local data = {displayCode = '911', dispatchCode = persondown, blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Caller ".. caller, isImportant = 0, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-phone-square', info = "Complaint: " .. args}
 	local dispatchData = {dispatchData = data, caller = caller, coords = playerCoords}
+	local ped = PlayerPedId()
+	LoadAnimation('cellphone@')
+	TaskPlayAnim(ped, 'cellphone@', 'cellphone_call_listen_base', 3.0, 3.0, 1.0, 50, 0, false, false, false)
+	Citizen.Wait(2500)
+	StopAnimTask(ped, 'cellphone@', 'cellphone_call_listen_base', 1.0)
 	TriggerServerEvent('wf-alerts:svNotify', dispatchData)
 	QBCore.Functions.Notify('The Authorities Have Been Notified', 'success')
 end, false)
@@ -358,7 +371,15 @@ RegisterCommand('911a', function(playerId, args, rawCommand)
 	args = table.concat(args, ' ')
 	local data = {displayCode = '911', blipSprite = 407, blipColour = 84, blipScale = 1.5, description = "Unknown Caller", isImportant = 0, recipientList = {'police', 'ambulance'}, length = '10000', infoM = 'fa-phone-square', info = "Complaint: " .. args}
 	local dispatchData = {dispatchData = data, caller = caller, coords = playerCoords}
+
+	local ped = PlayerPedId()
+	LoadAnimation('cellphone@')
+	TaskPlayAnim(ped, 'cellphone@', 'cellphone_call_listen_base', 3.0, 3.0, 1.0, 50, 0, false, false, false)
+	Citizen.Wait(2500)
+	StopAnimTask(ped, 'cellphone@', 'cellphone_call_listen_base', 1.0)
 	TriggerServerEvent('wf-alerts:svNotify', dispatchData)
+
+
 	QBCore.Functions.Notify('The Authorities Have Been Notified', 'success')
 end, false)
 

@@ -259,7 +259,7 @@ Config.Items = {
         },
         [3] = {
             name = "weapon_pumpshotgun",
-            price = 0,
+            price = 250,
             amount = 1,
             info = {
                 serie = "",
@@ -274,7 +274,7 @@ Config.Items = {
         [4] = {
             name = "weapon_smg",
             price = 0,
-            amount = 1,
+            amount = 0,
             info = {
                 serie = "",                
                 attachments = {
@@ -287,7 +287,7 @@ Config.Items = {
         },
         [5] = {
             name = "weapon_carbinerifle",
-            price = 0,
+            price = 750,
             amount = 1,
             info = {
                 serie = "",
@@ -301,7 +301,7 @@ Config.Items = {
         },
         [6] = {
             name = "weapon_sawnoffshotgun",
-            price = 0,
+            price = 500,
             amount = 1,
             info = {},
             type = "weapon",
@@ -310,7 +310,7 @@ Config.Items = {
         },
         [7] = {
             name = "pistol_ammo",
-            price = 0,
+            price = 50,
             amount = 5,
             info = {},
             type = "item",
@@ -320,7 +320,7 @@ Config.Items = {
         [8] = {
             name = "smg_ammo",
             price = 0,
-            amount = 5,
+            amount = 0,
             info = {},
             type = "item",
             slot = 8,
@@ -328,7 +328,7 @@ Config.Items = {
         },
         [9] = {
             name = "shotgun_ammo",
-            price = 0,
+            price = 50,
             amount = 5,
             info = {},
             type = "item",
@@ -337,7 +337,7 @@ Config.Items = {
         },
         [10] = {
             name = "rifle_ammo",
-            price = 0,
+            price = 75,
             amount = 5,
             info = {},
             type = "item",
@@ -373,7 +373,7 @@ Config.Items = {
         },
         [14] = {
             name = "police_stormram",
-            price = 0,
+            price = 500,
             amount = 1,
             info = {},
             type = "item",
@@ -382,8 +382,8 @@ Config.Items = {
         },
         [15] = {
             name = "armor",
-            price = 0,
-            amount = 5,
+            price = 100,
+            amount = 2,
             info = {},
             type = "item",
             slot = 15,
@@ -400,8 +400,8 @@ Config.Items = {
         },
         [17] = {
             name = "heavyarmor",
-            price = 0,
-            amount = 5,
+            price = 250,
+            amount = 1,
             info = {},
             type = "item",
             slot = 16,
@@ -409,7 +409,7 @@ Config.Items = {
         },
         [18] = {
             name = "firstaid",
-            price = 0,
+            price = 15,
             amount = 10,
             info = {},
             type = "item",
@@ -418,7 +418,7 @@ Config.Items = {
         },
         [19] = {
             name = "bandage",
-            price = 0,
+            price = 15,
             amount = 10,
             info = {},
             type = "item",
@@ -428,10 +428,19 @@ Config.Items = {
         [20] = {
             name = "specialbadge",
             price = 0,
-            amount = 10,
+            amount = 1,
             info = {},
             type = "item",
             slot = 20,
+            authorizedJobGrades = {3, 4}
+        },
+        [21] = {
+            name = "drone",
+            price = 0,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 21,
             authorizedJobGrades = {3, 4}
         },
     }

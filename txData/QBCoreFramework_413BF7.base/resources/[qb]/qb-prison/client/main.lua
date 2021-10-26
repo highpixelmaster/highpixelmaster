@@ -246,3 +246,21 @@ function DrawText3D(x, y, z, text)
     DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
     ClearDrawOrigin()
 end
+
+exports['qb-target']:AddBoxZone("timecheck", vector3(1831.98, 2579.86, 46.01), 0.6, 0.6, {
+	name="timecheck",
+	heading=357,
+	debugPoly=false,
+	minZ=46.01,
+	maxZ=47.01
+	}, {
+		options = {
+			{
+            	type = "client",
+            	event = "prison:client:Leave",
+				icon = "fas fa-alarm-clock",
+				label = "Check Time",
+			},
+		},
+		distance = 3.5
+})

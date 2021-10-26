@@ -24,4 +24,10 @@ QB.Spawns = {
         location = "tuner",
         label = "Tuner Shop",
     },
+
+    ["towyard"] = {
+        coords = vector4(-216.0, -1161.55, 23.16, 180.0),
+        location = "towyard",
+        label = "Tow Yard",
+    },
 }
