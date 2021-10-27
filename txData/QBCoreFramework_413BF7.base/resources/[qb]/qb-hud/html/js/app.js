@@ -1,18 +1,10 @@
-$(document).on('keydown', function() { //Don't Touch This
-    switch(event.keyCode) {
-        case 27:
-            break;
-    }
-});
-
-var moneyTimeout = null;
-var CurrentProx = 0;
-
-// MONEY HUD
-
+var carui = false;
+var airui = false;
+var color = null;
+// money
 (() => {
     Config = {};
-    Config.Update = function(data) {
+    Update = function(data) {
         if(data.type == "cash") {
             $(".money-cash").css("display", "block");
             $("#cash").html(data.cash);
@@ -38,13 +30,12 @@ var CurrentProx = 0;
         }
     };
 
-    Config.Open = function(data) {
+    Close = function() {
+    };
+
+    Show = function(data) {
         $(".money-cash").css("display", "block");
         $("#cash").html(data.cash);
-    };
-    Config.Close = function() {
-    };
-    Config.Show = function(data) {
         if(data.type == "cash") {
             $(".money-cash").fadeIn(150);
             $("#cash").html(data.cash);
@@ -54,149 +45,318 @@ var CurrentProx = 0;
         } 
     };
 
-// PLAYER HUD
-
-    Config.UpdateHud = function(data) {
+// playerui
+    UpdateHud = function(data) {
         var Show = "block";
         if (data.show) {
             Show = "none";
             $(".ui-container").css("display", Show);
+            
             return;
     }
             $(".ui-container").css("display", Show);
 
-    // Voice & Highlight Circle
-
+    // voice 
     Progress(data.talking, ".mic");
     if (data.speaking == 1) {
-    $(".mic").css({"stroke":"yellow"}); 
+    $(".mic").css({"stroke":"yellow"}); // mic highlight
     } else {
     $('.mic').css({"stroke":"#fff"});
     }
 
-    Config.SetTalkingState = function(data) {
-        if (!data.IsTalking) {
-            $(".voice-block").animate({"background-color": "rgb(255, 255, 255)"}, 150);
-        } else {
-            $(".voice-block").animate({"background-color": "#fc4e03"}, 150);
-        }
+    // voice switch
+    if (data.talking) {
+    $(".microphone").css({"display":"block"}); // don't touch if you don't understand
+    $(".headset").css({"display":"none"}); // don't touch if you don't understand
     }
 
-    // Radio & Highlight Circle
-
-    if (data.talking && data.radio) {
-        $(".mic").css({"background-color": "#3467d4"});
-    } else if (data.talking) {
-        $(".mic").css({"background-color": "white"}); 
-    } else {
-        $(".mic").css({"background-color": "rgb(85, 85, 85)"}); 
+    // radio 
+    Progress(data.talking, ".mic"); 
+    if (data.radio && data.speaking == 1) {
+    $(".mic").css({"stroke":"#ff5454"}); // radio highlight
     }
 
-    // Health Circle
+    // radio switch
+    if (data.radio) {
+    $(".microphone").css({"display":"none"}); // don't touch if you don't understand
+    $(".headset").css({"display":"block"}); // don't touch if you don't understand
+    }
 
+    // health radial
+    if ( data.health <=150){
+        color = "red"
+    } else if (data.health>150 ){
+        color = "#00E676"
+    }
+
+    if (Config.DynamicHealth == false) {
+    Progress(data.health - 100, ".hp");
+    if (data.health >= 196) {
+        $('.hvida').fadeIn(750);
+        $('.hp').css("stroke", color);
+        $('.vida').css("fill", color);
+        $('.vida').css("fill-opacity", "0.4");
+    }
+    if (data.health <= 195) {
+        $('.hvida').fadeIn(750);
+        $('.hp').css("stroke", color);
+        $('.vida').css("fill", color);
+    }
+    if (data.health <= 100) { 
+        $('.hp').css("stroke", color);
+        $('.vida').css("fill", color);
+        $('.vida').css("fill-opacity", "1.0");
+    }
+    }
+
+    if (Config.DynamicHealth == true) {
     Progress(data.health - 100, ".hp");
     if (data.health <= 195) {
-        $('.hvida').fadeIn(3000);
+        $('.hvida').fadeIn(750);
+        $('.hp').css("stroke", color);
+        $('.vida').css("fill", color);
     }
     if (data.health >= 196) {
-        $('.hvida').fadeOut(3000);
+        $('.hvida').fadeOut(750);
+        $('.hp').css("stroke", color);
+        $('.vida').css("fill", color);
+        $('.vida').css("fill-opacity", "0.4");
     }
-    if (data.health <= 145) {
-        $('.vida').css("stroke", "red");
-    } else {
-        $('.vida').css("stroke", "#498949");
+    if (data.health <= 100) { 
+        $('.hp').css("stroke", color);
+        $('.vida').css("fill", color);
+        $('.vida').css("fill-opacity", "1.0");
     }
+    }  
 
-    // Armor Circle
-
+    // armor radial
+    if (Config.DynamicArmor == false) {
     Progress(data.armor, ".armor");
-    if (data.armor <= 95) {
-        $('.harmor').fadeIn(3000);
-    }
-    if (data.armor >= 96) {
-        $('.harmor').fadeOut(3000);
+    if (data.armor > 100) {
+        $('.amr').css("fill", "#2962FF");
     }
     if (data.armor <= 45) {
-        $('.amr').css("stroke", "red");
+        $('.amr').css("fill", "red");
+    } 
+    }
+    
+    if (Config.DynamicArmor == true) {
+    Progress(data.armor, ".armor");
+    if (data.armor > 100) {
+        $('.amr').css("fill", "#2962FF");
+    }
+    if (data.armor <= 45) {
+        $('.amr').css("fill", "red");
+    } 
+    if (data.armor > 0) {
+        $(".harmor").fadeIn(750);
     } else {
-        $('.amr').css("stroke", "#2962FF");
+        $('.harmor').fadeOut(750);
+    }
     }
 
-    // Hunger Circle
-
+    // hunger radial
+    if (Config.DynamicHunger == false) {
     Progress(data.hunger, ".hunger");
-    if (data.hunger <= 95) {
-        $('.hhunger').fadeIn(3000);
-    }
     if (data.hunger >= 96) {
-        $('.hhunger').fadeOut(3000);
+        $('.hhunger').fadeIn(750);
     }
     if (data.hunger <= 45) {
-        $('.fome').css("stroke", "red");
+        $('.fome').css("fill", "red");
     } else {
-        $('.fome').css("stroke", "#f0932b");
+        $('.fome').css("fill", "#f0932b");
+    }
     }
 
-    // Thirst Circle
+    if (Config.DynamicHunger == true) {
+    Progress(data.hunger, ".hunger");
+    if (data.hunger <= 95) {
+        $('.hhunger').fadeIn(750);
+    }
+    if (data.hunger >= 96) {
+        $('.hhunger').fadeOut(750);
+    }
+    if (data.hunger <= 45) {
+        $('.fome').css("fill", "red");
+    } else {
+        $('.fome').css("fill", "#f0932b");
+    }
+    }
 
+    // thirst radial
+    if (Config.DynamicThirst == false) {
     Progress(data.thirst, ".thirst");
-    if (data.thirst <= 95) {
-        $('.hthirst').fadeIn(3000);
-    }
     if (data.thirst >= 96) {
-        $('.hthirst').fadeOut(3000);
+        $('.hthirst').fadeIn(750);
     }
     if (data.thirst <= 45) {
-        $('.cede').css("stroke", "red");
+        $('.cede').css("fill", "red");
     } else {
-        $('.cede').css("stroke", "#3467d4");
+        $('.cede').css("fill", "#3467d4");
+    }
     }
 
-    // Stress Circle
+    if (Config.DynamicThirst == true) {
+    Progress(data.thirst, ".thirst");
+    if (data.thirst <= 95) {
+        $('.hthirst').fadeIn(750);
+    }
+    if (data.thirst >= 96) {
+        $('.hthirst').fadeOut(750);
+    }
+    if (data.thirst <= 45) {
+        $('.cede').css("fill", "red");
+    } else {
+        $('.cede').css("fill", "#3467d4");
+    }
+    }
 
+    // oxygen radial
+    if (Config.DynamicOxygen == false) {
+    Progress(data.oxygen, ".oxygen");
+    if (data.oxygen >= 99) {
+        $('.ooxygen').fadeIn(750);
+    }
+    if (data.oxygen <= 45) {
+        $('.aome').css("fill", "red");
+    } else {
+        $('.aome').css("fill", "#9dbad5");
+    }
+    }
+    
+    if (Config.DynamicOxygen == true) {
+    Progress(data.oxygen, ".oxygen");
+    if (data.oxygen <= 99) {
+        $('.ooxygen').fadeIn(750);
+    }
+    if (data.oxygen >= 99) {
+        $('.ooxygen').fadeOut(750);
+    }
+    if (data.oxygen <= 45) {
+        $('.aome').css("fill", "red");
+    } else {
+        $('.aome').css("fill", "#9dbad5");
+    }
+    }
+
+    // stress radial
+    if (Config.DynamicStress == false) {
+    Progress(data.stress, ".stress");
+    if (data.stress <= 2) {
+        $('.hstress').fadeIn(750);
+    }
+    }
+
+    if (Config.DynamicStress == true) {
     Progress(data.stress, ".stress");
     if (data.stress >= 3) {
-        $('.hstress').fadeIn(3000);
+        $('.hstress').fadeIn(750);
     }
     if (data.stress <= 2) {
-        $('.hstress').fadeOut(3000);
+        $('.hstress').fadeOut(750);
+    }
     }
 
-// CAR HUD
-
-    Config.CarHud = function(data) {
+// carui
+    // carhud
+    CarHud = function(data) {
         if (data.show) {
+            carui = true;
             $(".ui-car-container").fadeIn();
-            $(".hnitrous").fadeIn(3000);
+            if (Config.Engine == "new") {
+                $(".circle-engine").fadeOut(750);
+                }
         } else {
+            carui=false;
             $(".ui-car-container").fadeOut();
-            $('.hnitrous').fadeOut(3000);
+            if (Config.DynamicNitro == false) {
+            $(".hnitrous").fadeOut(750);
+            }
+            $('.circle-engine').hide();
+            $('.circle-harness').hide();
         }
     };
 
-    // Seat Belt Circle
+    // aircraft
+    AirCraftHud = function(data) {
+        if (data.show) {
+            airui = true;
+            $(".ui-aircraft-container").fadeIn();
+            $('.car-seatbelt-info').css("margin-right", "90px");
+        } else {
+            airui = false;
+            $(".ui-aircraft-container").hide();
+            $('.car-seatbelt-info').css("margin-right", "0px");
+        }
+    };
 
-    Config.ToggleSeatbelt = function(data) {
+    // seatbelt
+    ToggleSeatbelt = function(data) {
         if (data.seatbelt) {
             $(".car-seatbelt-info img").fadeOut(750);
-            $(".circle-harness").fadeIn(750);
         } else {
             $(".car-seatbelt-info img").fadeIn(750);
+        }
+    };
+
+    // harness
+    ToggleHarness = function(data) {
+        if (data.harness) {
+            $(".circle-harness").fadeIn(750);
+        } else {
             $(".circle-harness").fadeOut(750);
         }
     };
 
-    // Nitrous Circle
-
-    Progress(data.nivel, ".nitrous");
-    if (data.activo) {
-    $(".nitrous").css({"stroke":"#fcb80a"});
+    // new engine
+    if (Config.DynamicEngine == false && Config.EngineType == "new" && carui == true) {
+    Progress(data.engine, ".engine");
+    if (data.engine >= 0) {
+        $('.circle-engine').fadeIn(750);
+    }
+    if (data.engine <= 45){
+        $('.engine').css("stroke", "#B71C1C");
+        $('.hengine').css("fill", "#B71C1C"); 
+    }
+    else if (data.engine <= 75 && data.engine >= 46 ) {
+        $('.engine').css("stroke", "#f0932b");
+        $('.hengine').css("fill", "#f0932b");
     } else {
-    $(".nitrous").css({"stroke":"rgb(241, 71, 185)"});
-    }  
+        $('.engine').css("stroke", "#00C853");
+        $('.hengine').css("fill", "#00C853");
+    }
+    }
 
-    // Engine Health
+    if (Config.EngineType == "new" &&  carui == true) {
+        $('.car-seatbelt-info').css("margin-left", "-28px");
+        $(".engine-red img").fadeOut(750);
+        $(".engine-orange img").fadeOut(750);
+    Progress(data.engine, ".engine");
+    if (data.engine <= 95) {
+        $('.circle-engine').fadeIn(750);
+    }
 
+    if (Config.DynamicEngine == true) {
+        if (data.engine >= 96) {
+            $('.circle-engine').fadeOut(750);
+    }
+    }
+    if (data.engine <= 45){
+        $('.engine').css("stroke", "#B71C1C");
+        $('.hengine').css("fill", "#B71C1C"); 
+    }
+    else if (data.engine <= 75 && data.engine >= 46 ) {
+        $('.engine').css("stroke", "#f0932b");
+        $('.hengine').css("fill", "#f0932b");
+    } else {
+        $('.engine').css("stroke", "#00C853");
+        $('.hengine').css("fill", "#00C853");
+    }
+    }
+
+    // np engine
+    if (Config.EngineType == "np") {
+        $(".circle-engine").fadeOut(750);
     if (data.engine <= 45) {
         $(".engine-red img").fadeIn(750);
         $(".engine-orange img").fadeOut(750);
@@ -208,22 +368,80 @@ var CurrentProx = 0;
         $(".engine-red img").fadeOut(750);
         $(".engine-orange img").fadeOut(750);
     }
+    }
 
-    // Speed & Fuel Color Circle
+    // nitro radial
+    if (Config.DynamicNitro == false) {
+    Progress(data.nivel, ".nitrous");
+    if (data.nivel >= 0 && carui ==true) {   
+        $('.hnitrous').fadeIn(750);
+    }
+    if (data.activo) {
+        $(".nitrous").css({"stroke":"#ff5454"});
+        $(".nitronot").css({"display":"none"}); // don't touch if you don't understand
+        $(".nitroactive").css({"display":"block"}); // don't touch if you don't understand
+    } else {
+        $(".nitrous").css({"stroke":"#F06292"});
+        $(".nitronot").css({"display":"block"}); // don't touch if you don't understand
+        $(".nitroactive").css({"display":"none"}); // don't touch if you don't understand
+    }  
+    }
 
+    if (Config.DynamicNitro == true) {
+    Progress(data.nivel, ".nitrous");
+    if (data.activo) {
+        $(".nitrous").css({"stroke":"#ff5454"});
+        $(".nitronot").css({"display":"none"}); // don't touch if you don't understand
+        $(".nitroactive").css({"display":"block"}); // don't touch if you don't understand
+    } else {
+        $(".nitrous").css({"stroke":"#F06292"});
+        $(".nitronot").css({"display":"block"}); // don't touch if you don't understand
+        $(".nitroactive").css({"display":"none"}); // don't touch if you don't understand
+    }  
+    if (data.nivel > 0 && carui==true) {
+        $(".hnitrous").fadeIn(750);
+    } else {       
+        $('.hnitrous').fadeOut(750);
+    }
+    }
+
+    // dev radial
+    if (data.devmode) {
+        $(".circle-dev").fadeIn(750);
+    } else {
+        $(".circle-dev").fadeOut(750);
+    }
+
+    // speed
     setProgressSpeed(data.speed, ".progress-speed");
+
+    // speed
+    setProgressSpeed(data.altitude, ".progress-altitude");
+
+    // fuel
     setProgressFuel(data.fuel, ".progress-fuel");
     if (data.fuel <= 20) {
-        $('.progress-fuel').css("stroke", "red");
+        $('.progress-fuel').css("stroke", "red"); // 20% fuel left color
     } else if (data.fuel <= 30) {
-        $('.progress-fuel').css("stroke", "orange");
+        $('.progress-fuel').css("stroke", "orange"); // 30% fuel left color
     } else {
-        $('.progress-fuel').css("stroke", "#fff");
+        $('.progress-fuel').css("stroke", "#fff"); // other fuel left color
+    }
+        
+    // cinematic mode
+    if (data.cinematicmode) {
+        $(".ui-aircraft-otherinfo").css("margin-left", "-60%");
+        $(".ui-car-otherinfo").css("left", "-52.5%");
+        $(".ui-bars-container").css("left", "-100%");
+        $(".outline").hide();
+    } else {
+        $(".ui-aircraft-otherinfo").css("margin-left", "0%");
+        $(".ui-car-otherinfo").css("left", "22.5%");
+        $(".ui-bars-container").css("left", "1%");
     }
 };
 
-// NAVIGATION VISIBILITY
-
+// compass
 window.addEventListener("message", function (event) {
     if (event.data.action == "display") {
         type = event.data.type
@@ -249,89 +467,73 @@ window.addEventListener("message", function (event) {
     }
 });
 
-// MINIMAP VISIBILITY
-
-$(function() {
-    window.addEventListener("message", function(event) {
-        var data = event.data;
-        switch (data.action) {
-            case "displaySquareUI":
-                $(".mapbordercircle").hide();
-                $(".outline").show();
-                $(".mapbordersquare").fadeIn(300);
-            break;
-            case "hideSquareUI":
-                $(".mapbordercircle").hide();
-                $(".outline").hide();
-                $(".mapbordersquare").hide();
-            break;
-            case "displayCircleUI":
-                $(".mapbordersquare").hide();
-                $(".outline").show();
-                $(".mapbordercircle").show();
-            break;
-            case "hideCircleUI":
-                $(".mapbordersquare").hide();
-                $(".outline").hide();
-                $(".mapbordercircle").hide();
-            break;
-        }
-    });
-});
-
-// ON LOAD
-
+// on load
 window.onload = function(e) {
     window.addEventListener('message', function(event) {
+        var data = event.data;
         switch(event.data.action) {
-            case "open":
-                Config.Open(event.data);
-                break;
             case "close":
-                Config.Close();
+                Close();
                 break;
             case "update":
-                Config.Update(event.data);
+                Update(event.data);
                 break;
             case "show":
-                Config.Show(event.data);
+                Show(event.data);
                 break;
             case "hudtick":
-                Config.UpdateHud(event.data);
+                UpdateHud(event.data);
                 break;
             case "car":
-                Config.CarHud(event.data);
+                CarHud(event.data);
+                break;
+            case "aircraft":
+                AirCraftHud(event.data);
                 break;
             case "engine":
-                Config.EngineHealth(event.data);
+                EngineHealth(event.data);
                 break;
             case "seatbelt":
-                Config.ToggleSeatbelt(event.data);
+                ToggleSeatbelt(event.data);
+                break;
+            case "harness":
+                ToggleHarness(event.data);
                 break;
             case "nitrous":
-                Config.UpdateNitrous(event.data);
+                UpdateNitrous(event.data);
                 break;
             case "UpdateProximity":
-                Config.UpdateProximity(event.data);
+                UpdateProximity(event.data);
                 break;
             case "talking":
-                Config.SetTalkingState(event.data);
+                SetTalkingState(event.data);
                 break;
+            case "displaySquareUI":
+                $(".circlemapborder").hide();
+                $(".outline").show();
+                $(".squaremapborder").fadeIn(300);
+            break;
+            case "hideSquareUI":
+                $(".circlemapborder").hide();
+
+                $(".squaremapborder").hide();
+            break;
+            case "displayCircleUI":
+                $(".squaremapborder").hide();
+                $(".outline").show();
+                $(".circlemapborder").show();
+            break;
+            case "hideCircleUI":
+                $(".squaremapborder").hide();
+
+                $(".circlemapborder").hide();
+            break;
         }
     })
 }
 
-// Progress Circle
-
-    function ProgressVoip(percent, element) {
-        var circle = document.querySelector(element);
-        var radius = circle.r.baseVal.value;
-        var circumference = radius * 200 * Math.PI;
-        circle.style.strokeDasharray = `${circumference} ${circumference}`;
-        circle.style.strokeDashoffset = `${circumference}`;
-        const offset = circumference - ((-percent * 100) / 100 / 100) * circumference;
-        circle.style.strokeDashoffset = -offset;
-    }
+// progress
+   
     function Progress(percent, element) {
         var circle = document.querySelector(element);
         var radius = circle.r.baseVal.value;
@@ -353,6 +555,7 @@ window.onload = function(e) {
         circle.style.strokeDashoffset = -offset;
         html.text(value);
       }
+   
       function setProgressFuel(percent, element) {
         var circle = document.querySelector(element);
         var radius = circle.r.baseVal.value;
@@ -365,184 +568,3 @@ window.onload = function(e) {
         html.text(Math.round(percent));
       }
 })();
-
-// RADIAL PROGRESS
-
-function radialProgress(parent) {
-    var _data=null,
-        _duration= 1000,
-        _selection,
-        _margin = {top:0, right:0, bottom:30, left:0},
-        __width = 300,
-        __height = 300,
-        _diameter = 150,
-        _label="",
-        _fontSize=10;
-    var _mouseClick;
-    var _value= 0,
-        _minValue = 0,
-        _maxValue = 100;
-    var  _currentArc= 0, _currentArc2= 0, _currentValue=0;
-    var _arc = d3.svg.arc()
-        .startAngle(0 * (Math.PI/180)); //just radians
-    var _arc2 = d3.svg.arc()
-        .startAngle(0 * (Math.PI/180))
-        .endAngle(0); //just radians
-    _selection=d3.select(parent);
-
-    function component() {
-        _selection.each(function (data) {
-            // Select the svg element, if it exists.
-            var svg = d3.select(this).selectAll("svg").data([data]);
-            var enter = svg.enter().append("svg").attr("class","radial-svg").append("g");
-            measure();
-            svg.attr("width", __width)
-                .attr("height", __height);
-            var background = enter.append("g").attr("class","component")
-                .attr("cursor","pointer")
-                .on("click",onMouseClick);
-            _arc.endAngle(360 * (Math.PI/180))
-            background.append("rect")
-                .attr("class","background")
-                .attr("width", _width)
-                .attr("height", _height);
-            background.append("path")
-                .attr("transform", "translate(" + _width/2 + "," + _width/2 + ")")
-                .attr("d", _arc);
-            background.append("text")
-                .attr("class", "label")
-                .attr("transform", "translate(" + _width/2 + "," + (_width + _fontSize) + ")")
-                .text(_label);
-           var g = svg.select("g")
-                .attr("transform", "translate(" + _margin.left + "," + _margin.top + ")");
-            _arc.endAngle(_currentArc);
-            enter.append("g").attr("class", "arcs");
-            var path = svg.select(".arcs").selectAll(".arc").data(data);
-            path.enter().append("path")
-                .attr("class","arc")
-                .attr("transform", "translate(" + _width/2 + "," + _width/2 + ")")
-                .attr("d", _arc);
-            //Another path in case we exceed 100%
-            var path2 = svg.select(".arcs").selectAll(".arc2").data(data);
-            path2.enter().append("path")
-                .attr("class","arc2")
-                .attr("transform", "translate(" + _width/2 + "," + _width/2 + ")")
-                .attr("d", _arc2);
-            enter.append("g").attr("class", "labels");
-            var label = svg.select(".labels").selectAll(".label").data(data);
-            label.enter().append("text")
-                .attr("class","label")
-                .attr("y",_width/2+_fontSize/3)
-                .attr("x",_width/2)
-                .attr("cursor","pointer")
-                .attr("width",_width)
-                // .attr("x",(3*_fontSize/2))
-                .text(function (d) { return Math.round((_value-_minValue)/(_maxValue-_minValue)*100) + "%" })
-                .style("font-size",_fontSize+"px")
-                .on("click",onMouseClick);
-            path.exit().transition().duration(500).attr("x",1000).remove();
-            layout(svg);
-            function layout(svg) {
-                var ratio=(_value-_minValue)/(_maxValue-_minValue);
-                var endAngle=Math.min(360*ratio,360);
-                endAngle=endAngle * Math.PI/180;
-                path.datum(endAngle);
-                path.transition().duration(_duration)
-                    .attrTween("d", arcTween);
-                if (ratio > 1) {
-                    path2.datum(Math.min(360*(ratio-1),360) * Math.PI/180);
-                    path2.transition().delay(_duration).duration(_duration)
-                        .attrTween("d", arcTween2);
-                }
-                label.datum(Math.round(ratio*100));
-                label.transition().duration(_duration)
-                    .tween("text",labelTween);
-            }
-        });
-        function onMouseClick(d) {
-            if (typeof _mouseClick == "function") {
-                _mouseClick.call();
-            }
-        }
-    }
-    function labelTween(a) {
-        var i = d3.interpolate(_currentValue, a);
-        _currentValue = i(0);
-
-        return function(t) {
-            _currentValue = i(t);
-            this.textContent = Math.round(i(t)) + "%";
-        }
-    }
-    function arcTween(a) {
-        var i = d3.interpolate(_currentArc, a);
-
-        return function(t) {
-            _currentArc=i(t);
-            return _arc.endAngle(i(t))();
-        };
-    }
-    function arcTween2(a) {
-        var i = d3.interpolate(_currentArc2, a);
-
-        return function(t) {
-            return _arc2.endAngle(i(t))();
-        };
-    }
-    function measure() {
-        _width=_diameter - _margin.right - _margin.left - _margin.top - _margin.bottom;
-        _height=_width;
-        _fontSize=_width*.2;
-        _arc.outerRadius(_width/2);
-        _arc.innerRadius(_width/2 * .85);
-        _arc2.outerRadius(_width/2 * .85);
-        _arc2.innerRadius(_width/2 * .85 - (_width/2 * .15));
-    }
-    component.render = function() {
-        measure();
-        component();
-        return component;
-    }
-    component.value = function (_) {
-        if (!arguments.length) return _value;
-        _value = [_];
-        _selection.datum([_value]);
-        return component;
-    }
-    component.margin = function(_) {
-        if (!arguments.length) return _margin;
-        _margin = _;
-        return component;
-    };
-    component.diameter = function(_) {
-        if (!arguments.length) return _diameter
-        _diameter =  _;
-        return component;
-    };
-    component.minValue = function(_) {
-        if (!arguments.length) return _minValue;
-        _minValue = _;
-        return component;
-    };
-    component.maxValue = function(_) {
-        if (!arguments.length) return _maxValue;
-        _maxValue = _;
-        return component;
-    };
-    component.label = function(_) {
-        if (!arguments.length) return _label;
-        _label = _;
-        return component;
-    };
-    component._duration = function(_) {
-        if (!arguments.length) return _duration;
-        _duration = _;
-        return component;
-    };
-    component.onClick = function (_) {
-        if (!arguments.length) return _mouseClick;
-        _mouseClick=_;
-        return component;
-    }
-    return component;
-}

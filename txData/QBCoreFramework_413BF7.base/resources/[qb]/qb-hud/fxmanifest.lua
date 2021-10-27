@@ -2,7 +2,8 @@ fx_version 'cerulean'
 games { 'gta5' }
 
 description 'lj-hud'
-version '1.0.0'
+version '3.0'
+author 'github.com/loljoshie'
 
 client_scripts {
 	"config.lua",
@@ -18,7 +19,12 @@ ui_page {
 	'html/ui.html',	
 }
 
+shared_scripts {
+	'@qb-core/import.lua',
+}
+
 files {
+	'html/js/config.js',
 	'html/ui.html',
 	'html/*.html',
 	"html/img/*.svg",

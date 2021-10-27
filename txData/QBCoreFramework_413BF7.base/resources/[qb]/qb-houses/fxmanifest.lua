@@ -6,10 +6,7 @@ version '1.0.0'
 
 ui_page 'html/index.html'
 
-shared_scripts { 
-	'@qb-core/import.lua',
-	'config.lua'
-}
+shared_script 'config.lua'
 
 client_scripts {
 	'client/main.lua',
@@ -25,10 +22,6 @@ files {
 	'html/style.css',
 	'html/script.js',
 	'html/img/dynasty8-logo.png'
-}
-
-server_export {
-	'hasKey'
 }
 
 dependencies {

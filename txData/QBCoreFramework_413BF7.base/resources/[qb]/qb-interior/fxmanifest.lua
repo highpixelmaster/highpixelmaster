@@ -4,71 +4,77 @@ game 'gta5'
 description 'QB-Interior'
 version '1.0.0'
 
+this_is_a_map 'yes'
+
 client_scripts {
-	'@qb-core/import.lua',
 	'client/main.lua',
-	'client/shells.lua',
-	'client/furnished.lua'
+	--'client/optional.lua'
 }
- 
+
 files {
-	'playerhouse_hotel/playerhouse_hotel.ytyp',
-	'stream/playerhouse_hotel/playerhouse_hotel.ytyp',
-	'stream/playerhouse_hotel/playerhouse_hote2.ytyp',
-	'stream/playerhouse_tier3/playerhouse_tier3.ytyp',
-	'stream/playerhouse_appartment_motel/playerhouse_appartment_motel.ytyp',
-	'stream/micheal_shell/micheal_shell.ytyp',
-	'stream/trevors_shell/trevors_shell.ytyp',
-	'stream/gunshop_shell/gunshop_shell.ytyp',
-	'stream/traphouse_shell/traphouse_shell.ytyp',
-	'stream/appartment/appartment.ytyp',
-	'stream/caravan_shell/caravan.ytyp',
-	'stream/frankelientje/frankelientje.ytyp',
-	'stream/tante_shell/tante.ytyp',
-	'stream/methlab_shell/methlab_shell.ytyp',
-	'stream/pinkcage/gabz_pinkcage.ytyp'
+	-- Default (included)
+	'stream/defaultshells/shellprops.ytyp',
+	'stream/startingapt/shellpropsv11.ytyp',
+    -- Warehouse Shells (addon) https://k4mb1.tebex.io/package/4673185
+    'stream/WarehouseShells/shellpropsv5.ytyp',
+    -- Highend Shells (addon) https://k4mb1.tebex.io/package/4673131
+	'stream/HighendHousingShells/shellpropsv9.ytyp',
+	-- Deluxe Shells (addon) https://k4mb1.tebex.io/package/4673159
+    'stream/DeluxeHousingShells/shellpropsv2.ytyp',
+    -- Office Shells (addon) https://k4mb1.tebex.io/package/4673258
+	'stream/OfficeShells/shellpropsv3.ytyp',
+    -- Store Shells (addon) https://k4mb1.tebex.io/package/4673264
+	'stream/StoreShells/shellpropsv4.ytyp',
+    -- Medium Housing (addon) https://k4mb1.tebex.io/package/4672307
+    'stream/MediumHousingShells/shellpropsv10.ytyp',
+	-- Drug Lab Shells (addon) https://k4mb1.tebex.io/package/4672285
+	'stream/LabShells/shellpropsv7.ytyp',
+    -- Garage Shells (addon) https://k4mb1.tebex.io/package/4673177
+	'stream/GarageShells/shellpropsv8.ytyp',
+	-- 'stream/ClassicHouseShells/shellpropsv19.ytyp',
+	-- 'stream/FurnishedHousingShells/shellpropsv11.ytyp',
+	-- 'stream/FurnishedMotelsShells/shellpropsv18.ytyp',
+	-- 'stream/FurnishedStashhousesShells/shellpropsv15.ytyp',
+	-- 'stream/HighendLabShells/kshellsdrug.ytyp',
+	-- 'stream/ModernHotelsShells/shellpropsv14.ytyp',
+	-- 'stream/ModernHousingShells/shellpropsv12.ytyp',
+	-- 'stream/StashhousesShells/shellpropsv16.ytyp'
 }
 
-data_file 'DLC_ITYP_REQUEST' 'stream/v_int_20.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/playerhouse_hotel/playerhouse_hotel.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/playerhouse_tier1/playerhouse_tier1.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/playerhouse_tier1/playerhouse_tier2.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/playerhouse_tier3/playerhouse_tier3.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/playerhouse_appartment_motel/playerhouse_appartment_motel.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/micheal_shell/micheal_shell.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/trevors_shell/trevors_shell.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/gunshop_shell/gunshop_shell.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/traphouse_shell/traphouse_shell.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/appartment/appartment.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/caravan_shell/caravan.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/frankelientje/frankelientje.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/tante_shell/tante.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/methlab_shell/methlab_shell.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/pinkcage/gabz_pinkcage.ytyp'
+-- Default (included)
+data_file 'DLC_ITYP_REQUEST' 'stream/defaultshells/shellprops.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/startingapt/shellpropsv11.ytyp'
+-- Warehouse Shells (addon) https://k4mb1.tebex.io/package/4673185
+data_file 'DLC_ITYP_REQUEST' 'stream/WarehouseShells/shellpropsv5.ytyp'
+-- Highend Shells (addon) https://k4mb1.tebex.io/package/4673131
+data_file 'DLC_ITYP_REQUEST' 'stream/HighendHousingShells/shellpropsv9.ytyp'
+-- Deluxe Shells (addon) https://k4mb1.tebex.io/package/4673159
+data_file 'DLC_ITYP_REQUEST' 'stream/DeluxeHousingShells/shellpropsv2.ytyp'
+-- Office Shells (addon) https://k4mb1.tebex.io/package/4673258
+data_file 'DLC_ITYP_REQUEST' 'stream/OfficeShells/shellpropsv3.ytyp'
+-- Store Shells (addon) https://k4mb1.tebex.io/package/4673264
+data_file 'DLC_ITYP_REQUEST' 'stream/StoreShells/shellpropsv4.ytyp'
+-- Medium Housing (addon) https://k4mb1.tebex.io/package/4672307
+data_file 'DLC_ITYP_REQUEST' 'stream/MediumHousingShells/shellpropsv10.ytyp'
+-- Drug Lab Shells (addon) https://k4mb1.tebex.io/package/4672285
+data_file 'DLC_ITYP_REQUEST' 'stream/LabShells/shellpropsv7.ytyp'
+-- Garage Shells (addon) https://k4mb1.tebex.io/package/4673177
+data_file 'DLC_ITYP_REQUEST' 'stream/GarageShells/shellpropsv8.ytyp'
+-- -- Classic
+-- data_file 'DLC_ITYP_REQUEST' 'stream/ClassicHouseShells/shellpropsv19.ytyp'
+-- -- Furnished Housing
+-- data_file 'DLC_ITYP_REQUEST' 'stream/FurnishedHousingShells/shellpropsv11.ytyp'
+-- -- Furnished Motels
+-- data_file 'DLC_ITYP_REQUEST' 'stream/FurnishedMotelsShells/shellpropsv18.ytyp'
+-- -- Furnished Stash
+-- data_file 'DLC_ITYP_REQUEST' 'stream/FurnishedStashhousesShells/shellpropsv15.ytyp'
+-- -- High End Labs
+-- data_file 'DLC_ITYP_REQUEST' 'stream/HighendLabShells/kshellsdrug.ytyp'
+-- -- Modern Hotels
+-- data_file 'DLC_ITYP_REQUEST' 'stream/ModernHotelsShells/shellpropsv14.ytyp'
+-- -- Modern Housing
+-- data_file 'DLC_ITYP_REQUEST' 'stream/ModernHousingShells/shellpropsv12.ytyp'
+-- -- Stash
+-- data_file 'DLC_ITYP_REQUEST' 'stream/StashhousesShells/shellpropsv16.ytyp'
 
-exports {
-	'DespawnInterior',
-	'CreateHotel',
-	'CreateTier1House',
-	'CreateTier2House',
-	'CreateTier3House',
-	'CreateMichaelShell',
-	'CreateTrevorsShell',
-	'CreateLesterShell',
-	'CreateGunshopShell',
-	'CreateTrapHouseShell',
-	'CreateMethlabShell',
-	
-	'CreateApartmentShell',
-	'CreateCaravanShell',
-	'CreateFranklinShell',
-	'CreateFranklinAuntShell',
-
-	'CreateTier1HouseFurnished',
-	'CreateHotelFurnished',
-	'CreateApartmentFurnished'
-}
-
-dependencies {
-	'qb-core'
-}
+lua54 'yes'

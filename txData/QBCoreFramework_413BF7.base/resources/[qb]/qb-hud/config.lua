@@ -1,52 +1,47 @@
 Config = {}
-Config.streetName = {}
-Config.compass = {}
-Config.Radar = {}
-Config.Money = {}
-Config.Show = true -- Don't Touch This
-Config.EnableCircleMap = true -- Switch Between Circular and Square Map
-Config.Money.ShowConstant = false -- Always Show Money
-Config.MinimumStress = 50 -- Minimum Stress Level For Screen Shaking
-Config.MinimumSpeed = 100 -- Going Over This Speed Will Cause Stress
-Config.compass.show = false -- Show Compass
-Config.compass.followGameplayCam = true -- Moving Mouse Around Reacts with Compass
-Config.streetName.show = false
 
--- Stress 
+Config.Version = "new" -- "new" or "old" set to old if using older versions of qbcore
+Config.ShowMap = "circle" -- "circle" or "square" set square if you want that shape instead
+Config.ShowStamina = true -- set to false if you don't want stamina
+Config.ShowOxygen = true -- set to false if you don't want oxygen
+Config.SpeedValue = "mph"  -- "kmh" or "mph"
+Config.MinimumStress = 50 -- minimum stress level for screen shaking
+Config.MinimumSpeed = 100 -- going over this speed will cause stress
 
+-- stress 
 Config.Intensity = {
     ["shake"] = {
         [1] = {
-            min = 50,
-            max = 60,
+            min = 20,
+            max = 40,
             intensity = 0.12,
         },
         [2] = {
-            min = 60,
-            max = 70,
+            min = 40,
+            max = 60,
             intensity = 0.17,
         },
         [3] = {
-            min = 70,
+            min = 60,
             max = 80,
-            intensity = 0.22,
+            intensity = 0.20,
         },
         [4] = {
             min = 80,
             max = 90,
-            intensity = 0.28,
+            intensity = 0.40,
         },
         [5] = {
             min = 90,
             max = 100,
-            intensity = 0.32,
+            intensity = 0.60,
         },
     }
 }
 
-Config.EffectInterval = {
+Config.EffectInterval = { -- change how often screen shake happens
     [1] = {
-        min = 50,
+        min = 20,
         max = 60,
         timeout = math.random(50000, 60000)
     },

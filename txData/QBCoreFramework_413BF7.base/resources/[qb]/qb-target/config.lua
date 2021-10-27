@@ -145,6 +145,8 @@ Config.TargetModels = {
         },
         distance = 2.5,
     },
+
+    
 	["ATM"] = {
         models = {  
             'prop_atm_01',
@@ -279,6 +281,7 @@ Config.GlobalPlayerOptions = {
 
 Config.Peds = {
 
+    
 }
 
 -------------------------------------------------------------------------------

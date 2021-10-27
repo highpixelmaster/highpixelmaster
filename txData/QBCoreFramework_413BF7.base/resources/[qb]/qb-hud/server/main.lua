@@ -1,8 +1,47 @@
-QBCore = exports['qb-core']:GetCoreObject()
 local ResetStress = false
+local dev = false
 
--- Events
+-- default new version of qbcore
+if Config.Version == "new" then
+    QBCore = exports['qb-core']:GetCoreObject()
 
+elseif Config.Version == "old" then
+    local QBCore = nil
+    Citizen.CreateThread(function()
+        while QBCore == nil do
+            TriggerEvent("QBCore:GetObject", function(obj)QBCore = obj end)
+            Citizen.Wait(200)
+        end
+    end)
+end
+
+
+-- /cash command
+QBCore.Commands.Add("cash", "Check cash", {}, false, function(source, args)
+	TriggerClientEvent('hud:client:ShowMoney', source, "cash")
+end)
+
+-- /bank command
+QBCore.Commands.Add("bank", "Check bank balance", {}, false, function(source, args)
+    local player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent('QBCore:Notify', source, 'Bank $' ..comma_value(player.PlayerData.money['bank']))
+end)
+
+-- /dev command
+QBCore.Commands.Add("dev", "Enable/Disable developer Mode", {}, false, function(source, args)
+    if QBCore.Functions.HasPermission(source, 'admin') then
+	    TriggerClientEvent("qb-admin:client:ToggleDevmode", source)
+    else
+        TriggerClientEvent('QBCore:Notify', source, 'No Access To This Command ', 'error')
+    end
+end)
+
+-- /cinematic command
+QBCore.Commands.Add("cinematic", "Enable/Disable cinematic mode", {}, false, function(source, args)
+    TriggerClientEvent("hud:client:ToggleCinematic", source)
+end)
+
+-- stress
 RegisterServerEvent("hud:Server:UpdateStress")
 AddEventHandler('hud:Server:UpdateStress', function(StressGain)
 	local src = source
@@ -46,7 +85,7 @@ AddEventHandler('hud:server:gain:stress', function(amount)
         end
         Player.Functions.SetMetaData("stress", newStress)
         TriggerClientEvent("hud:client:update:stress", src, newStress)
-        TriggerClientEvent('QBCore:Notify', src, 'Gained stress', 'error', 1500)
+        TriggerClientEvent('QBCore:Notify', src, "Getting stressed", "error")
 	end
 end)
 
@@ -70,7 +109,7 @@ AddEventHandler('hud:server:RelieveStress', function(amount)
         end
         Player.Functions.SetMetaData("stress", newStress)
         TriggerClientEvent("hud:client:update:stress", src, newStress)
-        TriggerClientEvent('QBCore:Notify', src, 'Stress relieved')
+        TriggerClientEvent('QBCore:Notify', src, "Stress relieved")
 	end
 end)
 
@@ -87,10 +126,13 @@ AddEventHandler('hud:server:remove:stress', function(Amount)
     end
 end)
 
-TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-
--- In-game Commands
-
-QBCore.Commands.Add("cash", "Check cash", {}, false, function(source, args)
-	TriggerClientEvent('hud:client:ShowMoney', source, "cash")
-end)
+function comma_value(amount)
+    local formatted = amount
+    while true do  
+      formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+      if (k==0) then
+        break
+      end
+    end
+    return formatted
+  end

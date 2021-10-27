@@ -16,6 +16,28 @@ local menu12 = MenuV:CreateMenu(false, 'Vehicle Options', 'topright', 220, 20, 6
 local menu13 = MenuV:CreateMenu(false, 'Vehicle Categories', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test12')
 local menu14 = MenuV:CreateMenu(false, 'Vehicle Models', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test13')
 
+
+local devmode = false
+
+local menu_buttondev = menu11:AddCheckbox({
+    icon = '⚫',
+    label = 'Dev Mode',
+    value = menu2,
+    description = 'Enable/Disable Developer Mode'
+})
+
+menu_buttondev:On('change', function(item, newValue, oldValue)
+    devmode = not devmode
+    TriggerEvent('qb-admin:client:ToggleDevmode')
+    if devmode then
+        while devmode do
+            Citizen.Wait(200)
+            SetPlayerInvincible(PlayerId(), true)
+        end
+            SetPlayerInvincible(PlayerId(), false)
+    end
+end)
+
 RegisterNetEvent('qb-admin:client:openMenu')
 AddEventHandler('qb-admin:client:openMenu', function()
     MenuV:OpenMenu(menu)
