@@ -122,3 +122,39 @@ BoxZone:Create(vector3(-1189.94, -904.21, 13.98), 2.4, 1.0, {
   maxZ=14.98
 })
 
+--Name: prisonleave | 2021-10-26T06:11:21Z
+BoxZone:Create(vector3(1831.98, 2579.86, 46.01), 0.6, 0.6, {
+  name="prisonleave",
+  heading=357,
+  --debugPoly=true,
+  minZ=46.01,
+  maxZ=47.01
+})
+
+--Name: 5.2 | 2021-10-26T07:43:36Z
+BoxZone:Create(vector3(-56.01, -1209.86, 28.58), 5.8, 0.6, {
+  name="5.2",
+  heading=45,
+  --debugPoly=true,
+  minZ=27.38,
+  maxZ=31.38
+})
+
+--Name: stash3 | 2021-10-26T07:49:41Z
+BoxZone:Create(vector3(-67.5, -1198.46, 27.78), 6.8, 0.6, {
+  name="stash3",
+  heading=45,
+  --debugPoly=true,
+  minZ=26.78,
+  maxZ=30.78
+})
+
+--Name: stash4 | 2021-10-26T07:59:53Z
+BoxZone:Create(vector3(-73.76, -1196.62, 27.66), 6.8, 0.6, {
+  name="stash4",
+  heading=90,
+  --debugPoly=true,
+  minZ=26.86,
+  maxZ=30.86
+})
+

@@ -4,7 +4,7 @@ Config.ItemTiers = 1
 
 Config.MinimumPaletoPolice = 3
 Config.MinimumPacificPolice = 5
-Config.MinimumFleecaPolice = 2
+Config.MinimumFleecaPolice = 3
 Config.MinimumThermitePolice = 0
 
 Config.RewardTypes = {

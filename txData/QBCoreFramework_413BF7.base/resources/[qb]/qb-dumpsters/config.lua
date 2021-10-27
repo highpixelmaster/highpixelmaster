@@ -33,10 +33,10 @@ Config.loot = {
     },
     ['tier3'] = {
         'weapon_pistol',
-        'weapon_handcuffs',
+        'handcuffs',
         'painkillers',
         'advancedrepairkit',
         'armor',
-
+        'uzi_part_2',
     }
 }

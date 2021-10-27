@@ -1,32 +1,16 @@
-fx_version 'adamant'
-
+fx_version 'cerulean'
 game 'gta5'
+author 'uyuyorum {um}'
+description 'idcard'
+version '2.0.0'
 
-ui_page 'html/index.html'
-
-
-shared_script { 
-	'@qb-core/import.lua'
-}
-
-client_script {
-	'client.lua'
-}
-
-server_script {
-	'server.lua'
-}
+ui_page 'ui/ui.html'
+client_script {'client/client.lua'}
+server_script {'server/server.lua'}
 
 files {
-	'html/index.html',
-	'html/assets/css/*.css',
-	'html/assets/js/*.js',
-	'html/assets/fonts/roboto/*.woff',
-	'html/assets/fonts/roboto/*.woff2',
-	'html/assets/fonts/justsignature/JustSignature.woff',
-	'html/assets/images/*.png'
-}
-
-dependencies {
-	'qb-core'
+	'ui/ui.html',
+	'ui/assets/css/*.css',
+	'ui/assets/js/*.js',
+	'ui/assets/img/*.png'
 }

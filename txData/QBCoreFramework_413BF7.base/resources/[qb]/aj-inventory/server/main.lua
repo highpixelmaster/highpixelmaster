@@ -1538,6 +1538,10 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 					info.bagid = math.random(11111,99999)
 				elseif itemData["name"] == "labkey" then
 					info.lab = exports["qb-methlab"]:GenerateRandomLab()
+				elseif itemData["name"] == "weaponlicense" then
+					info.firstname = Player.PlayerData.charinfo.firstname
+					info.lastname = Player.PlayerData.charinfo.lastname
+					info.birthdate = Player.PlayerData.charinfo.birthdate
 				elseif itemData["name"] == "printerdocument" then
 					info.url = "https://cdn.discordapp.com/attachments/645995539208470549/707609551733522482/image0.png"
 				end
@@ -1600,10 +1604,8 @@ QBCore.Functions.CreateUseableItem("driver_license", function(source, item)
 		end
 	end
 end)
-
 QBCore.Functions.CreateUseableItem("id_card", function(source, item)
 	for k, v in pairs(QBCore.Functions.GetPlayers()) do
-		local character = QBCore.Functions.GetPlayer(source)
 		local PlayerPed = GetPlayerPed(source)
 		local TargetPed = GetPlayerPed(v)
 		local dist = #(GetEntityCoords(PlayerPed) - GetEntityCoords(TargetPed))
@@ -1614,7 +1616,7 @@ QBCore.Functions.CreateUseableItem("id_card", function(source, item)
 			end
 			TriggerClientEvent('chat:addMessage', v,  {
 				template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>Civ ID:</strong> {1} <br><strong>First Name:</strong> {2} <br><strong>Last Name:</strong> {3} <br><strong>Birthdate:</strong> {4} <br><strong>Gender:</strong> {5} <br><strong>Nationality:</strong> {6}</div></div>',
-				args = {'ID Card', item.info.citizenid, item.info.firstname, item.info.lastname, item.info.birthdate, gender, item.info.nationality}
+				args = {'ID Card', item.info.citizenid, item.info.firstname, item.info.lastname,item.info.birthdate, gender, item.info.nationality}
 			})
 		end
 	end

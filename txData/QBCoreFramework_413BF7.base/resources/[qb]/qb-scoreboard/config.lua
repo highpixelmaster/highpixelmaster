@@ -16,12 +16,16 @@ Config.IllegalActions = {
         minimum = 1,
         busy = false,
     },
-    ["bankrobbery"] = {
+    ["truckrobbery"] = {
         minimum = 2,
         busy = false,
     },
-    ["jewellery"] = {
+    ["bankrobbery"] = {
         minimum = 3,
+        busy = false,
+    },
+    ["jewellery"] = {
+        minimum = 4,
         busy = false,
     },
     ["pacific"] = {

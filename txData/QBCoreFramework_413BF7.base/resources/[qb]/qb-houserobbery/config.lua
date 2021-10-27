@@ -24,6 +24,7 @@ Config.Rewards = {
             "trojan_usb",
             "gpu1",
             "gpu2",
+            "smg_ammo"
         },
         ["kitchen"] = {
             "tosti",
@@ -49,7 +50,9 @@ Config.Rewards = {
             "electronickit",
             "goldbar",
             "skateboard",
-            "gpu3"
+            "gpu3",
+            "uzi_part_1",
+            "uzi_part_3",
         },
     }
 }

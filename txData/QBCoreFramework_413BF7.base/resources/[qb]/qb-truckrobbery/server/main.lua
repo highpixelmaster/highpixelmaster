@@ -1,10 +1,10 @@
 ---======================---
 -----
 ---======================---
-local ActivePolice = 2  		--<< needed policemen to activate the mission
-local cashA = 250 				--<<how much minimum you can get from a robbery
-local cashB = 450				--<< how much maximum you can get from a robbery
-local ActivationCost = 500		--<< how much is the activation of the mission (clean from the bank)
+local ActivePolice = 0  		--<< needed policemen to activate the mission
+local cashA = 1500 				--<<how much minimum you can get from a robbery
+local cashB = 7500				--<< how much maximum you can get from a robbery
+local ActivationCost = 5000		--<< how much is the activation of the mission (clean from the bank)
 local ResetTimer = 2700 * 1000  --<< timer every how many missions you can do, default is 600 seconds
 -----------------------------------
 local ActiveMission = 0
@@ -34,7 +34,7 @@ if ActiveMission == 0 then
 		
 		OdpalTimer()
     else
-		TriggerClientEvent('QBCore:Notify', _source, 'Need at least '..ActivePolice.. ' SASP to activate the mission.')
+		TriggerClientEvent('QBCore:Notify', _source, 'Need at least '..ActivePolice.. ' police to activate the mission.')
     end
 	end
 else
@@ -77,9 +77,9 @@ AddEventHandler('AttackTransport:graczZrobilnapad', function(moneyCalc)
 	local chance = math.random(1, 100)
 	TriggerClientEvent('QBCore:Notify', _source, 'You took '..bags..' bags of cash from the van')
 
-	if chance >= 95 then
-	xPlayer.Functions.AddItem('security_card_01', 1)
-	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['security_card_01'], "add")
+	if chance >= 75 then
+	xPlayer.Functions.AddItem('uzi_part_1', 1)
+	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['uzi_part_1'], "add")
 	end
 
 Wait(2500)

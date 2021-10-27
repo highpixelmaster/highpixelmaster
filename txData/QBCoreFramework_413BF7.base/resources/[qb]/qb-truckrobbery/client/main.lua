@@ -1,15 +1,15 @@
 ---======================---
 ------
 ---======================---
-local MissionMarker =  vector3(960.71197509766, -215.51979064941, 76.2552947998) --<<place where is the marker with the mission
-local dealerCoords =  vector3(960.78, -216.25, 76.25)  							--<< place where the NPC dealer stands
+local MissionMarker =  vector3(882.04, -2257.69, 32.46) --<<place where is the marker with the mission
+local dealerCoords =  vector3(882.04, -2257.69, 32.46)  							--<< place where the NPC dealer stands
 local VehicleSpawn1 = vector3(-1327.479736328, -86.045326232910, 49.31)  		--<< below the coordinates for random vehicle responses
 local VehicleSpawn2 = vector3(-2075.888183593, -233.73908996580, 21.10)
 local VehicleSpawn3 = vector3(-972.1781616210, -1530.9045410150, 4.890)
 local VehicleSpawn4 = vector3(798.18426513672, -1799.8173828125, 29.33)
 local VehicleSpawn5 = vector3(1247.0718994141, -344.65634155273, 69.08)
-local DriverWep = "WEAPON_MICROSMG" 		--<< the weapon the driver is to be equipped with
-local NavWep = "WEAPON_MICROSMG"  			--<< the weapon the guard should be equipped with
+local DriverWep = "WEAPON_COMBATPISTOL" 		--<< the weapon the driver is to be equipped with
+local NavWep = "WEAPON_COMBATPISTOL"  			--<< the weapon the guard should be equipped with
 local TimeToBlow = 30 * 1000 				--<< bomb detonation time after planting, default 20 seconds
 ----------------------tego nizej nie ruszaj------------------------------
 local PickupMoney = 0
@@ -73,24 +73,10 @@ Citizen.CreateThread(function()
             local plyCoords = GetEntityCoords(PlayerPedId(), false) 
             local dist = #(plyCoords - vector3(MissionMarker.x, MissionMarker.y, MissionMarker.z))
 
-			if dist <= 25.0  then
-				if not DoesEntityExist(dealer) then
-				RequestModel("s_m_y_dealer_01")
-				while not HasModelLoaded("s_m_y_dealer_01") do
-				Wait(10)
-				end
-				dealer = CreatePed(26, "s_m_y_dealer_01", dealerCoords.x, dealerCoords.y, dealerCoords.z, 268.9422, false, false)
-				SetEntityHeading(dealer, 1.8)
-				SetBlockingOfNonTemporaryEvents(dealer, true)
-				TaskStartScenarioInPlace(dealer, "WORLD_HUMAN_AA_SMOKE", 0, false)
-				end	
-				DrawMarker(25, MissionMarker.x, MissionMarker.y, MissionMarker.z-0.90, 0, 0, 0, 0, 0, 0, 1.301, 1.3001, 1.3001, 0, 205, 250, 200, 0, 0, 0, 0)
-			else
-			Citizen.Wait(1500)
-			end
+
 
             if dist <= 1.0 then
-				DrawText3D(MissionMarker.x, MissionMarker.y, MissionMarker.z, "~g~[E]~b~ To accept missions")
+				DrawText3D(MissionMarker.x, MissionMarker.y, MissionMarker.z, "~g~[E]~b~ Start Truck Robbery")
 				if IsControlJustPressed(0, 38) then
 				TriggerServerEvent("AttackTransport:akceptujto")
 				Citizen.Wait(500)
@@ -185,61 +171,17 @@ end)
 
 RegisterNetEvent('qb-armoredtruckheist:client:robberyCall')
 AddEventHandler('qb-armoredtruckheist:client:robberyCall', function(streetLabel, coords)
-    if PlayerJob.name == "police" then 
-        local store = "Armored Truck"
-
-            PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-            TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
-                timeOut = 10000,
-                alertTitle = "Armored Truck Robbery Attempt",
-                coords = {
-                    x = coords.x,
-                    y = coords.y,
-                    z = coords.z,
-                },
-                details = {
-                    [1] = {
-                        icon = '<i class="fas fa-university"></i>',
-                        detail = store,
-                    },
-                    [2] = {
-                        icon = '<i class="fas fa-globe-europe"></i>',
-                        detail = streetLabel,
-                    },
-                },
-                callSign = QBCore.Functions.GetPlayerData().metadata["callsign"],
-            })
-        
-        local transG = 250
-        local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
-        SetBlipSprite(blip, 487)
-        SetBlipColour(blip, 4)
-        SetBlipDisplay(blip, 4)
-        SetBlipAlpha(blip, transG)
-        SetBlipScale(blip, 1.2)
-        SetBlipFlashes(blip, true)
-        BeginTextCommandSetBlipName('STRING')
-        AddTextComponentString("10-90: Armored Truck Robbery")
-        EndTextCommandSetBlipName(blip)
-        while transG ~= 0 do
-            Wait(180 * 4)
-            transG = transG - 1
-            SetBlipAlpha(blip, transG)
-            if transG == 0 then
-                SetBlipSprite(blip, 2)
-                RemoveBlip(blip)
-                return
-            end
-        end
-    end
+			local data = {displayCode = 'ROBBERY', blipSprite = 374, blipColour = 59, blipScale = 1.5, description = 'Money Truck Robbery', recipientList = {'police'}, isImportant = 1, length = '25000', infoM = 'fa-info-circle', info = "Security Guards under ATTACK!"}
+			local dispatchData = {dispatchData = data, caller = 'Security', coords = coords}
+			TriggerServerEvent('wf-alerts:svNotify', dispatchData)
 end)
 
 function MissionNotification()
 	Citizen.Wait(2000)
 	TriggerServerEvent('qb-phone:server:sendNewMail', {
 	sender = "The Boss",
-	subject = "New Target",
-	message = "So you are intrested in making some money? good... go get yourself a Gun and make it happen... sending you the location now.",
+	subject = "Bank Truck",
+	message = "We are sending you the GPS tracker location of a money truck hit it and run.",
 	})
 	Citizen.Wait(3000)
 end
