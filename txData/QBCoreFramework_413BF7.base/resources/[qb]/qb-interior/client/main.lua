@@ -59,6 +59,63 @@ local function CreateApartmentFurnished(spawn)
     return { objects, POIOffsets }
 end
 
+local function CreateContainer2(spawn)
+	local objects = {}
+    local POIOffsets = {}
+	POIOffsets.exit = json.decode('{"x": 0.02, "y": -5.37, "z": 1.12, "h": 355.28}')
+	DoScreenFadeOut(500)
+    while not IsScreenFadedOut() do
+        Citizen.Wait(10)
+    end
+	RequestModel(`container2_shell`)
+	while not HasModelLoaded(`container2_shell`) do
+	    Citizen.Wait(1000)
+	end
+	local house = CreateObject(`container2_shell`, spawn.x, spawn.y, spawn.z, false, false, false)
+    FreezeEntityPosition(house, true)
+    objects[#objects+1] = house
+	TeleportToInterior(spawn.x + POIOffsets.exit.x, spawn.y + POIOffsets.exit.y, spawn.z + POIOffsets.exit.z, POIOffsets.exit.h)
+    return { objects, POIOffsets }
+end
+
+local function CreateFurniStash1(spawn)
+	local objects = {}
+    local POIOffsets = {}
+	POIOffsets.exit = json.decode('{"x": 21.41, "y": -0.52, "z": 19.33, "h": 85.84}')
+	DoScreenFadeOut(500)
+    while not IsScreenFadedOut() do
+        Citizen.Wait(10)
+    end
+	RequestModel(`stashhouse1_shell`)
+	while not HasModelLoaded(`stashhouse1_shell`) do
+	    Citizen.Wait(1000)
+	end
+	local house = CreateObject(`stashhouse1_shell`, spawn.x, spawn.y, spawn.z, false, false, false)
+    FreezeEntityPosition(house, true)
+    objects[#objects+1] = house
+	TeleportToInterior(spawn.x + POIOffsets.exit.x, spawn.y + POIOffsets.exit.y, spawn.z + POIOffsets.exit.z, POIOffsets.exit.h)
+    return { objects, POIOffsets }
+end
+
+local function CreateFurniStash3(spawn)
+	local objects = {}
+    local POIOffsets = {}
+	POIOffsets.exit = json.decode('{"x": -0.003, "y": 5.5, "z": 3.04, "h": 180.77}')
+	DoScreenFadeOut(500)
+    while not IsScreenFadedOut() do
+        Citizen.Wait(10)
+    end
+	RequestModel(`stashhouse3_shell`)
+	while not HasModelLoaded(`stashhouse3_shell`) do
+	    Citizen.Wait(1000)
+	end
+	local house = CreateObject(`stashhouse3_shell`, spawn.x, spawn.y, spawn.z, false, false, false)
+    FreezeEntityPosition(house, true)
+    objects[#objects+1] = house
+	TeleportToInterior(spawn.x + POIOffsets.exit.x, spawn.y + POIOffsets.exit.y, spawn.z + POIOffsets.exit.z, POIOffsets.exit.h)
+    return { objects, POIOffsets }
+end
+
 -- Shells (in order by tier starting at 1)
 
 local function CreateApartmentShell(spawn)
@@ -749,3 +806,7 @@ exports('CreateWeed2', CreateWeed2)
 exports('CreateGarageLow', CreateGarageLow)
 exports('CreateGarageMed', CreateGarageMed)
 exports('CreateGarageHigh', CreateGarageHigh)
+
+exports('CreateContainer2', CreateContainer2)
+exports('CreateFurniStash1', CreateFurniStash1)
+exports('CreateFurniStash3', CreateFurniStash3)

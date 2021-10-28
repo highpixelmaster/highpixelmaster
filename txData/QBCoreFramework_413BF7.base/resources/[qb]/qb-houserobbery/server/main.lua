@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 QBCore.Functions.CreateCallback('qb-houserobbery:server:GetHouseConfig', function(source, cb)
     cb(Config.Houses)
 end)
@@ -34,7 +36,7 @@ AddEventHandler('qb-houserobbery:server:searchCabin', function(cabin, house)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local luck = math.random(1, 10)
-    local itemFound = 1
+    local itemFound = math.random(1, 4)
     local itemCount = 1
 
     local Tier = 1
@@ -48,9 +50,9 @@ AddEventHandler('qb-houserobbery:server:searchCabin', function(cabin, house)
 
     if itemFound < 4 then
         if luck == 10 then
-            itemCount = 3
+            itemCount = 1
         elseif luck >= 6 and luck <= 8 then
-            itemCount = 2
+            itemCount = 1
         end
 
         for i = 1, itemCount, 1 do

@@ -381,20 +381,87 @@ end
 
 local function getDataForHouseTier(house, coords)
     if Config.Houses[house].tier == 1 then
-        return exports['qb-interior']:CreateTier1House(coords)
-    elseif Config.Houses[house].tier == 2 then
-        return exports['qb-interior']:CreateTrevorsShell(coords)
-    elseif Config.Houses[house].tier == 3 then
-        return exports['qb-interior']:CreateMichaelShell(coords)
-    elseif Config.Houses[house].tier == 4 then
         return exports['qb-interior']:CreateApartmentShell(coords)
-    elseif Config.Houses[house].tier == 5 then
+    elseif Config.Houses[house].tier == 2 then
+        return exports['qb-interior']:CreateTier1House(coords)
+    elseif Config.Houses[house].tier == 3 then
+        return exports['qb-interior']:CreateTrevorsShell(coords)
+    elseif Config.Houses[house].tier == 4 then
         return exports['qb-interior']:CreateCaravanShell(coords)
+    elseif Config.Houses[house].tier == 5 then
+        return exports['qb-interior']:CreateLesterShell(coords)
     elseif Config.Houses[house].tier == 6 then
-        return exports['qb-interior']:CreateFranklinShell(coords)
+        return exports['qb-interior']:CreateRanchShell(coords)
+    -- Warehouse Shells (addon) https://k4mb1.tebex.io/package/4673185
     elseif Config.Houses[house].tier == 7 then
-        return exports['qb-interior']:CreateFranklinAuntShell(coords)
-
+        return exports['qb-interior']:CreateWarehouse1(coords)
+    elseif Config.Houses[house].tier == 8 then
+        return exports['qb-interior']:CreateWarehouse2(coords)
+    elseif Config.Houses[house].tier == 9 then
+        return exports['qb-interior']:CreateWarehouse3(coords)
+    -- Highend Shells (addon) https://k4mb1.tebex.io/package/4673131
+    elseif Config.Houses[house].tier == 10 then
+        return exports['qb-interior']:CreateHighend1(coords)
+    elseif Config.Houses[house].tier == 11 then
+        return exports['qb-interior']:CreateHighend2(coords)
+    elseif Config.Houses[house].tier == 12 then
+        return exports['qb-interior']:CreateHighend3(coords)
+    -- Deluxe Shells (addon) https://k4mb1.tebex.io/package/4673159
+    elseif Config.Houses[house].tier == 13 then
+        return exports['qb-interior']:CreateHighend(coords)
+    elseif Config.Houses[house].tier == 14 then
+        return exports['qb-interior']:CreateHighendV2(coords)
+    elseif Config.Houses[house].tier == 15 then
+        return exports['qb-interior']:CreateMichael(coords)
+    -- Office Shells (addon) https://k4mb1.tebex.io/package/4673258
+    elseif Config.Houses[house].tier == 16 then
+        return exports['qb-interior']:CreateOffice2(coords)
+    elseif Config.Houses[house].tier == 17 then
+        return exports['qb-interior']:CreateOfficeBig(coords)
+    -- Store Shells (addon) https://k4mb1.tebex.io/package/4673264
+    elseif Config.Houses[house].tier == 18 then
+        return exports['qb-interior']:CreateBarber(coords)
+    elseif Config.Houses[house].tier == 19 then
+        return exports['qb-interior']:CreateGunstore(coords)
+    elseif Config.Houses[house].tier == 20 then
+        return exports['qb-interior']:CreateStore1(coords)
+    elseif Config.Houses[house].tier == 21 then
+        return exports['qb-interior']:CreateStore2(coords)
+    elseif Config.Houses[house].tier == 22 then
+        return exports['qb-interior']:CreateStore3(coords)
+    -- Medium Housing Shells (addon) https://k4mb1.tebex.io/package/4672307
+    elseif Config.Houses[house].tier == 23 then
+        return exports['qb-interior']:CreateFranklinAunt(coords)
+    elseif Config.Houses[house].tier == 24 then
+        return exports['qb-interior']:CreateMedium2(coords)
+    elseif Config.Houses[house].tier == 25 then
+        return exports['qb-interior']:CreateMedium3(coords)
+    -- Drug Lab Shells (addon) https://k4mb1.tebex.io/package/4672285
+    elseif Config.Houses[house].tier == 26 then
+        return exports['qb-interior']:CreateCoke(coords)
+    elseif Config.Houses[house].tier == 27 then
+        return exports['qb-interior']:CreateCoke2(coords)
+    elseif Config.Houses[house].tier == 28 then
+        return exports['qb-interior']:CreateMeth(coords)
+    elseif Config.Houses[house].tier == 29 then
+        return exports['qb-interior']:CreateWeed2(coords)
+    -- Garage Shells (addon) https://k4mb1.tebex.io/package/4673177
+    elseif Config.Houses[house].tier == 30 then
+        return exports['qb-interior']:CreateGarageLow(coords)
+    elseif Config.Houses[house].tier == 31 then
+        return exports['qb-interior']:CreateGarageMed(coords)
+    elseif Config.Houses[house].tier == 32 then
+        return exports['qb-interior']:CreateGarageHigh(coords)
+    elseif Config.Houses[house].tier == 33 then
+        return exports['qb-interior']:CreateContainer2(coords)
+    elseif Config.Houses[house].tier == 34 then
+        return exports['qb-interior']:CreateFurniStash1(coords)
+    elseif Config.Houses[house].tier == 35 then
+        return exports['qb-interior']:CreateFurniStash3(coords)
+    else
+        QBCore.Functions.Notify('Invalid house tier', 'error')
+    end
+end
 
 -- If you are using paid shells the comment function above and uncomment this or grab the ones you need
 
@@ -411,12 +478,6 @@ local function getDataForHouseTier(house, coords)
 --         return exports['qb-interior']:CreateLesterShell(coords)
 --     elseif Config.Houses[house].tier == 6 then
 --         return exports['qb-interior']:CreateRanchShell(coords)
---     elseif Config.Houses[house].tier == 7 then
---         return exports['qb-interior']:CreateFranklinAunt(coords)
---     elseif Config.Houses[house].tier == 8 then
---         return exports['qb-interior']:CreateMedium2(coords)
---     elseif Config.Houses[house].tier == 9 then
---         return exports['qb-interior']:CreateMedium3(coords)
 --     elseif Config.Houses[house].tier == 10 then
 --         return exports['qb-interior']:CreateBanham(coords)
 --     elseif Config.Houses[house].tier == 11 then
@@ -453,32 +514,28 @@ local function getDataForHouseTier(house, coords)
 --         return exports['qb-interior']:CreateGarageMed(coords)
 --     elseif Config.Houses[house].tier == 27 then
 --         return exports['qb-interior']:CreateGarageHigh(coords)
-     elseif Config.Houses[house].tier == 8 then
-         return exports['qb-interior']:CreateOffice1(coords)
-     elseif Config.Houses[house].tier == 9 then
-       return exports['qb-interior']:CreateOffice2(coords)
-  elseif Config.Houses[house].tier == 10 then
-    return exports['qb-interior']:CreateOfficeBig(coords)
+--     elseif Config.Houses[house].tier == 28 then
+--         return exports['qb-interior']:CreateOffice1(coords)
+--     elseif Config.Houses[house].tier == 29 then
+--         return exports['qb-interior']:CreateOffice2(coords)
+--     elseif Config.Houses[house].tier == 30 then
+--         return exports['qb-interior']:CreateOfficeBig(coords)
 --     elseif Config.Houses[house].tier == 31 then
 --         return exports['qb-interior']:CreateBarber(coords)
 --     elseif Config.Houses[house].tier == 32 then
 --         return exports['qb-interior']:CreateGunstore(coords)
-elseif Config.Houses[house].tier == 12 then
-return exports['qb-interior']:CreateStore1(coords)
-elseif Config.Houses[house].tier == 13 then
-return exports['qb-interior']:CreateStore2(coords)
-elseif Config.Houses[house].tier == 14 then
-  return exports['qb-interior']:CreateStore3(coords)
-   elseif Config.Houses[house].tier == 15 then
- return exports['qb-interior']:CreateWarehouse1(coords)
- elseif Config.Houses[house].tier == 16 then
- return exports['qb-interior']:CreateWarehouse2(coords)
-elseif Config.Houses[house].tier == 17 then
-     return exports['qb-interior']:CreateWarehouse3(coords)
-    else
-        QBCore.Functions.Notify('Invalid House Tier', 'error')
-    end
-end
+--     elseif Config.Houses[house].tier == 33 then
+--         return exports['qb-interior']:CreateStore1(coords)
+--     elseif Config.Houses[house].tier == 34 then
+--         return exports['qb-interior']:CreateStore2(coords)
+--     elseif Config.Houses[house].tier == 35 then
+--         return exports['qb-interior']:CreateStore3(coords)
+--     elseif Config.Houses[house].tier == 36 then
+--         return exports['qb-interior']:CreateWarehouse1(coords)
+--     elseif Config.Houses[house].tier == 37 then
+--         return exports['qb-interior']:CreateWarehouse2(coords)
+--     elseif Config.Houses[house].tier == 38 then
+--         return exports['qb-interior']:CreateWarehouse3(coords)
 --     elseif Config.Houses[house].tier == 39 then
 --         return exports['qb-interior']:CreateK4Coke(coords)
 --     elseif Config.Houses[house].tier == 40 then
@@ -509,16 +566,6 @@ end
 --         return exports['qb-interior']:CreateFurniMotelModern2(coords)
 --     elseif Config.Houses[house].tier == 53 then
 --         return exports['qb-interior']:CreateFurniMotelModern3(coords)
---     elseif Config.Houses[house].tier == 54 then
---         return exports['qb-interior']:CreateCoke(coords)
---     elseif Config.Houses[house].tier == 55 then
---         return exports['qb-interior']:CreateCoke2(coords)
---     elseif Config.Houses[house].tier == 56 then
---         return exports['qb-interior']:CreateMeth(coords)
---     elseif Config.Houses[house].tier == 57 then
---         return exports['qb-interior']:CreateWeed(coords)
---     elseif Config.Houses[house].tier == 58 then
---         return exports['qb-interior']:CreateWeed2(coords)
 --     else
 --         QBCore.Functions.Notify('Invalid House Tier', 'error')
 --     end
@@ -876,57 +923,6 @@ RegisterNetEvent('qb-houses:client:setLocation', function(data)
     end
 end)
 
-RegisterNetEvent('qb-houses:client:setLocationStash')
-AddEventHandler('qb-houses:client:setLocationStash', function(data)
-    local ped = PlayerPedId()
-    local pos = GetEntityCoords(ped)
-    local coords = {x = pos.x, y = pos.y, z = pos.z}
-
-    if inside then
-        if hasKey then
-            TriggerServerEvent('qb-houses:server:setLocation', coords, closesthouse, 1)
-        else
-            QBCore.Functions.Notify('You do not own this house', 'error')
-        end
-    else    
-        QBCore.Functions.Notify('You are not in a house', 'error')
-    end
-end)
-
-RegisterNetEvent('qb-houses:client:setLocationOutfit')
-AddEventHandler('qb-houses:client:setLocationOutfit', function(data)
-    local ped = PlayerPedId()
-    local pos = GetEntityCoords(ped)
-    local coords = {x = pos.x, y = pos.y, z = pos.z}
-
-    if inside then
-        if hasKey then
-            TriggerServerEvent('qb-houses:server:setLocation', coords, closesthouse, 2)
-        else
-            QBCore.Functions.Notify('You do not own this house', 'error')
-        end
-    else    
-        QBCore.Functions.Notify('You are not in a house', 'error')
-    end
-end)
-
-RegisterNetEvent('qb-houses:client:setLocationLogout')
-AddEventHandler('qb-houses:client:setLocationLogout', function(data)
-    local ped = PlayerPedId()
-    local pos = GetEntityCoords(ped)
-    local coords = {x = pos.x, y = pos.y, z = pos.z}
-
-    if inside then
-        if hasKey then
-            TriggerServerEvent('qb-houses:server:setLocation', coords, closesthouse, 3)
-        else
-            QBCore.Functions.Notify('You do not own this house', 'error')
-        end
-    else    
-        QBCore.Functions.Notify('You are not in a house', 'error')
-    end
-end)
-
 RegisterNetEvent('qb-houses:client:refreshLocations', function(house, location, type)
     if closesthouse == house then
         if inside then
@@ -1091,13 +1087,13 @@ Citizen.CreateThread(function()
                     if not inside then
                         if closesthouse ~= nil then
                             if #(pos - dist2) < 1.5 then
-                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "/enter to Enter House")
+                                DrawText3Ds(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z, '~b~/enter~w~ - Enter')
                             end
                         end
                     end
                     if CurrentDoorBell ~= 0 then
                         if #(pos - vector3(Config.Houses[closesthouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[closesthouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[closesthouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                            TriggerEvent('cd_drawtextui:ShowUI', 'show', "[G] Invite In")
+                            DrawText3Ds(Config.Houses[closesthouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[closesthouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[closesthouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z + 0.35, '~g~G~w~ - Invite In')
                             if IsControlJustPressed(0, 47) then -- G
                                 TriggerServerEvent("qb-houses:server:OpenDoor", CurrentDoorBell, closesthouse)
                                 CurrentDoorBell = 0
@@ -1110,7 +1106,8 @@ Citizen.CreateThread(function()
                             if POIOffsets ~= nil then
                                 if POIOffsets.exit ~= nil then
                                     if #(pos - vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Leave - [H] Camera")
+                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Leave')
+                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z - 0.1, '~g~H~w~ - Camera')
                                         if IsControlJustPressed(0, 38) then -- E
                                             leaveOwnedHouse(CurrentHouse)
                                         end
@@ -1127,7 +1124,7 @@ Citizen.CreateThread(function()
                         if closesthouse ~= nil then
                             if #(pos - vector3(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z)) < 1.5 then
                                 if not viewCam and Config.Houses[closesthouse].locked then
-                                    TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Leave")
+                                    DrawText3Ds(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z, '~g~E~w~ - View House')
                                     if IsControlJustPressed(0, 38) then -- E
                                         TriggerServerEvent('qb-houses:server:viewHouse', closesthouse)
                                     end
@@ -1142,7 +1139,7 @@ Citizen.CreateThread(function()
                                 if POIOffsets ~= nil then
                                     if POIOffsets.exit ~= nil then
                                         if #(pos - vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                                            TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Leave")
+                                            DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Leave')
                                             if IsControlJustPressed(0, 38) then -- E
                                                 leaveNonOwnedHouse(CurrentHouse)
                                             end
@@ -1157,7 +1154,7 @@ Citizen.CreateThread(function()
                             if POIOffsets ~= nil then
                                 if POIOffsets.exit ~= nil then
                                     if #(pos - vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Stash")
+                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Leave')
                                         if IsControlJustPressed(0, 38) then -- E
                                             leaveNonOwnedHouse(CurrentHouse)
                                         end
@@ -1172,13 +1169,13 @@ Citizen.CreateThread(function()
                     if CurrentHouse ~= nil then
                         if stashLocation ~= nil then
                             if #(pos - vector3(stashLocation.x, stashLocation.y, stashLocation.z)) < 1.5 then
-                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Stash")
+                                DrawText3Ds(stashLocation.x, stashLocation.y, stashLocation.z, '~g~E~w~ - Stash')
                                 if IsControlJustPressed(0, 38) then -- E
                                     TriggerServerEvent("inventory:server:OpenInventory", "stash", CurrentHouse)
                                     TriggerEvent("inventory:client:SetCurrentStash", CurrentHouse)
                                 end
                             elseif #(pos - vector3(stashLocation.x, stashLocation.y, stashLocation.z)) < 3 then
-                                TriggerEvent('cd_drawtextui:HideUI')
+                                DrawText3Ds(stashLocation.x, stashLocation.y, stashLocation.z, 'Stash')
                             end
                         end
                     end
@@ -1187,12 +1184,12 @@ Citizen.CreateThread(function()
                     if CurrentHouse ~= nil then
                         if outfitLocation ~= nil then
                             if #(pos - vector3(outfitLocation.x, outfitLocation.y, outfitLocation.z)) < 1.5 then
-                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Outfits")
+                                DrawText3Ds(outfitLocation.x, outfitLocation.y, outfitLocation.z, '~g~E~w~ - Outfits')
                                 if IsControlJustPressed(0, 38) then -- E
                                     TriggerEvent('qb-clothing:client:openOutfitMenu')
                                 end
                             elseif #(pos - vector3(outfitLocation.x, outfitLocation.y, outfitLocation.z)) < 3 then
-                                TriggerEvent('cd_drawtextui:HideUI')
+                                DrawText3Ds(outfitLocation.x, outfitLocation.y, outfitLocation.z, 'Outfits')
                             end
                         end
                     end
@@ -1201,7 +1198,7 @@ Citizen.CreateThread(function()
                     if CurrentHouse ~= nil then
                         if logoutLocation ~= nil then
                             if #(pos - vector3(logoutLocation.x, logoutLocation.y, logoutLocation.z)) < 1.5 then
-                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Change Characters")
+                                DrawText3Ds(logoutLocation.x, logoutLocation.y, logoutLocation.z, '~g~E~w~ - Change Characters')
                                 if IsControlJustPressed(0, 38) then -- E
                                     DoScreenFadeOut(250)
                                     while not IsScreenFadedOut() do
@@ -1217,7 +1214,7 @@ Citizen.CreateThread(function()
                                     end)
                                 end
                             elseif #(pos - vector3(logoutLocation.x, logoutLocation.y, logoutLocation.z)) < 3 then
-                                TriggerEvent('cd_drawtextui:HideUI')
+                                DrawText3Ds(logoutLocation.x, logoutLocation.y, logoutLocation.z, 'Change Characters')
                             end
                         end
                     end

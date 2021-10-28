@@ -39,115 +39,119 @@ CONFIG.interiors[6] = function(coords)
 end
 
 CONFIG.interiors[7] = function(coords)
-	return CONFIG.export:CreateFranklinAunt(coords)
+	return exports['qb-interior']:CreateWarehouse1(coords)
 end
 
 CONFIG.interiors[8] = function(coords)
-	return CONFIG.export:CreateMedium2(coords)
+	return exports['qb-interior']:CreateWarehouse2(coords)
 end
 
 CONFIG.interiors[9] = function(coords)
-	return CONFIG.export:CreateMedium3(coords)
+	return exports['qb-interior']:CreateWarehouse3(coords)
 end
 
 CONFIG.interiors[10] = function(coords)
-	return CONFIG.export:CreateBanham(coords)
+	return exports['qb-interior']:CreateHighend1(coords)
 end
 
 CONFIG.interiors[11] = function(coords)
-	return CONFIG.export:CreateWestons(coords)
+	return exports['qb-interior']:CreateHighend2(coords)
 end
 
 CONFIG.interiors[12] = function(coords)
-	return CONFIG.export:CreateWestons2(coords)
+	return exports['qb-interior']:CreateHighend3(coords)
 end
 
 CONFIG.interiors[13] = function(coords)
-	return CONFIG.export:CreateClassicHouse(coords)
+	return exports['qb-interior']:CreateHighend(coords)
 end
 
 CONFIG.interiors[14] = function(coords)
-	return CONFIG.export:CreateClassicHouse2(coords)
+	return exports['qb-interior']:CreateHighendV2(coords)
 end
 
 CONFIG.interiors[15] = function(coords)
-	return CONFIG.export:CreateClassicHouse3(coords)
+	return exports['qb-interior']:CreateMichael(coords)
 end
 
 CONFIG.interiors[16] = function(coords)
-	return CONFIG.export:CreateHighend1(coords)
+	return exports['qb-interior']:CreateOffice2(coords)
+end
+
+CONFIG.interiors[17] = function(coords)
+	return exports['qb-interior']:CreateOfficeBig(coords)
 end
 
 CONFIG.interiors[18] = function(coords)
-	return CONFIG.export:CreateHighend3(coords)
+	return exports['qb-interior']:CreateBarber(coords)
 end
 
 CONFIG.interiors[19] = function(coords)
-	return CONFIG.export:CreateHighend(coords)
+	return exports['qb-interior']:CreateGunstore(coords)
 end
 
 CONFIG.interiors[20] = function(coords)
-	return CONFIG.export:CreateHighendV2(coords)
+	return exports['qb-interior']:CreateStore1(coords)
 end
 
 CONFIG.interiors[21] = function(coords)
-	return CONFIG.export:CreateMichael(coords)
+	return exports['qb-interior']:CreateStore2(coords)
 end
 
 CONFIG.interiors[22] = function(coords)
-	return CONFIG.export:CreateStashHouse(coords)
+	return exports['qb-interior']:CreateStore3(coords)
 end
 
 CONFIG.interiors[23] = function(coords)
-	return CONFIG.export:CreateStashHouse2(coords)
+	return exports['qb-interior']:CreateFranklinAunt(coords)
 end
 
 CONFIG.interiors[24] = function(coords)
-	return CONFIG.export:CreateContainer(coords)
+	return exports['qb-interior']:CreateMedium2(coords)
 end
 
 CONFIG.interiors[25] = function(coords)
-	return CONFIG.export:CreateGarageLow(coords)
+	return exports['qb-interior']:CreateMedium3(coords)
 end
 
 CONFIG.interiors[26] = function(coords)
-	return CONFIG.export:CreateGarageMed(coords)
+	return exports['qb-interior']:CreateCoke(coords)
 end
 
 CONFIG.interiors[27] = function(coords)
-	return CONFIG.export:CreateGarageHigh(coords)
+	return exports['qb-interior']:CreateCoke2(coords)
 end
 
 CONFIG.interiors[28] = function(coords)
-	return CONFIG.export:CreateOffice1(coords)
+	return exports['qb-interior']:CreateMeth(coords)
 end
 
 CONFIG.interiors[29] = function(coords)
-	return CONFIG.export:CreateOffice2(coords)
+	return exports['qb-interior']:CreateWeed2(coords)
 end
 
 CONFIG.interiors[30] = function(coords)
-	return CONFIG.export:CreateOfficeBig(coords)
+	return exports['qb-interior']:CreateGarageLow(coords)
 end
 
 CONFIG.interiors[31] = function(coords)
-	return CONFIG.export:CreateBarber(coords)
+	return exports['qb-interior']:CreateGarageMed(coords)
 end
 
 CONFIG.interiors[32] = function(coords)
-	return CONFIG.export:CreateGunstore(coords)
+	return exports['qb-interior']:CreateGarageHigh(coords)
 end
 
 CONFIG.interiors[33] = function(coords)
-	return CONFIG.export:CreateStore1(coords)
+	return CONFIG.export:CreateContainer2(coords)
 end
 
 CONFIG.interiors[34] = function(coords)
-	return CONFIG.export:CreateStore2(coords)
+	return CONFIG.export:CreateFurniStash1(coords)
 end
 
 CONFIG.interiors[35] = function(coords)
-	return CONFIG.export:CreateStore3(coords)
+	return CONFIG.export:CreateFurniStash3(coords)
 end
 
 CONFIG.interiors[36] = function(coords)

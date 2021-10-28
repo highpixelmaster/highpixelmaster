@@ -34,7 +34,7 @@ files {
 	-- 'stream/ClassicHouseShells/shellpropsv19.ytyp',
 	-- 'stream/FurnishedHousingShells/shellpropsv11.ytyp',
 	-- 'stream/FurnishedMotelsShells/shellpropsv18.ytyp',
-	-- 'stream/FurnishedStashhousesShells/shellpropsv15.ytyp',
+	'stream/FurnishedStashhousesShells/shellpropsv15.ytyp',
 	-- 'stream/HighendLabShells/kshellsdrug.ytyp',
 	-- 'stream/ModernHotelsShells/shellpropsv14.ytyp',
 	-- 'stream/ModernHousingShells/shellpropsv12.ytyp',
@@ -67,7 +67,7 @@ data_file 'DLC_ITYP_REQUEST' 'stream/GarageShells/shellpropsv8.ytyp'
 -- -- Furnished Motels
 -- data_file 'DLC_ITYP_REQUEST' 'stream/FurnishedMotelsShells/shellpropsv18.ytyp'
 -- -- Furnished Stash
--- data_file 'DLC_ITYP_REQUEST' 'stream/FurnishedStashhousesShells/shellpropsv15.ytyp'
+ data_file 'DLC_ITYP_REQUEST' 'stream/FurnishedStashhousesShells/shellpropsv15.ytyp'
 -- -- High End Labs
 -- data_file 'DLC_ITYP_REQUEST' 'stream/HighendLabShells/kshellsdrug.ytyp'
 -- -- Modern Hotels
@@ -75,6 +75,6 @@ data_file 'DLC_ITYP_REQUEST' 'stream/GarageShells/shellpropsv8.ytyp'
 -- -- Modern Housing
 -- data_file 'DLC_ITYP_REQUEST' 'stream/ModernHousingShells/shellpropsv12.ytyp'
 -- -- Stash
--- data_file 'DLC_ITYP_REQUEST' 'stream/StashhousesShells/shellpropsv16.ytyp'
+ -- data_file 'DLC_ITYP_REQUEST' 'stream/StashhousesShells/shellpropsv16.ytyp'
 
 lua54 'yes'

@@ -61,7 +61,7 @@ QBCore.Commands.Add("decorate", "Decorate Interior", {}, false, function(source)
     TriggerClientEvent("qb-houses:client:decorate", src)
 end)
 
-QBCore.Commands.Add("createhouse", "Create House (Real Estate Only)", {{name = "price", help = "Price of the house"}, {name = "tier", help = "Name of the item(no label)"}}, true, function(source, args)
+QBCore.Commands.Add("createhouse", "Create a house (Real Estate Only)", {{name = "price", help = "Price of the house"}, {name = "tier", help = "Name of the item(no label)"}}, true, function(source, args)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local price = tonumber(args[1])

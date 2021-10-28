@@ -564,6 +564,24 @@ table.insert(Config.DoorList, {
     -- autoLock = 1000
 })
 
+table.insert(Config.DoorList, {
+	objHeading = 328.00003051758,
+	items = { 'admin' },
+	maxDistance = 6.0,
+	garage = false,
+	slides = false,
+	locked = true,
+	objHash = 21324050,
+	lockpick = false,
+	audioRemote = false,
+	objCoords = vector3(925.91, 46.76, 81.09),
+	fixText = false,        
+    -- oldMethod = true,
+    -- audioLock = {['file'] = 'metal-locker.ogg', ['volume'] = 0.6},
+    -- audioUnlock = {['file'] = 'metallic-creak.ogg', ['volume'] = 0.7},
+    -- autoLock = 1000
+})
+
 -- 
 
 -- 

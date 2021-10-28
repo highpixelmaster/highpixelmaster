@@ -1,3 +1,4 @@
+local QBCore = exports['qb-core']:GetCoreObject()
 local inside = false
 local currentHouse = nil
 local closestHouse
@@ -10,8 +11,7 @@ local requiredItemsShowed = false
 local requiredItems = {}
 local CurrentCops = 0
 
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
-AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     QBCore.Functions.TriggerCallback('qb-houserobbery:server:GetHouseConfig', function(HouseConfig)
         Config.Houses = HouseConfig
     end)
@@ -32,8 +32,8 @@ function DrawText3Ds(x, y, z, text)
     ClearDrawOrigin()
 end
 
-Citizen.CreateThread(function()
-    Citizen.Wait(500)
+CreateThread(function()
+    Wait(500)
     requiredItems = {
         [1] = {name = QBCore.Shared.Items["lockpick"]["name"], image = QBCore.Shared.Items["lockpick"]["image"]},
         [2] = {name = QBCore.Shared.Items["screwdriverset"]["name"], image = QBCore.Shared.Items["screwdriverset"]["image"]},
@@ -43,7 +43,6 @@ Citizen.CreateThread(function()
         local PlayerPed = PlayerPedId()
         local PlayerPos = GetEntityCoords(PlayerPed)
         closestHouse = nil
-
         if QBCore ~= nil then
             local hours = GetClockHours()
             if hours >= Config.MinimumTime or hours <= Config.MaximumTime then
@@ -53,10 +52,9 @@ Citizen.CreateThread(function()
                         if dist <= 1.5 then
                             closestHouse = k
                             inRange = true
-                            
                             if CurrentCops >= Config.MinimumHouseRobberyPolice then
                                 if Config.Houses[k]["opened"] then
-                                    DrawText3Ds(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"], '~g~E~w~ - To Enter')
+                                    TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Enter")
                                     if IsControlJustPressed(0, 38) then
                                         enterRobberyHouse(k)
                                     end
@@ -71,33 +69,27 @@ Citizen.CreateThread(function()
                     end
                 end
             end
-
-            if inside then
-                Citizen.Wait(1000)
-            end
-
+            if inside then Wait(1000) end
             if not inRange then
                 if requiredItemsShowed then
                     requiredItemsShowed = false
                     TriggerEvent('inventory:client:requiredItems', requiredItems, false)
                 end
-                Citizen.Wait(1000)
+                Wait(1000)
             end
         end
-
-        Citizen.Wait(5)
+        Wait(5)
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
-
         local ped = PlayerPedId()
         local pos = GetEntityCoords(ped)
 
         if inside then
             if #(pos - vector3(Config.Houses[currentHouse]["coords"]["x"] + POIOffsets.exit.x, Config.Houses[currentHouse]["coords"]["y"] + POIOffsets.exit.y, Config.Houses[currentHouse]["coords"]["z"] - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + POIOffsets.exit.x, Config.Houses[currentHouse]["coords"]["y"] + POIOffsets.exit.y, Config.Houses[currentHouse]["coords"]["z"] - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - To leave home')
+                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Leave")
                 if IsControlJustPressed(0, 38) then
                     leaveRobberyHouse(currentHouse)
                 end
@@ -107,63 +99,57 @@ Citizen.CreateThread(function()
                 if #(pos - vector3(Config.Houses[currentHouse]["coords"]["x"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["x"], Config.Houses[currentHouse]["coords"]["y"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["y"], Config.Houses[currentHouse]["coords"]["z"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["z"] - Config.MinZOffset)) < 1 then
                     if not Config.Houses[currentHouse]["furniture"][k]["searched"] then
                         if not Config.Houses[currentHouse]["furniture"][k]["isBusy"] then
-                            DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["x"], Config.Houses[currentHouse]["coords"]["y"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["y"], Config.Houses[currentHouse]["coords"]["z"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["z"] - Config.MinZOffset, '~g~E~w~ - '..Config.Houses[currentHouse]["furniture"][k]["text"])
+                            TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] - "..Config.Houses[currentHouse]["furniture"][k]["text"])
+
                             if not IsLockpicking then
                                 if IsControlJustReleased(0, 38) then
                                     searchCabin(k)
                                 end
                             end
                         else
-                            DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["x"], Config.Houses[currentHouse]["coords"]["y"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["y"], Config.Houses[currentHouse]["coords"]["z"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["z"] - Config.MinZOffset, 'Searching..')
+                            TriggerEvent('cd_drawtextui:ShowUI', 'show', "Looking...")
                         end
                     else
-                        DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["x"], Config.Houses[currentHouse]["coords"]["y"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["y"], Config.Houses[currentHouse]["coords"]["z"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["z"] - Config.MinZOffset, 'Empty..')
+                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "This has been searched >:(")
                     end
                 end
             end
         end
 
         if not inside then 
-            Citizen.Wait(5000)
+            Wait(5000)
         end
-
-        Citizen.Wait(3)
+        Wait(3)
     end
 end)
 
 function enterRobberyHouse(house)
     TriggerServerEvent("InteractSound_SV:PlayOnSource", "houses_door_open", 0.25)
     openHouseAnim()
-    Citizen.Wait(250)
+    Wait(250)
     local coords = { x = Config.Houses[house]["coords"]["x"], y = Config.Houses[house]["coords"]["y"], z= Config.Houses[house]["coords"]["z"] - Config.MinZOffset}
     if Config.Houses[house]["tier"] == 1 then
-        data = exports['qb-interior']:CreateTier1HouseFurnished(coords)
+        data = exports['qb-interior']:CreateHouseRobbery(coords)
     end
-    Citizen.Wait(100)
+    Wait(100)
     houseObj = data[1]
     POIOffsets = data[2]
     inside = true
     currentHouse = house
-    Citizen.Wait(500)
-    SetRainLevel(0.0)
+    Wait(500)
     TriggerEvent('qb-weathersync:client:DisableSync')
-    Citizen.Wait(100)
-    SetWeatherTypePersist('EXTRASUNNY')
-    SetWeatherTypeNow('EXTRASUNNY')
-    SetWeatherTypeNowPersist('EXTRASUNNY')
-    NetworkOverrideClockTime(23, 0, 0)
 end
 
 function leaveRobberyHouse(house)
     local ped = PlayerPedId()
     TriggerServerEvent("InteractSound_SV:PlayOnSource", "houses_door_open", 0.25)
     openHouseAnim()
-    Citizen.Wait(250)
+    Wait(250)
     DoScreenFadeOut(250)
-    Citizen.Wait(500)
+    Wait(500)
     exports['qb-interior']:DespawnInterior(houseObj, function()
         TriggerEvent('qb-weathersync:client:EnableSync')
-        Citizen.Wait(250)
+        Wait(250)
         DoScreenFadeIn(250)
         SetEntityCoords(ped, Config.Houses[house]["coords"]["x"], Config.Houses[house]["coords"]["y"], Config.Houses[house]["coords"]["z"] + 0.5)
         SetEntityHeading(ped, Config.Houses[house]["coords"]["h"])
@@ -172,42 +158,36 @@ function leaveRobberyHouse(house)
     end)
 end
 
-RegisterNetEvent('qb-houserobbery:client:ResetHouseState')
-AddEventHandler('qb-houserobbery:client:ResetHouseState', function(house)
+RegisterNetEvent('qb-houserobbery:client:ResetHouseState', function(house)
     Config.Houses[house]["opened"] = false
     for k, v in pairs(Config.Houses[house]["furniture"]) do
         v["searched"] = false
     end
 end)
 
-RegisterNetEvent('police:SetCopCount')
-AddEventHandler('police:SetCopCount', function(amount)
+RegisterNetEvent('police:SetCopCount', function(amount)
     CurrentCops = amount
 end)
 
-RegisterNetEvent('qb-houserobbery:client:enterHouse')
-AddEventHandler('qb-houserobbery:client:enterHouse', function(house)
+RegisterNetEvent('qb-houserobbery:client:enterHouse', function(house)
     enterRobberyHouse(house)
 end)
 
 function openHouseAnim()
     loadAnimDict("anim@heists@keycard@") 
     TaskPlayAnim( PlayerPedId(), "anim@heists@keycard@", "exit", 5.0, 1.0, -1, 16, 0, 0, 0, 0 )
-    Citizen.Wait(400)
+    Wait(400)
     ClearPedTasks(PlayerPedId())
 end
 
 function loadAnimDict(dict)
     while (not HasAnimDictLoaded(dict)) do
         RequestAnimDict(dict)
-        Citizen.Wait(5)
+        Wait(5)
     end
 end
 
-
-
-RegisterNetEvent('lockpicks:UseLockpick')
-AddEventHandler('lockpicks:UseLockpick', function(isAdvanced)
+RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
     local hours = GetClockHours()
     if hours >= Config.MinimumTime or hours <= Config.MaximumTime then
         usingAdvanced = isAdvanced
@@ -264,7 +244,7 @@ function PoliceCall()
     if math.random(1, 100) <= chance then
         local closestPed = GetNearbyPed()
         if closestPed ~= nil then
-            local s1, s2 = Citizen.InvokeNative(0x2EB41072B4C1E4C0, pos.x, pos.y, pos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
+            local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
             local streetLabel = GetStreetNameFromHashKey(s1)
             local street2 = GetStreetNameFromHashKey(s2)
             if street2 ~= nil and street2 ~= "" then 
@@ -274,19 +254,11 @@ function PoliceCall()
             if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then
                 gender = "Woman"
             end
-            local chance = math.random(1, 100)
             local msg = "Attempted burglary into a house by one " .. gender .." at " .. streetLabel
-            local data = {displayCode = 'ROBBERY', blipSprite = 362, blipColour = 59, blipScale = 1.5, description = 'House Robbery In Progress', recipientList = {'police'}, length = '10000', infoM = 'fa-info-circle', info = msg}
-            local dispatchData = {dispatchData = data, caller = 'Panic Button', coords = pos}
-            if chance >= 25 then
-            TriggerServerEvent('wf-alerts:svNotify', dispatchData)
-            else
-            end
-            end
+            TriggerServerEvent("police:server:HouseRobberyCall", pos, msg, gender, streetLabel)
+        end
     end
 end
-
-
 
 function GetNearbyPed()
 	local retval = nil
@@ -327,8 +299,7 @@ function lockpickFinish(success)
     end
 end
 
-RegisterNetEvent('qb-houserobbery:client:setHouseState')
-AddEventHandler('qb-houserobbery:client:setHouseState', function(house, state)
+RegisterNetEvent('qb-houserobbery:client:setHouseState', function(house, state)
     Config.Houses[house]["opened"] = state
 end)
 
@@ -352,7 +323,7 @@ function searchCabin(cabin)
     IsLockpicking = true
 
     Skillbar.Start({
-        duration = math.random(7500, 15000),
+        duration = math.random(5000, 10000),
         pos = math.random(10, 30),
         width = math.random(10, 20),
     }, function()
@@ -370,8 +341,8 @@ function searchCabin(cabin)
             end)
         else
             -- Repeat
-            Skillbar.Repeat({ 
-                duration = math.random(700, 1250),
+            Skillbar.Repeat({
+                duration = math.random(750, 1250),
                 pos = math.random(10, 40),
                 width = math.random(10, 13),
             })
@@ -382,7 +353,7 @@ function searchCabin(cabin)
         openingDoor = false
         ClearPedTasks(PlayerPedId())
         TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, false)
-        QBCore.Functions.Notify("You stubbed your toe..", "error")
+        QBCore.Functions.Notify("You bumped your hand..", "error")
         SucceededAttempts = 0
         FreezeEntityPosition(ped, false)
         SetTimeout(500, function()
@@ -396,7 +367,7 @@ function LockpickDoorAnim(time)
     -- loadAnimDict("veh@break_in@0h@p_m_one@")
     -- TaskPlayAnim(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds" ,3.0, 3.0, -1, 16, 0, false, false, false)
     openingDoor = true
-    Citizen.CreateThread(function()
+    CreateThread(function()
         while true do
             if openingDoor then
                 TaskPlayAnim(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
@@ -404,18 +375,16 @@ function LockpickDoorAnim(time)
                 StopAnimTask(PlayerPedId(), "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 1.0)
                 break
             end
-            Citizen.Wait(1000)
+            Wait(1000)
         end
     end)
 end
 
-RegisterNetEvent('qb-houserobbery:client:setCabinState')
-AddEventHandler('qb-houserobbery:client:setCabinState', function(house, cabin, state)
+RegisterNetEvent('qb-houserobbery:client:setCabinState', function(house, cabin, state)
     Config.Houses[house]["furniture"][cabin]["searched"] = state
 end)
 
-RegisterNetEvent('qb-houserobbery:client:SetBusyState')
-AddEventHandler('qb-houserobbery:client:SetBusyState', function(cabin, house, bool)
+RegisterNetEvent('qb-houserobbery:client:SetBusyState', function(cabin, house, bool)
     Config.Houses[house]["furniture"][cabin]["isBusy"] = bool
 end)
 
@@ -434,3 +403,20 @@ function IsWearingHandshoes()
     end
     return retval
 end
+
+RegisterCommand('gethroffset', function()
+    local coords = GetEntityCoords(PlayerPedId())
+    local houseCoords = vector3(
+        Config.Houses[currentHouse]["coords"]["x"],
+        Config.Houses[currentHouse]["coords"]["y"],
+        Config.Houses[currentHouse]["coords"]["z"] - Config.MinZOffset
+    )
+    if inside then
+        local xdist = coords.x - houseCoords.x
+        local ydist = coords.y - houseCoords.y
+        local zdist = coords.z - houseCoords.z
+        print('X: '..xdist)
+        print('Y: '..ydist)
+        print('Z: '..zdist)
+    end
+end)
