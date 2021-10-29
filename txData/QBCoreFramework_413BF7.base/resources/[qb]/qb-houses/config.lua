@@ -395,7 +395,7 @@ Config.Furniture = {
 			[50] = { ["object"] = "prop_pooltable_02", ["price"] = 1500, ["label"] = "poolTable" },
 			[51] = { ["object"] = "prop_pool_rack_02", ["price"] = 100, ["label"] = "poolcues" },
 			[52] = { ["object"] = "v_club_vu_deckcase", ["price"] = 1000, ["label"] = "dj set" },
-			[53] = { ["object"] = "v_corp_servercln", ["price"] = 1000, ["label"] = "serverrack" }
+			[53] = { ["object"] = "v_corp_servercln", ["price"] = 25000, ["label"] = "serverrack" }
 		},
 	},
 	["general4"] = {
@@ -613,7 +613,7 @@ Config.Furniture = {
 			[32] = { ["object"] = "apa_mp_h_str_avunits_04", ["price"] = 5500, ["label"] = "flatscreen meubel" },
 			[33] = { ["object"] = "apa_mp_h_str_avunits_01", ["price"] = 5500, ["label"] = "flatscreen meubel 2" },
 			[34] = { ["object"] = "v_club_vu_deckcase", ["price"] = 1000, ["label"] = "dj set" },
-			[35] = { ["object"] = "v_corp_servercln", ["price"] = 1000, ["label"] = "serverrack" },
+			[35] = { ["object"] = "v_corp_servercln", ["price"] = 25000, ["label"] = "serverrack" },
 			[36] = { ["object"] = "apa_mp_h_str_avunitl_01_b", ["price"] = 5500, ["label"] = "flat screen furniture 3" },
 			[37] = { ["object"] = "apa_mp_h_str_avunitl_04", ["price"] = 5500, ["label"] = "flat screen furniture 4" },
 			[38] = { ["object"] = "apa_mp_h_str_avunitm_01", ["price"] = 5500, ["label"] = "flat screen furniture 5" },

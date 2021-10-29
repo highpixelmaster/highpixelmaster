@@ -10,10 +10,8 @@ Config.loot = {
         'aluminum',
         'iron',
         'steel',
+        'rubber',
         'glass',
-        'tosti',
-        'license_plate',
-        'burger-raw'
     },
     ['tier2'] = {
         'rolex',
@@ -26,16 +24,15 @@ Config.loot = {
         'cokebaggy',
         'philipsscrewdriver',
         'radio',
-        'walkstick',
         'phone',
         'skateboard',
-
     },
     ['tier3'] = {
         'weapon_pistol',
         'handcuffs',
         'painkillers',
         'advancedrepairkit',
+        'advancedlockpick',
         'armor',
         'uzi_part_2',
     }

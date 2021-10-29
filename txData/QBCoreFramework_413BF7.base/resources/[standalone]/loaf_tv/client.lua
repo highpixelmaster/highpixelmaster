@@ -62,7 +62,7 @@ CreateVideo = function(id, url, object, coords, scale, offset, time, volume)
         Wait(500)
     end
 
-    local distance = 10.0
+    local distance = 50.0
 
     for k, v in pairs(Config['Objects']) do
         if v['Object'] == object then

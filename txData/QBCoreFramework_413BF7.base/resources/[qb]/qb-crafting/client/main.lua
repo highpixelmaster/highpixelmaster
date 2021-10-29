@@ -22,11 +22,15 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 		local pos, awayFromObject = GetEntityCoords(PlayerPedId()), true
 		local craftObject = GetClosestObjectOfType(pos, 2.0, -573669520, false, false, false)
-		if craftObject ~= 0 then
+		local craftObject2 = GetClosestObjectOfType(pos, 2.0, 1715005417, false, false, false)
+
+		if craftObject ~= 0 or craftObject2 ~= 0 then
 			local objectPos = GetEntityCoords(craftObject)
-			if #(pos - objectPos) < 1.5 then
+			local objectPos2 = GetEntityCoords(craftObject2)
+			if #(pos - objectPos) < 1.5 or #(pos - objectPos2) < 1.5 then
+				TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Craft")
+
 				awayFromObject = false
-				DrawText3D(objectPos.x, objectPos.y, objectPos.z + 1.0, "~g~E~w~ - Craft")
 				if IsControlJustReleased(0, 38) then
 					local crafting = {}
 					crafting.label = "Crafting"
@@ -37,7 +41,7 @@ Citizen.CreateThread(function()
 		end
 
 		if awayFromObject then
-			Citizen.Wait(1000)
+			TriggerEvent('cd_drawtextui:HideUI')
 		end
 	end
 end)

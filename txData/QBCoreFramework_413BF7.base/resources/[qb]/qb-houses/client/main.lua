@@ -592,6 +592,57 @@ local function enterOwnedHouse(house)
     setHouseLocations()
 end
 
+RegisterNetEvent('qb-houses:client:setLocationStash')
+AddEventHandler('qb-houses:client:setLocationStash', function(data)
+    local ped = PlayerPedId()
+    local pos = GetEntityCoords(ped)
+    local coords = {x = pos.x, y = pos.y, z = pos.z}
+
+    if inside then
+        if hasKey then
+            TriggerServerEvent('qb-houses:server:setLocation', coords, closesthouse, 1)
+        else
+            QBCore.Functions.Notify('You do not own this house', 'error')
+        end
+    else    
+        QBCore.Functions.Notify('You are not in a house', 'error')
+    end
+end)
+
+RegisterNetEvent('qb-houses:client:setLocationOutfit')
+AddEventHandler('qb-houses:client:setLocationOutfit', function(data)
+    local ped = PlayerPedId()
+    local pos = GetEntityCoords(ped)
+    local coords = {x = pos.x, y = pos.y, z = pos.z}
+
+    if inside then
+        if hasKey then
+            TriggerServerEvent('qb-houses:server:setLocation', coords, closesthouse, 2)
+        else
+            QBCore.Functions.Notify('You do not own this house', 'error')
+        end
+    else    
+        QBCore.Functions.Notify('You are not in a house', 'error')
+    end
+end)
+
+RegisterNetEvent('qb-houses:client:setLocationLogout')
+AddEventHandler('qb-houses:client:setLocationLogout', function(data)
+    local ped = PlayerPedId()
+    local pos = GetEntityCoords(ped)
+    local coords = {x = pos.x, y = pos.y, z = pos.z}
+
+    if inside then
+        if hasKey then
+            TriggerServerEvent('qb-houses:server:setLocation', coords, closesthouse, 3)
+        else
+            QBCore.Functions.Notify('You do not own this house', 'error')
+        end
+    else    
+        QBCore.Functions.Notify('You are not in a house', 'error')
+    end
+end)
+
 local function leaveOwnedHouse(house)
     if not FrontCam then
         inside = false
@@ -1087,13 +1138,13 @@ Citizen.CreateThread(function()
                     if not inside then
                         if closesthouse ~= nil then
                             if #(pos - dist2) < 1.5 then
-                                DrawText3Ds(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z, '~b~/enter~w~ - Enter')
+                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "/enter to Enter House")
                             end
                         end
                     end
                     if CurrentDoorBell ~= 0 then
                         if #(pos - vector3(Config.Houses[closesthouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[closesthouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[closesthouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                            DrawText3Ds(Config.Houses[closesthouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[closesthouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[closesthouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z + 0.35, '~g~G~w~ - Invite In')
+                            TriggerEvent('cd_drawtextui:ShowUI', 'show', "[G] Invite In")
                             if IsControlJustPressed(0, 47) then -- G
                                 TriggerServerEvent("qb-houses:server:OpenDoor", CurrentDoorBell, closesthouse)
                                 CurrentDoorBell = 0
@@ -1106,8 +1157,7 @@ Citizen.CreateThread(function()
                             if POIOffsets ~= nil then
                                 if POIOffsets.exit ~= nil then
                                     if #(pos - vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Leave')
-                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z - 0.1, '~g~H~w~ - Camera')
+                                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Leave - [H] Camera")
                                         if IsControlJustPressed(0, 38) then -- E
                                             leaveOwnedHouse(CurrentHouse)
                                         end
@@ -1169,13 +1219,13 @@ Citizen.CreateThread(function()
                     if CurrentHouse ~= nil then
                         if stashLocation ~= nil then
                             if #(pos - vector3(stashLocation.x, stashLocation.y, stashLocation.z)) < 1.5 then
-                                DrawText3Ds(stashLocation.x, stashLocation.y, stashLocation.z, '~g~E~w~ - Stash')
+                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Stash")
                                 if IsControlJustPressed(0, 38) then -- E
                                     TriggerServerEvent("inventory:server:OpenInventory", "stash", CurrentHouse)
                                     TriggerEvent("inventory:client:SetCurrentStash", CurrentHouse)
                                 end
                             elseif #(pos - vector3(stashLocation.x, stashLocation.y, stashLocation.z)) < 3 then
-                                DrawText3Ds(stashLocation.x, stashLocation.y, stashLocation.z, 'Stash')
+                                TriggerEvent('cd_drawtextui:HideUI')
                             end
                         end
                     end
@@ -1184,12 +1234,12 @@ Citizen.CreateThread(function()
                     if CurrentHouse ~= nil then
                         if outfitLocation ~= nil then
                             if #(pos - vector3(outfitLocation.x, outfitLocation.y, outfitLocation.z)) < 1.5 then
-                                DrawText3Ds(outfitLocation.x, outfitLocation.y, outfitLocation.z, '~g~E~w~ - Outfits')
+                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Outfits")
                                 if IsControlJustPressed(0, 38) then -- E
                                     TriggerEvent('qb-clothing:client:openOutfitMenu')
                                 end
                             elseif #(pos - vector3(outfitLocation.x, outfitLocation.y, outfitLocation.z)) < 3 then
-                                DrawText3Ds(outfitLocation.x, outfitLocation.y, outfitLocation.z, 'Outfits')
+                                TriggerEvent('cd_drawtextui:HideUI')
                             end
                         end
                     end
@@ -1198,7 +1248,7 @@ Citizen.CreateThread(function()
                     if CurrentHouse ~= nil then
                         if logoutLocation ~= nil then
                             if #(pos - vector3(logoutLocation.x, logoutLocation.y, logoutLocation.z)) < 1.5 then
-                                DrawText3Ds(logoutLocation.x, logoutLocation.y, logoutLocation.z, '~g~E~w~ - Change Characters')
+                                TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Change Characters")
                                 if IsControlJustPressed(0, 38) then -- E
                                     DoScreenFadeOut(250)
                                     while not IsScreenFadedOut() do
@@ -1214,7 +1264,7 @@ Citizen.CreateThread(function()
                                     end)
                                 end
                             elseif #(pos - vector3(logoutLocation.x, logoutLocation.y, logoutLocation.z)) < 3 then
-                                DrawText3Ds(logoutLocation.x, logoutLocation.y, logoutLocation.z, 'Change Characters')
+                                TriggerEvent('cd_drawtextui:HideUI')
                             end
                         end
                     end
@@ -1244,3 +1294,4 @@ RegisterCommand('getoffset', function()
         print('Z: '..zdist)
     end
 end)
+
