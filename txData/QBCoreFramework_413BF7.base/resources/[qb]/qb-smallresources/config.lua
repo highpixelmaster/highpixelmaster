@@ -25,6 +25,12 @@ Consumeables = {
 ["burger-heartstopper"] = math.random(35, 54),
 ["burger-meatfree"] = math.random(35, 54),
 ["burger-fries"] = math.random(35, 54),
+["candycorn"] = math.random(5, 10),
+["candypumpkins"] = math.random(4, 5),
+["candyghosts"] = math.random(1, 10),
+["candypeppermint"] = math.random(5, 9),
+["candyworm"] = math.random(2, 4),
+["candygum"] = math.random(5, 7),
 
 
 --Drinks

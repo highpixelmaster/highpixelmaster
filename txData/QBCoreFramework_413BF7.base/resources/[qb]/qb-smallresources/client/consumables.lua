@@ -348,6 +348,32 @@ AddEventHandler("consumables:client:Crackbaggy", function()
     end)
 end)
 
+RegisterNetEvent("consumables:client:EatCandy")
+AddEventHandler("consumables:client:EatCandy", function(itemName)
+    TriggerEvent('animations:client:EmoteCommandStart', {"fallover3"})
+    local ped = PlayerPedId()
+    QBCore.Functions.Progressbar("eat_something", "Eating..", 2500, false, true, {
+        disableMovement = false,
+        disableCarMovement = false,
+		disableMouse = false,
+		disableCombat = true,
+    }, {}, {}, {}, function() -- Done
+        TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[itemName], "remove")
+		TriggerServerEvent("QBCore:Server:RemoveItem", itemName, 1)
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        SetPedArmour(ped, GetPedArmour(ped) + 5)
+        TriggerServerEvent("QBCore:Server:SetMetaData", "hunger", QBCore.Functions.GetPlayerData().metadata["hunger"] + Consumeables[itemName])
+        local rng = math.random(0, 100)
+        if rng > 75 then
+            QBCore.Functions.Notify("I dont think that was candy....", "error")
+            TriggerEvent("evidence:client:SetStatus", "widepupils", 300)
+            CrackBaggyEffect()
+        else
+        end
+
+    end)
+end)
+
 RegisterNetEvent('consumables:client:EcstasyBaggy')
 AddEventHandler('consumables:client:EcstasyBaggy', function()
     QBCore.Functions.Progressbar("use_ecstasy", "Pops Pills", 3000, false, true, {

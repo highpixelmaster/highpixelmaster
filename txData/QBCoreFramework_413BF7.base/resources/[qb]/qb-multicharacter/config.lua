@@ -1,8 +1,8 @@
 Config = {}
 Config.StartingApartment = true -- Enable/disable starting apartments (make sure to set default spawn coords)
-Config.Interior = vector3(-3961.69, 2013.08, 500.91) -- Interior to load where characters are previewed
+Config.Interior = vector3(136.34, -749.57, 258.15) -- Interior to load where characters are previewed
 Config.DefaultSpawn = vector3(-1035.71, -2731.87, 12.86) -- Default spawn coords if you have start apartments disabled
 --Spawnstation
-Config.PedCoords = vector4(-3962.103, 2013.484, 500.91, 66.137) -- Create preview ped at these coordinates
-Config.HiddenCoords = vector4(-3968.355, 2005.308, 500.91, 67.523) -- Hides your actual ped while you are in selection
-Config.CamCoords = vector4(-3963.967, 2014.232, 500.91, 250.553) -- Camera coordinates for character preview screen
+Config.PedCoords = vector4(136.14, -749.28, 258.15, 158.44) -- Create preview ped at these coordinates
+Config.HiddenCoords = vector4(153.73, -758.87, 258.15, 0) -- Hides your actual ped while you are in selection
+Config.CamCoords = vector4(134.88, -752.47, 258.15, 334.93) -- Camera coordinates for character preview screen

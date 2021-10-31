@@ -309,7 +309,7 @@ QBShared.Items = {
 	["empty_evidence_bag"] 			 = {["name"] = "empty_evidence_bag", 			["label"] = "Empty Evidence Bag", 		["weight"] = 0, 		["type"] = "item", 		["image"] = "evidence.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Used a lot to keep DNA from blood, bullet shells and more"},
 	["filled_evidence_bag"] 		 = {["name"] = "filled_evidence_bag", 			["label"] = "Evidence Bag", 			["weight"] = 200, 		["type"] = "item", 		["image"] = "evidence.png", 			["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A filled evidence bag to see who committed the crime >:("},
 	["armor"] 		 				 = {["name"] = "armor", 						["label"] = "Armor", 					["weight"] = 15000, 	    ["type"] = "item", 		["image"] = "armor.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Some protection won't hurt... right?"},
-	["heavyarmor"] 		 				 = {["name"] = "heavyarmor", 						["label"] = "Heavy Armor", 					["weight"] = 25000, 	    ["type"] = "item", 		["image"] = "armor.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Some protection won't hurt... right?"},
+	["heavyarmor"] 		 				 = {["name"] = "heavyarmor", 						["label"] = "Heavy Armor", 					["weight"] = 25000, 	    ["type"] = "item", 		["image"] = "HeavyArmor.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Some protection won't hurt... right?"},
 	["rccar"] = {["name"] = "rccar", ["label"] = "RC Car", ["weight"] = 8000, ["type"] = "item", ["image"] = "rccar.png", ["unique"] = true, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "Playable RC Toy Car with embedded Camera"},
 	["drone"] = {["name"] = "drone", ["label"] = "Police Drone", ["weight"] = 8000, ["type"] = "item", ["image"] = "drone.png", ["unique"] = true, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "Playable RC Toy Car with embedded Camera"},
 
@@ -357,8 +357,14 @@ QBShared.Items = {
 	["uzi_part_3"] 			 = {["name"] = "uzi_part_3", 				["label"] = "UZI Mag", 				["weight"] = 1500, 		["type"] = "item", 		["image"] = "uzi_part_3.png", 	["unique"] = true, 	    ["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = {accept = {"uzi_part_1"}, reward = "uzi_stage_1", anim = {["dict"] = "anim@amb@business@weed@weed_inspecting_high_dry@", ["lib"] = "weed_inspecting_high_base_inspector", ["text"] = "Atttaching attachments", ["timeOut"] = 15000,}},   ["description"] = "Mag of a UZI"},
 	["uzi_stage_1"] 	     = {["name"] = "uzi_stage_1", 			    ["label"] = "UZI Body", 				["weight"] = 2500, 		["type"] = "item", 		["image"] = "uzi_stage_1.png", 	["unique"] = true, 	    ["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = {accept = {"uzi_part_2"}, reward = "weapon_microsmg", anim = {["dict"] = "anim@amb@business@weed@weed_inspecting_high_dry@", ["lib"] = "weed_inspecting_high_base_inspector", ["text"] = "Attaching attachments", ["timeOut"] = 15000,}}, ["description"] = "UZI w/ Mag & Barrel"},
 	
-	
-	
+	["carstereo"] 	     = {["name"] = "carstereo", 			    ["label"] = "Car Stereo", 				["weight"] = 2500, 		["type"] = "item", 		["image"] = "highradio.png", 	["unique"] = true, 	    ["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil, ["description"] = "You can like play music or something in your car?"},
+
+	["candycorn"]  = { ["name"] = "candycorn", ["label"] = "Candy Corn", ["weight"] = 0, ["type"] = "item", ["image"] = "candycorn.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = "Happy halloween"},
+	["candypumpkins"]  = { ["name"] = "candypumpkins", ["label"] = "Candy Pumpkins", ["weight"] = 0, ["type"] = "item", ["image"] = "candypumpkins.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = "Happy halloween"},
+	["candyghosts"]  = { ["name"] = "candyghosts", ["label"] = "Candy Ghosts", ["weight"] = 0, ["type"] = "item", ["image"] = "candyghosts.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = "Happy halloween"},
+	["candypeppermint"]  = { ["name"] = "candypeppermint", ["label"] = "Candy Peppermint", ["weight"] = 0, ["type"] = "item", ["image"] = "candygreen.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = "Happy halloween"},
+	["candyworm"]  = { ["name"] = "candyworm", ["label"] = "Candy Worm", ["weight"] = 0, ["type"] = "item", ["image"] = "candygumworm.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = "Happy halloween"},
+	["candygum"]  = { ["name"] = "candygum", ["label"] = "Candy Gummy Bears", ["weight"] = 0, ["type"] = "item", ["image"] = "candygum.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = "Happy halloween"},
 	
 	
 	["bandage"] 			 		 = {["name"] = "bandage", 						["label"] = "Bandage", 					["weight"] = 0, 		["type"] = "item", 		["image"] = "bandage.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A bandage works every time"},
@@ -5412,6 +5418,15 @@ QBShared.Vehicles = {
         ["price"] = 75000,
         ["category"] = "Imports",
         ["hash"] = `zx10`,
+        ["shop"] = "tuner"
+    },
+	["romero"] = {
+        ["name"] = "Ghostbuster",
+        ["brand"] = "romero",
+        ["model"] = "romero",
+        ["price"] = 75000,
+        ["category"] = "Imports",
+        ["hash"] = `romero`,
         ["shop"] = "tuner"
     },
 }

@@ -26,6 +26,10 @@ Config.loot = {
         'radio',
         'phone',
         'skateboard',
+        'tablet',
+        'iphone',
+        'samsungphone',
+        'laptop',
     },
     ['tier3'] = {
         'weapon_pistol',
@@ -35,5 +39,6 @@ Config.loot = {
         'advancedlockpick',
         'armor',
         'uzi_part_2',
+        'carstereo',
     }
 }

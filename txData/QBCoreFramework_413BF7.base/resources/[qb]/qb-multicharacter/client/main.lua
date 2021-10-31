@@ -17,7 +17,8 @@ end)
 -- Functions
 
 local function skyCam(bool)
-    TriggerEvent('qb-weathersync:client:DisableSync')
+    TriggerEvent('qb-weathersync:server:setWeather', "clear")
+
     if bool then
         DoScreenFadeIn(1000)
         SetTimecycleModifier('hud_def_blur')
